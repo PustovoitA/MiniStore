@@ -7,14 +7,13 @@
 
   "compilerOptions": {
     "baseUrl": ".",
-    "types":["node"],
     "paths": {
       "@/*":["src/*"],
       "@assets/*":["src/assets/*"],
-      "@components":["src/components/*"],
-      "@modules":["src/modules/*"],
-      "@pages":["src/pages/*"],
-      "@ui":["src/ui/*"]
+      "@components/*":["src/components/*"],
+      "@modules/*":["src/modules/*"],
+      "@pages/*":["src/pages/*"],
+      "@ui/*":["src/ui/*"]
     }
   }
 }
