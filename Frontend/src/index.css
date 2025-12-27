@@ -1,1 +1,15 @@
 @import "tailwindcss";
+
+html,body{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    --blue-color: #72AEC8;
+    --black-text-color: #272727;
+    --grey-text-color: #8D8D8D;
+    --black-block-color: #272727;
+    --grey-light-color: #EDF1F4;
+    --white-color: #FFFFFF;
+}
