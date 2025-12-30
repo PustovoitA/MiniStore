@@ -1,7 +1,10 @@
 import './App.css'
+import {Button} from "@ui/Button"
 
 function App() {
-  return (<></>)
+  return (<>
+  <Button value='Word'/>
+  </>)
 }
 
 export default App

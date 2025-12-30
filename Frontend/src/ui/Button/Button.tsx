@@ -1,8 +1,12 @@
 
 
-const Button = () => {
+type ButtonProps = {
+    value:string
+}
+
+const Button = ({value}:ButtonProps) => {
     return(<>
-    <button></button>
+    <button>{value}</button>
     </>)
 }
 
