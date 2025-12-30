@@ -6,7 +6,7 @@ type ButtonProps = {
 
 const Button = ({value}:ButtonProps) => {
     return(<>
-    <button>{value}</button>
+        <button className="text-white bg-(--blue-color) py-2.5 w-37.5 cursor-pointer font-[Jost]">{value}</button>
     </>)
 }
 

@@ -3,7 +3,10 @@ import {Button} from "@ui/Button"
 
 function App() {
   return (<>
-  <Button value='Word'/>
+  <Button value='BUY NOW'/>
+  <br />
+  <br />
+  <Button value='SUBSCRIBE'/>
   </>)
 }
 
