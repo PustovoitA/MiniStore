@@ -1,12 +1,16 @@
 
 
 type ButtonProps = {
-    value:string
+    value:string,
+    bgColor:string
 }
 
-const Button = ({value}:ButtonProps) => {
+const Button = ({value, bgColor}:ButtonProps) => {
     return(<>
-        <button className="text-white bg-(--blue-color) py-2.5 w-37.5 cursor-pointer font-[Jost]">{value}</button>
+        <button
+         className="text-white tracking-[2px] text-sm py-4.5 px-10.5 cursor-pointer font-[Jost]"
+         style={{backgroundColor:bgColor}}
+         >{value}</button>
     </>)
 }
 
