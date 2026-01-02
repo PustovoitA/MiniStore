@@ -2,7 +2,7 @@
 
 type ButtonProps = {
     value:string,
-    bgColor:string,
+    bgColor: "var(--blue-color)" | "var(--black-block-color)",
     type:"submit" | "reset" | "button" | undefined,
 }
 
