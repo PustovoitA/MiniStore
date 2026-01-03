@@ -10,10 +10,11 @@ type InputProps = {
     regExp: RegExp,
     errorMassage: string,
     formStateError: FormState<InputType> | undefined,
-    width: string
+    width: string,
+    required: "This file is required" | boolean
 }
 
-const Input = ({type, register, placeholder, regExp, errorMassage, formStateError, width}:InputProps) => {
+const Input = ({type, register, placeholder, regExp, errorMassage, formStateError, width, required}:InputProps) => {
     return(<div className="flex flex-col">
         <input
         className="border border-(--grey-light-color) px-5.5 py-3.75"
@@ -21,7 +22,7 @@ const Input = ({type, register, placeholder, regExp, errorMassage, formStateErro
         type={type}
         placeholder={placeholder}
         {...register(type, {
-            required: "This field is required",
+            required: required,
             pattern: {
                 value: regExp,
                 message: errorMassage
