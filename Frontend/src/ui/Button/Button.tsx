@@ -10,7 +10,7 @@ const Button = ({value, bgColor, type}:ButtonProps) => {
     return(<>
         <button
          type={type}
-         className="text-white tracking-[2px] text-sm py-4.5 px-10.5 cursor-pointer font-[Jost]"
+         className="text-white tracking-[2px] text-sm h-14 py-4.5 px-10.5 cursor-pointer font-[Jost]"
          style={{backgroundColor:bgColor}}
          >{value}</button>
     </>)
