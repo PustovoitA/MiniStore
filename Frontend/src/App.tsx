@@ -30,15 +30,15 @@ function App() {
 <br />
 <br />
 
-  <form onSubmit={handleSubmit(onsubmit)}>
+  <form className="flex" onSubmit={handleSubmit(onsubmit)}>
     <Input 
     register={register}
-    type="text"
+    type="email"
     placeholder="Your Email Here"
-    regExp={/^[A-Za-z]+$/}
+    regExp={/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/}
     errorMassage="Invalid email. You must to use only English letters"
     formStateError={formState}
-    width="200px"
+    width="500px"
     />
     <Button type="submit" bgColor='var(--blue-color)'value='SUBMIT'/>
   </form>
