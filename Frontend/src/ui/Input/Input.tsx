@@ -17,7 +17,7 @@ type InputProps = {
 const Input = ({type, register, placeholder, regExp, errorMassage, formStateError, width, required}:InputProps) => {
     return(<div className="flex flex-col">
         <input
-        className="border border-(--grey-light-color) px-5.5 py-3.75"
+        className="border border-(--grey-light-color) px-5.5 py-3.75 text-(--grey-text-color) bg-(--white-color) outline-0"
         style={{width:width}}
         type={type}
         placeholder={placeholder}
