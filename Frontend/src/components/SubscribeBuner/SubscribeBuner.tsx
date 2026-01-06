@@ -14,10 +14,10 @@ const SubscibeBuner = () => {
         console.log(data);
         reset();
     }
-    return(<section>
-    <div>
-        <h1>SUBSCRIBE US NOW</h1>
-        <p>Get latest news, updates and deals directly mailed to your inbox.</p>
+    return(<section className="w-full py-20 bg-(--black-block-color) flex items-center justify-around">
+    <div className="leading-11.25">
+        <h1 className="font-[Jost] text-3xl text-(--white-color) tracking-[1px]">SUBSCRIBE US NOW</h1>
+        <p className="text-(--grey-text-color)">Get latest news, updates and deals directly mailed to your inbox.</p>
     </div>
     <form className="flex" onSubmit={handleSubmit(onsubmit)}>
         <Input
