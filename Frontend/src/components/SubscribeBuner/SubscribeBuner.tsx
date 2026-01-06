@@ -5,18 +5,18 @@ import {Input} from "@ui/Input"
 
 import type {InputType} from "@ui/Input"
 
-const SubscribeBuner = () => {
-      const {register, handleSubmit, formState, reset} = useForm<InputType>({
+const SubscibeBuner = () => {
+    const {register, handleSubmit, formState, reset} = useForm<InputType>({
         mode: "onChange"
-      });
-    
-      const onsubmit:SubmitHandler<InputType> = (data) => {
+    });
+
+    const onsubmit:SubmitHandler<InputType> = (data) => {
         console.log(data);
         reset();
-      }
-  return(<>
+    }
+    return(<section>
     <form className="flex" onSubmit={handleSubmit(onsubmit)}>
-        <Input 
+        <Input
         register={register}
         required="This file is required"
         type="email"
@@ -28,7 +28,7 @@ const SubscribeBuner = () => {
         />
         <Button type="submit" bgColor='var(--blue-color)'value='SUBSCRIBE'/>
     </form>
-  </>)
+    </section>)
 }
 
-export default SubscribeBuner
+export default SubscibeBuner
