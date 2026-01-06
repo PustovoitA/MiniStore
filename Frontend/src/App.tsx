@@ -7,7 +7,7 @@ import type { InputType } from "@ui/Input"
 
 function App() {
 
-  const {register, handleSubmit, watch, formState, reset} = useForm<InputType>({
+  const {register, handleSubmit, formState, reset} = useForm<InputType>({
     mode: "onChange"
   });
 
@@ -33,14 +33,15 @@ function App() {
   <form className="flex" onSubmit={handleSubmit(onsubmit)}>
     <Input 
     register={register}
+    required="This file is required"
     type="email"
-    placeholder="Your Email Here"
+    placeholder="Your email address here"
     regExp={/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/}
-    errorMassage="Invalid email. You must to use only English letters"
+    errorMassage="Invalid email"
     formStateError={formState}
-    width="500px"
+    width="350px"
     />
-    <Button type="submit" bgColor='var(--blue-color)'value='SUBMIT'/>
+    <Button type="submit" bgColor='var(--blue-color)'value='SUBSCRIBE'/>
   </form>
 
   </>)
