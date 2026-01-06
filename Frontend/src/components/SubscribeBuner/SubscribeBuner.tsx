@@ -1,4 +1,34 @@
+import { useForm, type SubmitHandler } from "react-hook-form";
 
-const SubscribeBuner = () => {}
+import {Button} from "@ui/Button"
+import {Input} from "@ui/Input"
+
+import type {InputType} from "@ui/Input"
+
+const SubscribeBuner = () => {
+      const {register, handleSubmit, formState, reset} = useForm<InputType>({
+        mode: "onChange"
+      });
+    
+      const onsubmit:SubmitHandler<InputType> = (data) => {
+        console.log(data);
+        reset();
+      }
+  return(<>
+    <form className="flex" onSubmit={handleSubmit(onsubmit)}>
+        <Input 
+        register={register}
+        required="This file is required"
+        type="email"
+        placeholder="Your email address here"
+        regExp={/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/}
+        errorMassage="Invalid email"
+        formStateError={formState}
+        width="350px"
+        />
+        <Button type="submit" bgColor='var(--blue-color)'value='SUBSCRIBE'/>
+    </form>
+  </>)
+}
 
 export default SubscribeBuner
