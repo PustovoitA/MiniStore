@@ -15,6 +15,10 @@ const SubscibeBuner = () => {
         reset();
     }
     return(<section>
+    <div>
+        <h1>SUBSCRIBE US NOW</h1>
+        <p>Get latest news, updates and deals directly mailed to your inbox.</p>
+    </div>
     <form className="flex" onSubmit={handleSubmit(onsubmit)}>
         <Input
         register={register}
