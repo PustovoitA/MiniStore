@@ -1,69 +1,119 @@
-# React + TypeScript + Vite
+# MiniStore 🛒
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+MiniStore is a frontend e-commerce project created to practice modern React development, application architecture, and UI design.
 
-Currently, two official plugins are available:
+This project is built as a pet project and is aimed at the **Junior Frontend Developer** level.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## Expanding the ESLint configuration
+## 🔍 About the Project
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+MiniStore is a landing page / online store with a product catalog, hero section, and basic e-commerce UI blocks.
+The main focus of the project:
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+* clean and maintainable project structure;
+* reusable UI components;
+* working with a modern frontend tech stack;
+* responsive layout.
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+The design is based on a free-to-use layout (no copyright issues).
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+---
+
+## 🧩 Features
+
+* Hero section with CTA
+* Product catalog
+* Product cards
+* Responsive layout
+* UI components (buttons, cards, sections)
+* Scalable project structure
+
+> ⚠️ The project is still in development. Some features may be implemented later.
+
+---
+
+## 🛠️ Tech Stack
+
+* **React**
+* **TypeScript**
+* **Vite**
+* **Tailwind CSS**
+* **Modular architecture**
+* **Alias imports** (`@/`, `@components`, `@ui`, etc.)
+
+---
+
+## 📁 Project Architecture
+
+The project follows a simple modular architecture:
+
+```
+src/
+ ├─ app/        # Application initialization
+ ├─ pages/      # Pages
+ ├─ modules/    # Business modules
+ ├─ components/ # Shared components
+ ├─ ui/         # UI components
+ ├─ assets/     # Static assets
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+**index.ts** files are used for component re-exports.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+---
 
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## 🚀 Getting Started
+
+1. Clone the repository:
+
+```bash
+git clone https://github.com/PustovoitA/MiniStore.git
 ```
+
+2. Install dependencies:
+
+```bash
+npm install
+```
+
+3. Run the project:
+
+```bash
+npm run dev
+```
+
+4. Open in your browser:
+
+```
+http://localhost:5173
+```
+
+---
+
+## 📸 Preview
+
+> Screenshot of the main page
+
+---
+
+## 🎯 Project Goals
+
+* Improve React + TypeScript skills
+* Practice Tailwind CSS
+* Understand frontend application architecture
+* Prepare a portfolio-ready project
+
+---
+
+## 👤 Author
+
+**Andrii Pustovoit**
+Junior Frontend Developer
+
+* GitHub: [PustovoitA](https://github.com/PustovoitA)
+* Telegram: @st1f3nd
+* Email: [andreipustovoit6@gmail.com](mailto:andreipustovoit6@gmail.com)
+
+---
+
+⭐️ If you find this project useful, feel free to give it a star
