@@ -7,8 +7,6 @@ function App() {
 
   return (<>
     <Header/>
-    <br />
-    <br />
     <SubscribeBuner/>
 
   </>)
