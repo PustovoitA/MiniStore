@@ -4,13 +4,13 @@ import Toolbar from "./components/Toolbar"
 
 
 const Header = () => {
-    return(<div className="flex items-center justify-around py-1.5">
+    return(<header className="flex items-center justify-around py-3.5">
         <h1 className="font-[Jost] text-3xl">MiniStore<span className="text-(--blue-color)">.</span></h1>
-        <div>
+        <div className="flex gap-25">
             <List/>
             <Toolbar/>
         </div>
-    </div>)
+    </header>)
 }
 
 export default Header
