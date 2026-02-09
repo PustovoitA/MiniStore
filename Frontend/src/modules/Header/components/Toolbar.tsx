@@ -1,14 +1,14 @@
 
 const Toolbar = () =>{
     return(<>
-        <ul>
-            <li>
+        <ul className="flex gap-4">
+            <li className="flex items-center hover:text-(--blue-color) cursor-pointer">
                 <span className="material-symbols-outlined">search</span>
             </li>
-            <li>
+            <li className="flex items-center hover:text-(--blue-color) cursor-pointer">
                 <span className="material-symbols-outlined">person</span>
             </li>
-            <li>
+            <li className="flex items-center hover:text-(--blue-color) cursor-pointer">
                 <span className="material-symbols-outlined">shopping_cart</span>
             </li>
         </ul>
