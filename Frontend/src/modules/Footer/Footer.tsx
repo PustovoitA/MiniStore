@@ -1,11 +1,25 @@
-import { socialLinks } from "./components/socialLinks"
-import { quickLinks } from "./components/quickLinks"
-import { helpAndInfo } from "./components/helpAndInfo"
-import { contacts } from "./components/contacts"
-import { insta } from "./components/insta"
+
+import SocialLinks from "./components/socialLinks";
+import QuickLinks from "./components/quickLinks";
+import HelpAndInfo from "./components/helpAndInfo";
+import Contacts from "./components/contacts";
+import Insta from "./components/insta";
 
 const Footer = () => {
-    return(<>footer is working</>)
+    return(<footer>
+
+        <section>
+            <Insta/>
+        </section>
+
+        <section>
+            <SocialLinks/>
+            <QuickLinks/>
+            <HelpAndInfo/>
+            <Contacts/>
+        </section>
+
+    </footer>)
 }
 
 export default Footer

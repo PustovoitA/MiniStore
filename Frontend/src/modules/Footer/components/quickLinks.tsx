@@ -1,4 +1,6 @@
 
-export const quickLinks = () => {
-    return(<></>)
+const QuickLinks = () => {
+    return (<>QuickLinks</>)
 }
+
+export default QuickLinks

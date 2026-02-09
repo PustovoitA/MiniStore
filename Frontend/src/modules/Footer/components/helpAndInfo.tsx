@@ -1,4 +1,6 @@
 
-export const helpAndInfo = () => {
-    return(<></>)
+const HelpAndInfo = () => {
+    return(<>HelpAndInfo</>)
 }
+
+export default HelpAndInfo

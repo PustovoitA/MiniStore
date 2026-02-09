@@ -1,4 +1,6 @@
 
-export const insta = () => {
-    return(<></>)
+const Insta = () => {
+    return(<>Insta</>)
 }
+
+export default Insta

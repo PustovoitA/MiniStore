@@ -1,4 +1,6 @@
 
-export const socialLinks = () => {
-    return(<></>)
+const SocialLinks = () => {
+    return(<>SocialLinks</>)
 }
+
+export default SocialLinks
