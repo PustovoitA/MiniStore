@@ -10,6 +10,7 @@ const Toolbar = () =>{
             </li>
             <li className="flex items-center hover:text-(--blue-color) cursor-pointer">
                 <span className="material-symbols-outlined">shopping_cart</span>
+                <span className="flex items-center">(0)</span>
             </li>
         </ul>
     </>)
