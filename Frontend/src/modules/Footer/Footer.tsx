@@ -6,20 +6,22 @@ import Contacts from "./components/Contacts";
 import Insta from "./components/Insta";
 
 const Footer = () => {
-    return(<footer>
+    return(<div className="flex items-center justify-center w-full">
+        <footer className="w-(--width)">
 
-        <section>
-            <Insta/>
-        </section>
+            <section>
+                <Insta/>
+            </section>
 
-        <section>
-            <SocialLinks/>
-            <QuickLinks/>
-            <HelpAndInfo/>
-            <Contacts/>
-        </section>
+            <section>
+                <SocialLinks/>
+                <QuickLinks/>
+                <HelpAndInfo/>
+                <Contacts/>
+            </section>
 
-    </footer>)
+        </footer>
+    </div>)
 }
 
 export default Footer
