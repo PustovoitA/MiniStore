@@ -1,11 +1,27 @@
-import { socialLinks } from "./components/socialLinks"
-import { quickLinks } from "./components/quickLinks"
-import { helpAndInfo } from "./components/helpAndInfo"
-import { contacts } from "./components/contacts"
-import { insta } from "./components/insta"
+
+import SocialLinks from "./components/SocialLinks";
+import QuickLinks from "./components/QuickLinks";
+import HelpAndInfo from "./components/HelpAndInfo";
+import Contacts from "./components/Contacts";
+import Insta from "./components/Insta";
 
 const Footer = () => {
-    return(<>footer is working</>)
+    return(<div className="flex items-center justify-center w-full">
+        <footer className="w-(--width)">
+
+            <section>
+                <Insta/>
+            </section>
+
+            <section>
+                <SocialLinks/>
+                <QuickLinks/>
+                <HelpAndInfo/>
+                <Contacts/>
+            </section>
+
+        </footer>
+    </div>)
 }
 
 export default Footer

@@ -1,4 +1,6 @@
 
-export const contacts = () => {
-    return(<></>)
+const Contacts = () => {
+    return(<>Contacts</>)
 }
+
+export default Contacts
