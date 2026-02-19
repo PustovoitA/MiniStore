@@ -2,15 +2,15 @@
 import { Logo } from "@ui/Logo"
 
 const SocialLinks = () => {
-    return(<div>
+    return(<div className="flex items-start flex-col gap-3.5 w-75">
     <Logo/>
 
-    <p>
+    <p className="text-(--grey-text-color)">
         Nisi, purus vitae, ultrices nunc. Sit ac sit suscipit hendrerit. 
         Gravida massa volutpat aenean odio erat nullam fringilla.
     </p>
 
-    <ul>
+    <ul className="flex items-center gap-5">
         <li>
             <a id="Facebook" href="#">
                 <svg width="24px" height="24px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
