@@ -13,8 +13,8 @@ const SocialLinks = () => {
     <ul className="flex items-center gap-5">
         <li>
             <a id="Facebook" href="#">
-                <svg width="24px" height="24px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-                <path className="fill-[#D7DCDF] hover:fill-[#72AEC8] transition-colors" d="M352 32H288c-70.7 0-112 41.3-112 116v60H128v96h48v176h104V304h69.3l10.7-96H280v-48
+                <svg className="fill-[#D7DCDF] hover:fill-[#72AEC8] transition-colors" width="24px" height="24px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                <path d="M352 32H288c-70.7 0-112 41.3-112 116v60H128v96h48v176h104V304h69.3l10.7-96H280v-48
                 c0-27.4 7.6-46 46.9-46H352V32z"/>
                 </svg>
             </a>
