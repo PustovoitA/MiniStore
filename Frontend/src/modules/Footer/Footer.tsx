@@ -13,7 +13,7 @@ const Footer = () => {
                 <Insta/>
             </section>
 
-            <section className="flex items-start">
+            <section className="flex items-center">
                 <SocialLinks/>
                 <QuickLinks/>
                 <HelpAndInfo/>
