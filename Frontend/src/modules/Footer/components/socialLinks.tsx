@@ -5,7 +5,7 @@ const SocialLinks = () => {
     return(<div className="flex items-start flex-col gap-3.5 w-75">
     <Logo/>
 
-    <p className="text-(--grey-text-color)">
+    <p className="text-(--grey-text-color) font-[Jost]">
         Nisi, purus vitae, ultrices nunc. Sit ac sit suscipit hendrerit. 
         Gravida massa volutpat aenean odio erat nullam fringilla.
     </p>
