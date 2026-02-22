@@ -13,7 +13,7 @@ const Footer = () => {
                 <Insta/>
             </section>
 
-            <section className="flex items-center">
+            <section className="flex items-center justify-between">
                 <SocialLinks/>
                 <QuickLinks/>
                 <HelpAndInfo/>
