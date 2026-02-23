@@ -7,7 +7,7 @@ import Insta from "./components/Insta";
 
 const Footer = () => {
     return(<div className="flex items-center justify-center w-full">
-        <footer className="w-(--width)">
+        <footer className="flex flex-col gap-15 w-(--width)">
 
             <section>
                 <Insta/>
