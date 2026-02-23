@@ -4,10 +4,11 @@ import QuickLinks from "./components/QuickLinks";
 import HelpAndInfo from "./components/HelpAndInfo";
 import Contacts from "./components/Contacts";
 import Insta from "./components/Insta";
+import FooterBottom from "./components/FooterBottom";
 
 const Footer = () => {
-    return(<div className="flex items-center justify-center w-full">
-        <footer className="flex flex-col gap-15 w-(--width)">
+    return(<div className="flex flex-col gap-10 items-center justify-center w-full">
+        <footer className="flex flex-col gap-10 w-(--width)">
 
             <section>
                 <Insta/>
@@ -19,8 +20,8 @@ const Footer = () => {
                 <HelpAndInfo/>
                 <Contacts/>
             </section>
-
         </footer>
+        <FooterBottom/>
     </div>)
 }
 
