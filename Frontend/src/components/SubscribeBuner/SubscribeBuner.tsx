@@ -14,7 +14,7 @@ const SubscibeBuner = () => {
         console.log(data);
         reset();
     }
-    return(<div className="flex items-center justify-center w-full">
+    return(<div className="my-20 flex items-center justify-center w-full">
         <section className="w-(--width) py-20 bg-(--black-block-color) flex items-center justify-around">
         <div className="leading-11.25">
             <h1 className="font-[Jost] text-3xl text-(--white-color) tracking-[1px]">SUBSCRIBE US NOW</h1>
