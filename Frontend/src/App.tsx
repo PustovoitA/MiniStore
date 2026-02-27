@@ -1,7 +1,16 @@
-import './App.css'
+
+import { Header } from "@modules/Header"
+import { SubscribeBuner } from "@components/SubscribeBuner"
+import {Footer} from "@modules/Footer"
 
 function App() {
-  return (<>nigger</>)
+
+
+  return (<>
+    <Header/>
+    <SubscribeBuner/>
+    <Footer/>
+  </>)
 }
 
 export default App
