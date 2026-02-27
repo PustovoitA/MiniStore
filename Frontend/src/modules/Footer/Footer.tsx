@@ -1,9 +1,9 @@
 
-import SocialLinks from "./components/SocialLinks";
-import QuickLinks from "./components/QuickLinks";
-import HelpAndInfo from "./components/HelpAndInfo";
-import Contacts from "./components/Contacts";
-import Insta from "./components/Insta";
+import SocialLinks from "./components/socialLinks";
+import QuickLinks from "./components/quickLinks";
+import HelpAndInfo from "./components/helpAndInfo";
+import Contacts from "./components/contacts";
+import Insta from "./components/insta";
 import FooterBottom from "./components/FooterBottom";
 
 const Footer = () => {
