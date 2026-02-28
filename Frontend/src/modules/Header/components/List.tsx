@@ -12,8 +12,8 @@ const List = () =>{
                 PAGES
                 <span className="material-symbols-outlined">arrow_drop_down</span>
             </li>
-            <li className="flex items-center hover:text-(--blue-color) cursor-pointer transition-colors tracking-widest">ABOUT</li>
-            <li className="flex items-center hover:text-(--blue-color) cursor-pointer transition-colors tracking-widest">BLOGS</li>
+            <li onClick={() => navigate("About")} className="flex items-center hover:text-(--blue-color) cursor-pointer transition-colors tracking-widest">ABOUT</li>
+            <li onClick={() => navigate("Blog")} className="flex items-center hover:text-(--blue-color) cursor-pointer transition-colors tracking-widest">BLOGS</li>
             <li className="flex items-center hover:text-(--blue-color) cursor-pointer transition-colors tracking-widest">CONTACT</li>
         </ul>
     </>)
