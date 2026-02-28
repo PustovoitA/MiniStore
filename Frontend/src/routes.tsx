@@ -4,7 +4,7 @@ import { Home } from "@pages/Home"
 const AppRoutes = () => {
     const navigationRoutes = [
         {
-            path: "Home",
+            path: "/",
             element: <Home/>
         }
     ]
