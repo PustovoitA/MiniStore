@@ -23,6 +23,7 @@ const List = () =>{
             onClick={() => navigate("Blog")} 
             className={`${location.pathname === "/Blog" ? "text-[#72AEC8]" : "text-black"} flex items-center hover:text-(--blue-color) cursor-pointer transition-colors tracking-widest`}>BLOGS</li>
             <li
+            onClick={() => navigate("Contact")} 
             className={`${location.pathname === "/Contact" ? "text-[#72AEC8]" : "text-black"} flex items-center hover:text-(--blue-color) cursor-pointer transition-colors tracking-widest`}>CONTACT</li>
         </ul>
     </>)

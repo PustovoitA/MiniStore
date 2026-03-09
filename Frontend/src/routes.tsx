@@ -2,6 +2,7 @@ import { Route, Routes } from "react-router-dom"
 import { Home } from "@pages/Home"
 import { About } from "./pages/About"
 import { Blog } from "./pages/Blog"
+import { Contact } from "./pages/Contact"
 
 const AppRoutes = () => {
     const navigationRoutes = [
@@ -16,6 +17,10 @@ const AppRoutes = () => {
         {
             path: "Blog",
             element: <Blog/>
+        },
+        {
+            path: "Contact",
+            element: <Contact/>
         }
     ]
 
