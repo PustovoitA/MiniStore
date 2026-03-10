@@ -12,10 +12,7 @@ const List = () =>{
             onClick={() => navigate("/")} 
             className={`${location.pathname === "/" ? "text-[#72AEC8]" : "text-black"} flex items-center hover:text-(--blue-color) cursor-pointer transition-colors tracking-widest`}>HOME</li>
             <li
-            className={`${location.pathname === "/Pages" ? "text-[#72AEC8]" : "text-black"} flex items-center hover:text-(--blue-color) cursor-pointer transition-colors tracking-widest`}>
-                PAGES
-                <span className="material-symbols-outlined">arrow_drop_down</span>
-            </li>
+            className={`${location.pathname === "/Shop" ? "text-[#72AEC8]" : "text-black"} flex items-center hover:text-(--blue-color) cursor-pointer transition-colors tracking-widest`}>SHOP</li>
             <li 
             onClick={() => navigate("About")} 
             className={`${location.pathname === "/About" ? "text-[#72AEC8]" : "text-black"} flex items-center hover:text-(--blue-color) cursor-pointer transition-colors tracking-widest`}>ABOUT</li>
