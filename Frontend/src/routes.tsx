@@ -8,7 +8,7 @@ import { Shop } from "@pages/Shop"
 const AppRoutes = () => {
     const navigationRoutes = [
         {
-            path: "/",
+            path: "Home",
             element: <Home/>
         },
         {

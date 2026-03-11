@@ -14,13 +14,13 @@ const QuickLinks = () => {
 
         <ul className="flex flex-col gap-1 font-[Jost]">
             <li onClick={() => scrolToTop()} className="hover:text-(--blue-color) transition-colors">
-                <Link className="text-[15px] tracking-widest" to="/">HOME</Link>
+                <Link className="text-[15px] tracking-widest" to="/Home">HOME</Link>
             </li>
             <li onClick={() => scrolToTop()} className="hover:text-(--blue-color) transition-colors">
                 <Link className="text-[15px] tracking-widest" to="/About">ABOUT</Link>
             </li>
             <li onClick={() => scrolToTop()} className="hover:text-(--blue-color) transition-colors">
-                <Link className="text-[15px] tracking-widest" to="#">SHOP</Link>
+                <Link className="text-[15px] tracking-widest" to="/Shop">SHOP</Link>
             </li>
             <li onClick={() => scrolToTop()} className="hover:text-(--blue-color) transition-colors">
                 <Link className="text-[15px] tracking-widest" to="/Blog">BLOGS</Link>

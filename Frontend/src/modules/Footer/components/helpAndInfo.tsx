@@ -1,6 +1,6 @@
 
 const HelpAndInfo = () => {
-    return(<div className="flex flex-col gap-2">
+    return(<div className="flex flex-col gap-2 unselectable">
         <h1 className="font-[Jost] text-xl tracking-wider">HELP & INFO</h1>
 
         <ul className="flex flex-col gap-1 font-[Jost]">

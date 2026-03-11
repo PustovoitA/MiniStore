@@ -1,7 +1,8 @@
+import PageBuner from "@/components/PageBuner/PageBuner"
 
 const Home = () => {
     return(<>
-    <p>Home</p>
+    <PageBuner/>
     </>)
 }
 
