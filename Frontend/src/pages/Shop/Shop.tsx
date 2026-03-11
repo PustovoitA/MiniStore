@@ -1,6 +1,9 @@
+import PageBuner from "@/components/PageBuner/PageBuner"
 
 const Shop = () => {
-    return(<>Shop</>)
+    return(<>
+        <PageBuner/>
+    </>)
 }
 
 export default Shop
