@@ -9,7 +9,7 @@ const images = [
 
 const Insta = () => {
   return (
-    <div className="flex flex-col items-center gap-6">
+    <div className="flex flex-col items-center gap-6 unselectable">
       <h1 className="text-2xl font-[Jost] tracking-wide">
         SHOP OUR INSTA
       </h1>
