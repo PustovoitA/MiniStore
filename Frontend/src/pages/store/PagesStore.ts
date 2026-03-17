@@ -1,35 +1,39 @@
 import { create } from "zustand";
+import { persist } from "zustand/middleware";
 
 interface TypesHistoryRoutes{
     list: string[],
     setPathInList: (path:string) => void,
-    getList: () => string[],
     deletePath: (path:string) => void
 }
 
+const HistoryRoutes = create<TypesHistoryRoutes>()(
+  persist(
+    (set, get) => ({
+      list: ["/Home"],
 
-const HistoryRoutes = create<TypesHistoryRoutes>((set, get) => ({
-    list: [],
+      setPathInList: (path) => {
+        set((state) => ({
+          list: [...state.list, path]
+        }))
+      },
 
-    setPathInList: (path) => {
-        set((state) => ({list: [...state.list, path]}))
-    },
-
-    getList: () => {
-        return get().list
-    },
-
-    deletePath: (path) => {
+      deletePath: (path) => {
         set((state) => {
-            const index = state.list.indexOf(path)
+          const index = state.list.indexOf(path)
 
-            if (index === -1) return state
+          if (index === -1) return state
 
-            return {
+          return {
             list: state.list.slice(0, index + 1)
-            }
+          }
         })
+      }
+    }),
+    {
+      name: "history-routes-storage"
     }
-}));
+  )
+);
 
 export default HistoryRoutes;
