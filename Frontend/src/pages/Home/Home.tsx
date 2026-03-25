@@ -1,3 +1,4 @@
+import { CustomerBenefits } from "@/components/CustomerBenefits"
 import { HomeBuner } from "@/components/HomeBuner"
 import PageBuner from "@/components/PageBuner/PageBuner"
 
@@ -7,6 +8,7 @@ const Home = () => {
         <PageBuner/>
     </div>
     <HomeBuner/>
+    <CustomerBenefits/>
     </>)
 }
 
