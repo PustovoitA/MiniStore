@@ -7,8 +7,10 @@ const Home = () => {
     <div className="hidden">
         <PageBuner/>
     </div>
-    <HomeBuner/>
-    <CustomerBenefits/>
+    <div className="flex flex-col gap-22">
+        <HomeBuner/>
+        <CustomerBenefits/>
+    </div>
     </>)
 }
 
