@@ -44,4 +44,6 @@ const ProductStore = create()(
             name: "history-routes-storage"
         }
 
-))
+));
+
+export default ProductStore;
