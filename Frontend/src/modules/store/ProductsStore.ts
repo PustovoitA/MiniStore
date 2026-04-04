@@ -2,8 +2,29 @@ import { create } from "zustand";
 import { persist } from "zustand/middleware";
 
 
+interface TypeProductsStore {
+    products: Product[];
+}
 
-const ProductStore = create()(
+interface Product {
+    name: string;
+    type: string;
+    price: 300;
+    count: 5;
+    image: string;
+    colors: Colors[];
+    description: string;
+    reviews: [];
+}
+
+interface Colors {
+    color: string;
+    code: string;
+    availability: boolean;
+}
+
+
+const ProductStore = create<TypeProductsStore>()(
     persist(
         (set, get) => ({
             products: [
@@ -11,7 +32,7 @@ const ProductStore = create()(
                     name: "iphone 13",
                     type: "phone",
                     price: 300,
-                    conunt: 5,
+                    count: 5,
                     image: "##",
                     colors: [
                         {
