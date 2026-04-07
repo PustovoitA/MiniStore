@@ -1,5 +1,9 @@
 
-const ProductCart = () => {
+type Props = {
+    countProductsInRow: number;
+}
+
+const ProductCart = ({countProductsInRow}:Props) => {
     return(
     <div className="w-75 flex flex-col items-center gap-2">
         <div className="image_block group flex flex-col items-center w-full h-90 relative overflow-hidden">

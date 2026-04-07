@@ -11,7 +11,7 @@ const Home = () => {
     <div className="flex flex-col gap-22">
         <HomeBuner/>
         <CustomerBenefits/>
-        <ProductCart/>
+        <ProductCart countProductsInRow={5}/>
     </div>
     </>)
 }
