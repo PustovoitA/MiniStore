@@ -1,15 +1,18 @@
 
 type Props = {
     countProductsInRow: number;
+    productName: string;
+    productImageSrc: string;
+    productPrice: number;
 }
 
-const ProductCart = ({countProductsInRow}:Props) => {
+const ProductCart = ({countProductsInRow, productPrice, productName, productImageSrc}:Props) => {
     return(
-    <div className="w-75 flex flex-col items-center gap-2">
+    <div className=" flex flex-col items-center gap-2" style={{width: `calc((100% / ${countProductsInRow}) - 9px)`}}>
         <div className="image_block group flex flex-col items-center w-full h-90 relative overflow-hidden">
             <img
                 className="object-cover h-full w-full"
-                src="https://images.pexels.com/photos/29020349/pexels-photo-29020349.jpeg"
+                src={productImageSrc}
                 alt="image of product"
             />
 
@@ -33,8 +36,8 @@ const ProductCart = ({countProductsInRow}:Props) => {
             </button>
         </div>
         <div className="inf0_block flex items-center justify-between font-[Jost] w-full text-[18px]">
-            <p className="name">{"iphone 13".toUpperCase()}</p>
-            <p className="prise text-(--blue-color)">{`$${300}`}</p>
+            <p className="name">{productName.toUpperCase()}</p>
+            <p className="prise text-(--blue-color)">{`$${productPrice}`}</p>
         </div>
     </div>)
 }
