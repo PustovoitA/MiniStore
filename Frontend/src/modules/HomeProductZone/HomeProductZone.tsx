@@ -7,10 +7,10 @@ const HomeProductZone = () => {
     return(<div className="flex flex-col justify-center items-center w-full">
         <section className="mobile_sec flex flex-col items-center gap-5 w-(--width)">
             <div className="title flex items-center justify-between w-full font-[Jost]">
-                <h1 className="text-2xl">MOBILE PRODUCTS</h1>
+                <h1 className="text-3xl">MOBILE PRODUCTS</h1>
                 <div>
-                    <a className="text-[14px])" href="#">GO TO SHOP</a>
-                    <span className=""></span>
+                    <a className="text-[14px]" href="/Shop">GO TO SHOP</a>
+                    <hr className="h-0.5 bg-[#c8c8c8] border-none" />
                 </div>
             </div>
             <div className="flex items-center gap-4.5 w-full products">
