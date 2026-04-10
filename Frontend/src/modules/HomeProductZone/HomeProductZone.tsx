@@ -4,7 +4,7 @@ import ProductStore from "../store/ProductsStore";
 const HomeProductZone = () => {
     const products = ProductStore((state) => state.products);
 
-    return(<div className="flex flex-col gap-20 justify-center items-center w-full">
+    return(<div className="flex flex-col gap-20 justify-center items-center w-full unselectable">
         <section className="mobile_sec flex flex-col items-center gap-5 w-(--width)">
             <div className="title flex items-center justify-between w-full font-[Jost]">
                 <h1 className="text-3xl">MOBILE PRODUCTS</h1>
