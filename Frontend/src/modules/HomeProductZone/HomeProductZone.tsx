@@ -3,6 +3,9 @@ import ProductStore from "../store/ProductsStore";
 
 const HomeProductZone = () => {
     const products = ProductStore((state) => state.products);
+    const phoneProducts = [... products.filter(el => el.type === "phone").slice(0, 15)];
+    const watchProducts = [... products.filter(el => el.type === "smart-watches").slice(0, 15)];
+
 
     return(<div className="flex flex-col gap-20 justify-center items-center w-full unselectable">
         <section className="mobile_sec flex flex-col items-center gap-5 w-(--width)">
@@ -14,7 +17,7 @@ const HomeProductZone = () => {
                 </div>
             </div>
             <div className="flex items-center gap-4.5 w-full products">
-                {products.map(el => <ProductCart productPrice={el.price} productImageSrc={el.image} productName={el.name} countProductsInRow={5}/>)}
+                {phoneProducts.map(el => <ProductCart productPrice={el.price} productImageSrc={el.image} productName={el.name} countProductsInRow={5}/>)}
             </div>
             <div className="switcher w-full"></div>
         </section>
@@ -28,7 +31,7 @@ const HomeProductZone = () => {
                 </div>
             </div>
             <div className="flex items-center gap-4.5 w-full products">
-                {products.map(el => <ProductCart productPrice={el.price} productImageSrc={el.image} productName={el.name} countProductsInRow={5}/>)}
+                {watchProducts.map(el => <ProductCart productPrice={el.price} productImageSrc={el.image} productName={el.name} countProductsInRow={5}/>)}
             </div>
             <div className="switcher w-full"></div>
         </section>

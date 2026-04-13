@@ -9,7 +9,7 @@ interface TypeProductsStore {
 interface Product {
     productId: string;
     name: string;
-    type: "phone" | "smart watches";
+    type: "phone" | "smart-watches";
     price: number;
     count: number;
     status: "normal" | "sale" | "new";
@@ -67,7 +67,7 @@ const ProductStore = create<TypeProductsStore>()(
                 {
                     productId: "K543ubmf90O",
                     name: "pink watches",
-                    type: "smart watches",
+                    type: "smart-watches",
                     price: 870,
                     count: 2,
                     status: "sale",
