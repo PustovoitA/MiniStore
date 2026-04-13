@@ -17,7 +17,7 @@ const HomeProductZone = () => {
                 </div>
             </div>
             <div className="flex items-center gap-4.5 w-full products">
-                {phoneProducts.map(el => <ProductCart productPrice={el.price} productImageSrc={el.image} productName={el.name} countProductsInRow={5}/>)}
+                {phoneProducts.map(el => <ProductCart key={el.productId} productPrice={el.price} productImageSrc={el.image} productName={el.name} countProductsInRow={5}/>)}
             </div>
             <div className="switcher w-full"></div>
         </section>
@@ -31,7 +31,7 @@ const HomeProductZone = () => {
                 </div>
             </div>
             <div className="flex items-center gap-4.5 w-full products">
-                {watchProducts.map(el => <ProductCart productPrice={el.price} productImageSrc={el.image} productName={el.name} countProductsInRow={5}/>)}
+                {watchProducts.map(el => <ProductCart key={el.productId} productPrice={el.price} productImageSrc={el.image} productName={el.name} countProductsInRow={5}/>)}
             </div>
             <div className="switcher w-full"></div>
         </section>
