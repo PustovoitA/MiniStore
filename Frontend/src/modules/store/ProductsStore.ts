@@ -30,59 +30,142 @@ const ProductStore = create<TypeProductsStore>()(
     persist(
         (set, get) => ({
             products: [
+                // ===== iPhone (5) =====
                 {
-                    productId: "A12bgk800J",
-                    name: "iphone 13",
+                    productId: "IP1",
+                    name: "iPhone XS",
                     type: "phone",
-                    price: 300,
-                    count: 5,
+                    price: 150,
+                    count: 8,
                     status: "normal",
+                    image: "https://images.pexels.com/photos/788946/pexels-photo-788946.jpeg",
+                    colors: [
+                        { color: "Midnight", code: "#1C1C1E", availability: true },
+                        { color: "Starlight", code: "#F2F2F7", availability: true }
+                    ],
+                    description: "Reliable everyday iPhone",
+                    reviews: [],
+                },
+                {
+                    productId: "IP2",
+                    name: "iPhone 13 Pro",
+                    type: "phone",
+                    price: 700,
+                    count: 5,
+                    status: "sale",
                     image: "https://images.pexels.com/photos/29020349/pexels-photo-29020349.jpeg",
                     colors: [
-                        {
-                            color: "Midnight",
-                            code: "#1C1C1E",
-                            availability: true,
-                        },
-                        {
-                            color: "Starlight",
-                            code: "#F2F2F7",
-                            availability: true,
-                        },
-                        {
-                            color: "Blue",
-                            code: "#3C7EE4",
-                            availability: true,
-                        },
-                        {
-                            color: "Pink",
-                            code: "#F4A8B8",
-                            availability: true,
-                        }
+                        { color: "Graphite", code: "#2C2C2E", availability: true }
                     ],
-                    description: "good phone",
+                    description: "Pro performance",
                     reviews: [],
                 },
-
                 {
-                    productId: "K543ubmf90O",
-                    name: "pink watches",
-                    type: "smart-watches",
-                    price: 870,
-                    count: 2,
-                    status: "sale",
-                    image: "https://images.pexels.com/photos/31406903/pexels-photo-31406903.jpeg",
+                    productId: "IP3",
+                    name: "iPhone 14",
+                    type: "phone",
+                    price: 750,
+                    count: 6,
+                    status: "new",
+                    image: "https://images.pexels.com/photos/30353222/pexels-photo-30353222.jpeg",
                     colors: [
-                        {
-                            color: "Pink",
-                            code: "#F4A8B8",
-                            availability: true,
-                        }
+                        { color: "Blue", code: "#3C7EE4", availability: true }
                     ],
-                    description: "good watches",
+                    description: "Modern design",
                     reviews: [],
                 },
-            ],
+                {
+                    productId: "IP4",
+                    name: "iPhone 14 Pro",
+                    type: "phone",
+                    price: 900,
+                    count: 4,
+                    status: "new",
+                    image: "https://images.pexels.com/photos/16004744/pexels-photo-16004744.jpeg",
+                    colors: [
+                        { color: "Deep Purple", code: "#5E5CE6", availability: true }
+                    ],
+                    description: "Dynamic Island",
+                    reviews: [],
+                },
+                {
+                    productId: "IP5",
+                    name: "iPhone 12",
+                    type: "phone",
+                    price: 400,
+                    count: 10,
+                    status: "sale",
+                    image: "https://images.pexels.com/photos/13570143/pexels-photo-13570143.jpeg",
+                    colors: [
+                        { color: "Red", code: "#FF3B30", availability: true }
+                    ],
+                    description: "Budget iPhone",
+                    reviews: [],
+                },
+    
+
+                // ===== Apple Watch (5) =====
+                {
+                    productId: "AW1",
+                    name: "Apple Watch Series 8",
+                    type: "smart-watches",
+                    price: 500,
+                    count: 6,
+                    status: "new",
+                    image: "https://images.pexels.com/photos/9130515/pexels-photo-9130515.jpeg",
+                    colors: [{ color: "Midnight", code: "#1C1C1E", availability: true }],
+                    description: "Advanced health tracking",
+                    reviews: [],
+                },
+                {
+                    productId: "AW2",
+                    name: "Apple Watch SE",
+                    type: "smart-watches",
+                    price: 300,
+                    count: 10,
+                    status: "normal",
+                    image: "https://images.pexels.com/photos/31406895/pexels-photo-31406895.jpeg",
+                    colors: [{ color: "Silver", code: "#C7C7CC", availability: true }],
+                    description: "Affordable Apple Watch",
+                    reviews: [],
+                },
+                {
+                    productId: "AW3",
+                    name: "Apple Watch Ultra",
+                    type: "smart-watches",
+                    price: 900,
+                    count: 2,
+                    status: "new",
+                    image: "https://images.pexels.com/photos/30708230/pexels-photo-30708230.jpeg",
+                    colors: [{ color: "Titanium", code: "#8E8E93", availability: true }],
+                    description: "Extreme sports watch",
+                    reviews: [],
+                },
+                {
+                    productId: "AW4",
+                    name: "Apple Watch Series 7",
+                    type: "smart-watches",
+                    price: 420,
+                    count: 7,
+                    status: "sale",
+                    image: "https://images.pexels.com/photos/5083216/pexels-photo-5083216.jpeg",
+                    colors: [{ color: "Blue", code: "#007AFF", availability: true }],
+                    description: "Large display",
+                    reviews: [],
+                },
+                {
+                    productId: "AW5",
+                    name: "Apple Watch Series 6",
+                    type: "smart-watches",
+                    price: 350,
+                    count: 9,
+                    status: "normal",
+                    image: "https://images.pexels.com/photos/267394/pexels-photo-267394.jpeg",
+                    colors: [{ color: "Red", code: "#FF3B30", availability: true }],
+                    description: "Classic model",
+                    reviews: [],
+                },
+            ]
         }),
         {
             name: "history-routes-storage"
