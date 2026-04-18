@@ -6,6 +6,10 @@ const HomeProductZone = () => {
     const phoneProducts = [... products.filter(el => el.type === "phone").slice(0, 15)];
     const watchProducts = [... products.filter(el => el.type === "smart-watches").slice(0, 15)];
 
+    const allPhoneProducts = phoneProducts.length;
+    const allWatchesProducts = watchProducts.length;
+    const limitProductsOnPage = 5;
+
 
     return(<div className="flex flex-col gap-20 justify-center items-center w-full unselectable">
         <section className="mobile_sec flex flex-col items-center gap-5 w-(--width)">

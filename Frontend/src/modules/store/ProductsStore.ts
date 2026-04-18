@@ -102,7 +102,6 @@ const ProductStore = create<TypeProductsStore>()(
                     description: "Budget iPhone",
                     reviews: [],
                 },
-    
 
                 // ===== Apple Watch (5) =====
                 {
