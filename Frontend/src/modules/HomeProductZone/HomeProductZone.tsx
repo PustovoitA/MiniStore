@@ -38,12 +38,12 @@ const HomeProductZone = () => {
             <div className="flex items-center gap-4.5 w-full products">
                 {renderPhoneProducts.map(el => <ProductCart key={el.productId} productPrice={el.price} productImageSrc={el.image} productName={el.name} countProductsInRow={5}/>)}
             </div>
-            <div className="switcher flex items-center justify-center w-full">
+            <div className="switcher flex items-center justify-center gap-2 w-full">
                 {Array.from({ length: Math.ceil(allPhoneProducts / limitProductsOnPage) }, (_, i) => (
                     <span
                     onClick={() => setPhonePage(i + 1)}
                     style={{backgroundColor: `${phonePage === i + 1 ? "var(--black-block-color)" : "var(--grey-text-color)"}`, borderRadius: '50%'}}
-                    className="w-2.5 h-2.5"
+                    className="w-3 h-3 cursor-pointer"
                     ></span>
                 ))}
             </div>
@@ -60,12 +60,12 @@ const HomeProductZone = () => {
             <div className="flex items-center gap-4.5 w-full products">
                 {renderWathchProducts.map(el => <ProductCart key={el.productId} productPrice={el.price} productImageSrc={el.image} productName={el.name} countProductsInRow={5}/>)}
             </div>
-            <div className="switcher flex items-center justify-center w-full">
+            <div className="switcher flex items-center justify-center gap-2 w-full">
                 {Array.from({ length: Math.ceil(allWatchesProducts / limitProductsOnPage) }, (_, i) => (
                     <span
                     onClick={() => setWatachPage(i + 1)}
                     style={{backgroundColor: `${watchPage === i + 1 ? "var(--black-block-color)" : "var(--grey-text-color)"}`, borderRadius: '50%'}}
-                    className="w-2.5 h-2.5"
+                    className="w-3 h-3 cursor-pointer"
                     ></span>
                 ))}
             </div>
