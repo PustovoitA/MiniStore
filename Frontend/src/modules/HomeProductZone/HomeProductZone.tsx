@@ -1,5 +1,6 @@
 import { ProductCart } from "@/components/ProductCart";
 import ProductStore from "../store/ProductsStore";
+import { useState } from "react";
 
 const HomeProductZone = () => {
     const products = ProductStore((state) => state.products);
@@ -7,8 +8,11 @@ const HomeProductZone = () => {
     const watchProducts = [... products.filter(el => el.type === "smart-watches").slice(0, 15)];
 
     const allPhoneProducts = phoneProducts.length;
+    const [phonePage, setPhonePage] = useState(1)
+
     const allWatchesProducts = watchProducts.length;
     const limitProductsOnPage = 5;
+
 
 
     return(<div className="flex flex-col gap-20 justify-center items-center w-full unselectable">
@@ -23,7 +27,15 @@ const HomeProductZone = () => {
             <div className="flex items-center gap-4.5 w-full products">
                 {phoneProducts.map(el => <ProductCart key={el.productId} productPrice={el.price} productImageSrc={el.image} productName={el.name} countProductsInRow={5}/>)}
             </div>
-            <div className="switcher w-full"></div>
+            <div className="switcher flex items-center justify-center w-full">
+                {Array.from({ length: Math.ceil(allPhoneProducts / limitProductsOnPage) }, (_, i) => (
+                    <span
+                    onClick={() => setPhonePage(i + 1)}
+                    style={{backgroundColor: `${phonePage === i + 1 ? "var(--black-block-color)" : "var(--grey-text-color)"}`, borderRadius: '50%'}}
+                    className="w-2.5 h-2.5"
+                    ></span>
+                ))}
+            </div>
         </section>
 
         <section className="watches_sec flex flex-col items-center gap-5 w-(--width)">
