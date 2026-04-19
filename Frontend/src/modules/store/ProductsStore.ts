@@ -2,11 +2,11 @@ import { create } from "zustand";
 import { persist } from "zustand/middleware";
 
 
-interface TypeProductsStore {
+export interface TypeProductsStore {
     products: Product[];
 }
 
-interface Product {
+export interface Product {
     productId: string;
     name: string;
     type: "phone" | "smart-watches";
