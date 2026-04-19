@@ -11,6 +11,7 @@ const HomeProductZone = () => {
     const [phonePage, setPhonePage] = useState(1)
 
     const allWatchesProducts = watchProducts.length;
+    const [watchPage, setWatachPage] = useState(1);
     const limitProductsOnPage = 5;
 
 
@@ -49,7 +50,15 @@ const HomeProductZone = () => {
             <div className="flex items-center gap-4.5 w-full products">
                 {watchProducts.map(el => <ProductCart key={el.productId} productPrice={el.price} productImageSrc={el.image} productName={el.name} countProductsInRow={5}/>)}
             </div>
-            <div className="switcher w-full"></div>
+            <div className="switcher flex items-center justify-center w-full">
+                {Array.from({ length: Math.ceil(allWatchesProducts / limitProductsOnPage) }, (_, i) => (
+                    <span
+                    onClick={() => setPhonePage(i + 1)}
+                    style={{backgroundColor: `${watchPage === i + 1 ? "var(--black-block-color)" : "var(--grey-text-color)"}`, borderRadius: '50%'}}
+                    className="w-2.5 h-2.5"
+                    ></span>
+                ))}
+            </div>
         </section>
     </div>)
 }
