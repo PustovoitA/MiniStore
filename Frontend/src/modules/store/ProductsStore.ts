@@ -38,7 +38,7 @@ const ProductStore = create<TypeProductsStore>()(
                     price: 150,
                     count: 8,
                     status: "normal",
-                    image: "https://images.pexels.com/photos/788946/pexels-photo-788946.jpeg",
+                    image: "/productsImg/ip4.webp",
                     colors: [
                         { color: "Midnight", code: "#1C1C1E", availability: true },
                         { color: "Starlight", code: "#F2F2F7", availability: true }
@@ -53,7 +53,7 @@ const ProductStore = create<TypeProductsStore>()(
                     price: 700,
                     count: 5,
                     status: "sale",
-                    image: "https://images.pexels.com/photos/29020349/pexels-photo-29020349.jpeg",
+                    image: "/productsImg/ip4.webp",
                     colors: [
                         { color: "Graphite", code: "#2C2C2E", availability: true }
                     ],
@@ -67,7 +67,7 @@ const ProductStore = create<TypeProductsStore>()(
                     price: 750,
                     count: 6,
                     status: "new",
-                    image: "https://images.pexels.com/photos/30353222/pexels-photo-30353222.jpeg",
+                    image: "/productsImg/ip4.webp",
                     colors: [
                         { color: "Blue", code: "#3C7EE4", availability: true }
                     ],
@@ -81,7 +81,7 @@ const ProductStore = create<TypeProductsStore>()(
                     price: 900,
                     count: 4,
                     status: "new",
-                    image: "https://images.pexels.com/photos/16004744/pexels-photo-16004744.jpeg",
+                    image: "/productsImg/ip4.webp",
                     colors: [
                         { color: "Deep Purple", code: "#5E5CE6", availability: true }
                     ],
@@ -95,7 +95,7 @@ const ProductStore = create<TypeProductsStore>()(
                     price: 400,
                     count: 10,
                     status: "sale",
-                    image: "https://images.pexels.com/photos/13570143/pexels-photo-13570143.jpeg",
+                    image: "/productsImg/ip4.webp",
                     colors: [
                         { color: "Red", code: "#FF3B30", availability: true }
                     ],
@@ -111,7 +111,7 @@ const ProductStore = create<TypeProductsStore>()(
                     price: 500,
                     count: 6,
                     status: "new",
-                    image: "https://images.pexels.com/photos/9130515/pexels-photo-9130515.jpeg",
+                    image: "/productsImg/aw2.webp",
                     colors: [{ color: "Midnight", code: "#1C1C1E", availability: true }],
                     description: "Advanced health tracking",
                     reviews: [],
@@ -123,7 +123,7 @@ const ProductStore = create<TypeProductsStore>()(
                     price: 300,
                     count: 10,
                     status: "normal",
-                    image: "https://images.pexels.com/photos/31406895/pexels-photo-31406895.jpeg",
+                    image: "/productsImg/aw2.webp",
                     colors: [{ color: "Silver", code: "#C7C7CC", availability: true }],
                     description: "Affordable Apple Watch",
                     reviews: [],
@@ -135,7 +135,7 @@ const ProductStore = create<TypeProductsStore>()(
                     price: 900,
                     count: 2,
                     status: "new",
-                    image: "https://images.pexels.com/photos/30708230/pexels-photo-30708230.jpeg",
+                    image: "/productsImg/aw2.webp",
                     colors: [{ color: "Titanium", code: "#8E8E93", availability: true }],
                     description: "Extreme sports watch",
                     reviews: [],
@@ -147,7 +147,7 @@ const ProductStore = create<TypeProductsStore>()(
                     price: 420,
                     count: 7,
                     status: "sale",
-                    image: "https://images.pexels.com/photos/5083216/pexels-photo-5083216.jpeg",
+                    image: "/productsImg/aw2.webp",
                     colors: [{ color: "Blue", code: "#007AFF", availability: true }],
                     description: "Large display",
                     reviews: [],
@@ -159,7 +159,7 @@ const ProductStore = create<TypeProductsStore>()(
                     price: 350,
                     count: 9,
                     status: "normal",
-                    image: "https://images.pexels.com/photos/267394/pexels-photo-267394.jpeg",
+                    image: "/productsImg/aw2.webp",
                     colors: [{ color: "Red", code: "#FF3B30", availability: true }],
                     description: "Classic model",
                     reviews: [],
