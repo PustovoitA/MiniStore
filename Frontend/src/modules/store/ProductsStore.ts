@@ -38,7 +38,7 @@ const ProductStore = create<TypeProductsStore>()(
                     price: 150,
                     count: 8,
                     status: "normal",
-                    image: "/productsImg/ip4.webp",
+                    image: "/productsImg/ip1.jpg",
                     colors: [
                         { color: "Midnight", code: "#1C1C1E", availability: true },
                         { color: "Starlight", code: "#F2F2F7", availability: true }
@@ -53,7 +53,7 @@ const ProductStore = create<TypeProductsStore>()(
                     price: 700,
                     count: 5,
                     status: "sale",
-                    image: "/productsImg/ip4.webp",
+                    image: "/productsImg/ip2.webp",
                     colors: [
                         { color: "Graphite", code: "#2C2C2E", availability: true }
                     ],
@@ -67,7 +67,7 @@ const ProductStore = create<TypeProductsStore>()(
                     price: 750,
                     count: 6,
                     status: "new",
-                    image: "/productsImg/ip4.webp",
+                    image: "/productsImg/ip3.jpg",
                     colors: [
                         { color: "Blue", code: "#3C7EE4", availability: true }
                     ],
@@ -95,7 +95,7 @@ const ProductStore = create<TypeProductsStore>()(
                     price: 400,
                     count: 10,
                     status: "sale",
-                    image: "/productsImg/ip4.webp",
+                    image: "/productsImg/ip5.jpg",
                     colors: [
                         { color: "Red", code: "#FF3B30", availability: true }
                     ],
