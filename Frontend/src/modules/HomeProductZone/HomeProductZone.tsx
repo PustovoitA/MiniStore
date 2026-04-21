@@ -23,7 +23,7 @@ const HomeProductZone = () => {
 
     useEffect(() => {
         setRenderWatchProducts(watchProducts.slice(limitProductsOnPage * watchPage - limitProductsOnPage, limitProductsOnPage * watchPage))
-    }, [watchProducts, watchProducts])
+    }, [watchProducts, watchPage])
 
 
     return(<div className="flex flex-col gap-20 justify-center items-center w-full unselectable">
