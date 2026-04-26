@@ -1,5 +1,5 @@
 import { CustomerBenefits } from "@/components/CustomerBenefits"
-import { HomeBuner } from "@/components/HomeBuner"
+import { HomeSlider } from "@/components/HomeSlider"
 import PageBuner from "@/components/PageBuner/PageBuner"
 import { HomeProductZone } from "@/modules/HomeProductZone"
 
@@ -9,7 +9,7 @@ const Home = () => {
         <PageBuner/>
     </div>
     <div className="flex flex-col gap-22">
-        <HomeBuner/>
+        <HomeSlider/>
         <CustomerBenefits/>
         <HomeProductZone/>
     </div>

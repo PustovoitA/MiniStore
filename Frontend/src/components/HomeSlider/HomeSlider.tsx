@@ -1,7 +1,7 @@
 import { Button } from "@/ui/Button"
 import { useNavigate } from "react-router-dom"
 
-const HomeBuner = () => {
+const HomeSlider = () => {
     const navigate = useNavigate();
 
     return(<div className="w-full h-150 bg-(--grey-light-color) unselectable">
@@ -19,4 +19,4 @@ const HomeBuner = () => {
     </div>)
 }
 
-export default HomeBuner
+export default HomeSlider
