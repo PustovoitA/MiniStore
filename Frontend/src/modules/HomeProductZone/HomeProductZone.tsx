@@ -36,7 +36,7 @@ const HomeProductZone = () => {
                 </div>
             </div>
             <div className="flex items-center gap-4.5 w-full products">
-                {renderPhoneProducts.map(el => <ProductCart key={el.productId} productPrice={el.price} productImageSrc={el.image} productName={el.name} countProductsInRow={5}/>)}
+                {renderPhoneProducts.map(el => <ProductCart key={el.productId} productId={el.productId} productPrice={el.price} productImageSrc={el.image} productName={el.name} countProductsInRow={5}/>)}
             </div>
             <div className="switcher flex items-center justify-center gap-4 w-full">
                 {Array.from({ length: Math.ceil(allPhoneProducts / limitProductsOnPage) }, (_, i) => (
@@ -59,7 +59,7 @@ const HomeProductZone = () => {
                 </div>
             </div>
             <div className="flex items-center gap-4.5 w-full products">
-                {renderWathchProducts.map(el => <ProductCart key={el.productId} productPrice={el.price} productImageSrc={el.image} productName={el.name} countProductsInRow={5}/>)}
+                {renderWathchProducts.map(el => <ProductCart key={el.productId} productId={el.productId} productPrice={el.price} productImageSrc={el.image} productName={el.name} countProductsInRow={5}/>)}
             </div>
             <div className="switcher flex items-center justify-center gap-4 w-full">
                 {Array.from({ length: Math.ceil(allWatchesProducts / limitProductsOnPage) }, (_, i) => (
