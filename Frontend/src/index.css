@@ -14,3 +14,10 @@ body{
     --white-color: #FFFFFF;
     --width: 1370px;
 }
+
+.unselectable {
+  -webkit-user-select: none; /* Safari, Chrome, Opera */
+  -moz-user-select: none;    /* Firefox */
+  -ms-user-select: none;     /* IE/Edge */
+  user-select: none;         /* Стандартное свойство */
+}

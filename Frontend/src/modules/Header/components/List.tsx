@@ -7,10 +7,10 @@ const List = () =>{
     const location = useLocation();
 
     return(<>
-        <ul className="flex gap-12 font-[Jost] text-black">
+        <ul className="flex gap-12 font-[Jost] text-black unselectable">
             <li
-            onClick={() => navigate("/")} 
-            className={`${location.pathname === "/" ? "text-[#72AEC8]" : "text-black"} flex items-center hover:text-(--blue-color) cursor-pointer transition-colors tracking-widest`}>HOME</li>
+            onClick={() => navigate("Home")} 
+            className={`${location.pathname === "/Home" ? "text-[#72AEC8]" : "text-black"} flex items-center hover:text-(--blue-color) cursor-pointer transition-colors tracking-widest`}>HOME</li>
             <li
             onClick={() => navigate("Shop")} 
             className={`${location.pathname === "/Shop" ? "text-[#72AEC8]" : "text-black"} flex items-center hover:text-(--blue-color) cursor-pointer transition-colors tracking-widest`}>SHOP</li>

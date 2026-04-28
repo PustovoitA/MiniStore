@@ -1,4 +1,4 @@
-import { Route, Routes } from "react-router-dom"
+import { Navigate, Route, Routes } from "react-router-dom"
 import { Home } from "@pages/Home"
 import { About } from "@pages/About"
 import { Blog } from "@pages/Blog"
@@ -9,6 +9,10 @@ const AppRoutes = () => {
     const navigationRoutes = [
         {
             path: "/",
+            element: <Navigate to="Home" />
+        },
+        {
+            path: "Home",
             element: <Home/>
         },
         {
