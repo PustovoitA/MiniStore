@@ -4,6 +4,7 @@ import { About } from "@pages/About"
 import { Blog } from "@pages/Blog"
 import { Contact } from "@pages/Contact"
 import { Shop } from "@pages/Shop"
+import { ProductPage } from "./pages/ProductPage"
 
 const AppRoutes = () => {
     const navigationRoutes = [
@@ -30,6 +31,10 @@ const AppRoutes = () => {
         {
             path: "Contact",
             element: <Contact/>
+        },
+        {
+            path: "product/:id",
+            element: <ProductPage/>
         }
     ]
 

@@ -1,15 +1,19 @@
+import { useNavigate } from "react-router-dom";
 
 type Props = {
     countProductsInRow: number;
     productName: string;
     productImageSrc: string;
     productPrice: number;
+    productId:string;
 }
 
-const ProductCart = ({countProductsInRow, productPrice, productName, productImageSrc}:Props) => {
+const ProductCart = ({countProductsInRow, productPrice, productName, productImageSrc, productId}:Props) => {
+    const navigate = useNavigate();
+
     return(
     <div className=" flex flex-col items-center gap-2" style={{width: `calc((100% / ${countProductsInRow}) - 9px)`}}>
-        <div className="image_block group flex flex-col items-center w-full h-90 relative overflow-hidden">
+        <div onClick={()=>{navigate(`/product/${productId}`)}} className="image_block group flex flex-col items-center w-full h-90 relative overflow-hidden">
             <img
                 className="object-cover h-full w-full"
                 src={productImageSrc}
