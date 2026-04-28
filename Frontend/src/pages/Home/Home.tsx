@@ -1,4 +1,5 @@
 import { CustomerBenefits } from "@/components/CustomerBenefits"
+import { HomeBuner } from "@/components/HomeBuner"
 import { HomeSlider } from "@/components/HomeSlider"
 import PageBuner from "@/components/PageBuner/PageBuner"
 import { HomeProductZone } from "@/modules/HomeProductZone"
@@ -12,6 +13,7 @@ const Home = () => {
         <HomeSlider/>
         <CustomerBenefits/>
         <HomeProductZone/>
+        <HomeBuner/>
     </div>
     </>)
 }
