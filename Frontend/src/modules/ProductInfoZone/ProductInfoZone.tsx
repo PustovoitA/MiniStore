@@ -23,12 +23,12 @@ const ProductInfoZone = ({ProductId}:Props) => {
 
     return(<div className="flex justify-center items-center w-full">
         <div className="flex flex-col items-center w-(--width)">
-            <section className="product_sec">
-                <div className="image_product">
+            <section className="product_sec flex items-start justify-center gap-3">
+                <div className="image_product w-137.5 h-137.5">
                     <ImageProdZone imageSrc={currProduct?.image}/>
                 </div>
                 <div className="char_product">
-                    <CharProdZone/>
+                    <CharProdZone item={currProduct}/>
                 </div>
             </section>
 
