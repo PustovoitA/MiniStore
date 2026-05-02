@@ -1,4 +1,6 @@
 import ProductStore, { type Product } from "../store/ProductsStore";
+import { CharProdZone } from "./components/CharProdZone";
+import { ImageProdZone } from "./components/ImageProdZone";
 
 type Props = {
     ProductId:string | undefined
@@ -22,8 +24,12 @@ const ProductInfoZone = ({ProductId}:Props) => {
     return(<div className="flex justify-center items-center w-full">
         <div className="flex flex-col items-center w-(--width)">
             <section className="product_sec">
-                <div className="image_product"><img src={currProduct?.image} alt="odfsof" /></div>
-                <div className="char_product"></div>
+                <div className="image_product">
+                    <ImageProdZone imageSrc={currProduct?.image}/>
+                </div>
+                <div className="char_product">
+                    <CharProdZone/>
+                </div>
             </section>
 
             <section className="info_sec">
