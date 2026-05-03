@@ -5,6 +5,6 @@ type Props = {
 
 export const ImageProdZone = ({imageSrc}:Props) => {
     return(<>
-        <img className="w-full h-full object-cover" src={imageSrc} alt="Product Image" />
+        <img className="w-full h-full object-cover unselectable" src={imageSrc} alt="Product Image" />
     </>)
 }

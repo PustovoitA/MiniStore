@@ -21,7 +21,7 @@ const ProductInfoZone = ({ProductId}:Props) => {
     }
     const currProduct = getProduct(products);
 
-    return(<div className="flex justify-center items-center w-full">
+    return(<div className="flex justify-center items-center w-full mt-[80px]">
         <div className="flex flex-col items-center w-(--width)">
             <section className="product_sec flex items-start justify-center gap-3">
                 <div className="image_product w-137.5 h-137.5">
