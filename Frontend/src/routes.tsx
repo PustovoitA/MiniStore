@@ -33,7 +33,7 @@ const AppRoutes = () => {
             element: <Contact/>
         },
         {
-            path: "product/:id",
+            path: "product/:ProductId",
             element: <ProductPage/>
         }
     ]

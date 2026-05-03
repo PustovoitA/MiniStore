@@ -1,13 +1,8 @@
+import { scrolToTop } from "@/assets/Functions"
 import { Link } from "react-router-dom"
 
 const QuickLinks = () => {
 
-    function scrolToTop(){
-        window.scrollTo({
-            top:0,
-            behavior: "smooth"
-        })
-    }
 
     return (<div className="flex flex-col gap-2">
         <h1 className="font-[Jost] text-xl tracking-wider">QUICK LINKS</h1>

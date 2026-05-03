@@ -15,6 +15,7 @@ export interface Product {
     status: "normal" | "sale" | "new";
     image: string;
     colors: Colors[];
+    size?: Size[];
     description: string;
     reviews: [];
 }
@@ -22,6 +23,11 @@ export interface Product {
 interface Colors {
     color: string;
     code: string;
+    availability: boolean;
+}
+
+interface Size {
+    size: "XL" | "L" | "M" | "S";
     availability: boolean;
 }
 
@@ -235,6 +241,12 @@ const ProductStore = create<TypeProductsStore>()(
                     status: "new",
                     image: "/productsImg/aw1.jpg",
                     colors: [{ color: "Midnight", code: "#1C1C1E", availability: true }],
+                    size: [
+                        {size: "XL", availability: true},
+                        {size: "L", availability: true},
+                        {size: "M", availability: true},
+                        {size: "S", availability: true}
+                    ],
                     description: "Advanced health tracking",
                     reviews: [],
                 },
@@ -247,6 +259,12 @@ const ProductStore = create<TypeProductsStore>()(
                     status: "normal",
                     image: "/productsImg/aw2.webp",
                     colors: [{ color: "Silver", code: "#C7C7CC", availability: true }],
+                    size: [
+                        {size: "XL", availability: true},
+                        {size: "L", availability: true},
+                        {size: "M", availability: true},
+                        {size: "S", availability: true}
+                    ],
                     description: "Affordable Apple Watch",
                     reviews: [],
                 },
@@ -259,6 +277,12 @@ const ProductStore = create<TypeProductsStore>()(
                     status: "new",
                     image: "/productsImg/aw3.jpg",
                     colors: [{ color: "Titanium", code: "#8E8E93", availability: true }],
+                    size: [
+                        {size: "XL", availability: true},
+                        {size: "L", availability: true},
+                        {size: "M", availability: true},
+                        {size: "S", availability: true}
+                    ],
                     description: "Extreme sports watch",
                     reviews: [],
                 },
@@ -271,6 +295,12 @@ const ProductStore = create<TypeProductsStore>()(
                     status: "sale",
                     image: "/productsImg/aw4.jpg",
                     colors: [{ color: "Blue", code: "#007AFF", availability: true }],
+                    size: [
+                        {size: "XL", availability: true},
+                        {size: "L", availability: true},
+                        {size: "M", availability: true},
+                        {size: "S", availability: true}
+                    ],
                     description: "Large display",
                     reviews: [],
                 },
@@ -283,6 +313,12 @@ const ProductStore = create<TypeProductsStore>()(
                     status: "normal",
                     image: "/productsImg/aw5.webp",
                     colors: [{ color: "Red", code: "#FF3B30", availability: true }],
+                    size: [
+                        {size: "XL", availability: true},
+                        {size: "L", availability: true},
+                        {size: "M", availability: true},
+                        {size: "S", availability: true}
+                    ],
                     description: "Classic model",
                     reviews: [],
                 },
@@ -295,6 +331,12 @@ const ProductStore = create<TypeProductsStore>()(
                     status: "new",
                     image: "/productsImg/aw6.avif",
                     colors: [{ color: "Midnight", code: "#1C1C1E", availability: true }],
+                    size: [
+                        {size: "XL", availability: true},
+                        {size: "L", availability: true},
+                        {size: "M", availability: true},
+                        {size: "S", availability: true}
+                    ],
                     description: "Latest Apple Watch",
                     reviews: [],
                 },
@@ -307,6 +349,12 @@ const ProductStore = create<TypeProductsStore>()(
                     status: "sale",
                     image: "/productsImg/aw7.webp",
                     colors: [{ color: "Space Gray", code: "#2F2F2F", availability: true }],
+                    size: [
+                        {size: "XL", availability: true},
+                        {size: "L", availability: true},
+                        {size: "M", availability: true},
+                        {size: "S", availability: true}
+                    ],
                     description: "Older but reliable",
                     reviews: [],
                 },
@@ -319,6 +367,12 @@ const ProductStore = create<TypeProductsStore>()(
                     status: "sale",
                     image: "/productsImg/aw8.jpg",
                     colors: [{ color: "Silver", code: "#C7C7CC", availability: true }],
+                    size: [
+                        {size: "XL", availability: true},
+                        {size: "L", availability: true},
+                        {size: "M", availability: true},
+                        {size: "S", availability: true}
+                    ],
                     description: "Entry-level watch",
                     reviews: [],
                 },
@@ -331,6 +385,12 @@ const ProductStore = create<TypeProductsStore>()(
                     status: "new",
                     image: "/productsImg/aw9.webp",
                     colors: [{ color: "Titanium", code: "#8E8E93", availability: true }],
+                    size: [
+                        {size: "XL", availability: true},
+                        {size: "L", availability: true},
+                        {size: "M", availability: true},
+                        {size: "S", availability: true}
+                    ],
                     description: "Extreme performance",
                     reviews: [],
                 },
@@ -343,6 +403,12 @@ const ProductStore = create<TypeProductsStore>()(
                     status: "normal",
                     image: "/productsImg/aw10.jpg",
                     colors: [{ color: "Black/Volt", code: "#32D74B", availability: true }],
+                    size: [
+                        {size: "XL", availability: true},
+                        {size: "L", availability: true},
+                        {size: "M", availability: true},
+                        {size: "S", availability: true}
+                    ],
                     description: "Sport edition",
                     reviews: [],
                 },
@@ -355,6 +421,12 @@ const ProductStore = create<TypeProductsStore>()(
                     status: "new",
                     image: "/productsImg/aw11.webp",
                     colors: [{ color: "Orange", code: "#FF9500", availability: true }],
+                    size: [
+                        {size: "XL", availability: true},
+                        {size: "L", availability: true},
+                        {size: "M", availability: true},
+                        {size: "S", availability: true}
+                    ],
                     description: "Luxury edition",
                     reviews: [],
                 },
@@ -367,6 +439,12 @@ const ProductStore = create<TypeProductsStore>()(
                     status: "normal",
                     image: "/productsImg/aw12.webp",
                     colors: [{ color: "Starlight", code: "#F2F2F7", availability: true }],
+                    size: [
+                        {size: "XL", availability: true},
+                        {size: "L", availability: true},
+                        {size: "M", availability: true},
+                        {size: "S", availability: true}
+                    ],
                     description: "Budget modern watch",
                     reviews: [],
                 },
@@ -379,6 +457,12 @@ const ProductStore = create<TypeProductsStore>()(
                     status: "sale",
                     image: "/productsImg/aw13.jpg",
                     colors: [{ color: "White", code: "#FFFFFF", availability: true }],
+                    size: [
+                        {size: "XL", availability: true},
+                        {size: "L", availability: true},
+                        {size: "M", availability: true},
+                        {size: "S", availability: true}
+                    ],
                     description: "Very affordable",
                     reviews: [],
                 },
@@ -391,6 +475,12 @@ const ProductStore = create<TypeProductsStore>()(
                     status: "new",
                     image: "/productsImg/aw14.webp",
                     colors: [{ color: "Ceramic", code: "#F5F5F5", availability: true }],
+                    size: [
+                        {size: "XL", availability: true},
+                        {size: "L", availability: true},
+                        {size: "M", availability: true},
+                        {size: "S", availability: true}
+                    ],
                     description: "Exclusive model",
                     reviews: [],
                 },
@@ -403,6 +493,12 @@ const ProductStore = create<TypeProductsStore>()(
                     status: "sale",
                     image: "/productsImg/aw15.webp",
                     colors: [{ color: "Aluminum", code: "#D1D1D6", availability: true }],
+                    size: [
+                        {size: "XL", availability: true},
+                        {size: "L", availability: true},
+                        {size: "M", availability: true},
+                        {size: "S", availability: true}
+                    ],
                     description: "Basic functionality",
                     reviews: [],
                 },
