@@ -1,3 +1,4 @@
+import { QuantityCounter } from "@/components/QuantityCounter"
 import type { Product } from "@/modules/store/ProductsStore"
 import { Button } from "@/ui/Button"
 import { useState } from "react"
@@ -48,6 +49,7 @@ export const CharProdZone = ({item}:Props) => {
         <p>
             {`${item?.count} in stock`}
         </p>
+        <QuantityCounter/>
         <div className="flex items-center gap-1.5">
             <Button value="BUY NOW" bgColor="var(--blue-color)" type="button"/>
             <Button value="ADD TO CART" bgColor="var(--black-block-color)" type="button"/>
