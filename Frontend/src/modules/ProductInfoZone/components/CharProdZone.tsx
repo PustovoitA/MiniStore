@@ -28,6 +28,7 @@ export const CharProdZone = ({item}:Props) => {
             <ul className="flex items-center gap-4">
                 {item?.colors.map(el => 
                 <li
+                key={item?.productId}
                 className={`hover:text-(--blue-color) cursor-pointer transition-colors text-[18px] ${currColorProduct === el.color ? 'text-(--blue-color)' : 'text-(--black-text-color)'}`}
                 onClick={() => setCurrColorProduct(el.color)}
                 >{el.color}</li>
@@ -40,6 +41,7 @@ export const CharProdZone = ({item}:Props) => {
                 <ul className="flex items-center gap-4">
                 {item?.size?.map(el => 
                 <li
+                key={item?.productId}
                 className={`hover:text-(--blue-color) cursor-pointer transition-colors text-[18px] ${currSizeProduct === el.size ? 'text-(--blue-color)' : 'text-(--black-text-color)'}`}
                 onClick={() => setCurrSizeProduct(el.size)}
                 >{el.size}</li>
