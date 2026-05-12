@@ -1,3 +1,4 @@
+import { QuantityCounter } from "@/components/QuantityCounter"
 import type { Product } from "@/modules/store/ProductsStore"
 import { Button } from "@/ui/Button"
 import { useState } from "react"
@@ -10,6 +11,7 @@ type Props = {
 export const CharProdZone = ({item}:Props) => {
     const [currColorProduct, setCurrColorProduct] = useState<string | undefined>(item?.colors[0].color);
     const [currSizeProduct, setCurrSizeProduct] = useState<string | undefined>(item?.size?.[0]?.size);
+    const [selectedCountProduct, setSelectedCountProduct] = useState(1);
     const size = item?.size;
 
     return (<div className="flex flex-col items-start gap-3 font-[Jost]">
@@ -26,6 +28,7 @@ export const CharProdZone = ({item}:Props) => {
             <ul className="flex items-center gap-4">
                 {item?.colors.map(el => 
                 <li
+                key={item?.productId}
                 className={`hover:text-(--blue-color) cursor-pointer transition-colors text-[18px] ${currColorProduct === el.color ? 'text-(--blue-color)' : 'text-(--black-text-color)'}`}
                 onClick={() => setCurrColorProduct(el.color)}
                 >{el.color}</li>
@@ -38,6 +41,7 @@ export const CharProdZone = ({item}:Props) => {
                 <ul className="flex items-center gap-4">
                 {item?.size?.map(el => 
                 <li
+                key={item?.productId}
                 className={`hover:text-(--blue-color) cursor-pointer transition-colors text-[18px] ${currSizeProduct === el.size ? 'text-(--blue-color)' : 'text-(--black-text-color)'}`}
                 onClick={() => setCurrSizeProduct(el.size)}
                 >{el.size}</li>
@@ -48,6 +52,7 @@ export const CharProdZone = ({item}:Props) => {
         <p>
             {`${item?.count} in stock`}
         </p>
+        <QuantityCounter setSelectedCountProduct={setSelectedCountProduct} selectedCountProduct={selectedCountProduct} maxCountProduct={item?.count}/>
         <div className="flex items-center gap-1.5">
             <Button value="BUY NOW" bgColor="var(--blue-color)" type="button"/>
             <Button value="ADD TO CART" bgColor="var(--black-block-color)" type="button"/>
