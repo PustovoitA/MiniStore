@@ -11,6 +11,7 @@ type Props = {
 export const CharProdZone = ({item}:Props) => {
     const [currColorProduct, setCurrColorProduct] = useState<string | undefined>(item?.colors[0].color);
     const [currSizeProduct, setCurrSizeProduct] = useState<string | undefined>(item?.size?.[0]?.size);
+    const [selectedCountProduct, setSelectedCountProduct] = useState(1);
     const size = item?.size;
 
     return (<div className="flex flex-col items-start gap-3 font-[Jost]">
@@ -49,7 +50,7 @@ export const CharProdZone = ({item}:Props) => {
         <p>
             {`${item?.count} in stock`}
         </p>
-        <QuantityCounter/>
+        <QuantityCounter setSelectedCountProduct={setSelectedCountProduct} selectedCountProduct={selectedCountProduct} maxCountProduct={item?.count}/>
         <div className="flex items-center gap-1.5">
             <Button value="BUY NOW" bgColor="var(--blue-color)" type="button"/>
             <Button value="ADD TO CART" bgColor="var(--black-block-color)" type="button"/>
