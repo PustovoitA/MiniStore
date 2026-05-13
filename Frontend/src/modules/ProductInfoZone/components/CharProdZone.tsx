@@ -14,9 +14,22 @@ export const CharProdZone = ({item}:Props) => {
     const [selectedCountProduct, setSelectedCountProduct] = useState(1);
     const size = item?.size;
 
+    function calculateDiscount(price:number, discount:number):string{
+        const result = price - (price * discount / 100)
+        return result.toFixed(2);
+    }
+
     return (<div className="flex flex-col items-start gap-3 font-[Jost]">
         <h1 className="text-[30px]">{item?.name.toUpperCase()}</h1>
-        <p className="text-(--blue-color) text-[30px]">${item?.price.toFixed(2)}</p>
+        {item!.discount === null 
+            ?
+                <p className="text-(--blue-color) text-[30px]">${item?.price.toFixed(2)}</p>
+            :
+                <div>
+                    <p className="text-(--grey-text-color) text-[20px] line-through">${item?.price.toFixed(2)}</p>
+                    <p className="text-[#ea0404] text-[30px]">${calculateDiscount(item?.price!, item?.discount!)}</p>
+                </div>
+        }
         <p className="shirt_description text-(--grey-text-color) w-150">
             Justo, cum feugiat imperdiet nulla molestie ac vulputate scelerisque amet. 
             Bibendum adipiscing platea blandit sit sed quam semper rhoncus. 
