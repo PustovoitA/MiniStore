@@ -13,6 +13,7 @@ export interface Product {
     price: number;
     count: number;
     status: "normal" | "sale" | "new";
+    discount: number | null;
     image: string;
     colors: Colors[];
     size?: Size[];
@@ -44,6 +45,7 @@ const ProductStore = create<TypeProductsStore>()(
                     price: 150,
                     count: 8,
                     status: "normal",
+                    discount:5,
                     image: "/productsImg/ip1.jpg",
                     colors: [
                         { color: "Midnight", code: "#1C1C1E", availability: true },
@@ -59,6 +61,7 @@ const ProductStore = create<TypeProductsStore>()(
                     price: 700,
                     count: 5,
                     status: "sale",
+                    discount:30,
                     image: "/productsImg/ip2.webp",
                     colors: [
                         { color: "Graphite", code: "#2C2C2E", availability: true }
@@ -73,6 +76,7 @@ const ProductStore = create<TypeProductsStore>()(
                     price: 750,
                     count: 6,
                     status: "new",
+                    discount:null,
                     image: "/productsImg/ip3.jpg",
                     colors: [
                         { color: "Blue", code: "#3C7EE4", availability: true }
@@ -87,6 +91,7 @@ const ProductStore = create<TypeProductsStore>()(
                     price: 900,
                     count: 4,
                     status: "new",
+                    discount: null,
                     image: "/productsImg/ip4.webp",
                     colors: [
                         { color: "Deep Purple", code: "#5E5CE6", availability: true }
@@ -101,6 +106,7 @@ const ProductStore = create<TypeProductsStore>()(
                     price: 400,
                     count: 10,
                     status: "sale",
+                    discount: 40,
                     image: "/productsImg/ip5.jpg",
                     colors: [
                         { color: "Red", code: "#FF3B30", availability: true }
@@ -115,6 +121,7 @@ const ProductStore = create<TypeProductsStore>()(
                     price: 199,
                     count: 25,
                     status: "sale",
+                    discount: 20,
                     image: "/productsImg/ip6.webp",
                     colors: [
                         { color: "Deep Purple", code: "#5E5CE6", availability: true }
@@ -129,6 +136,7 @@ const ProductStore = create<TypeProductsStore>()(
                     price: 180,
                     count: 12,
                     status: "normal",
+                    discount: 10,
                     image: "/productsImg/ip7.jpg",
                     colors: [{ color: "Coral", code: "#FF6F61", availability: true }],
                     description: "Colorful iPhone",
@@ -141,6 +149,7 @@ const ProductStore = create<TypeProductsStore>()(
                     price: 650,
                     count: 7,
                     status: "normal",
+                    discount: 10,
                     image: "/productsImg/ip8.webp",
                     colors: [{ color: "Pink", code: "#FF2D55", availability: true }],
                     description: "Balanced performance",
@@ -153,6 +162,7 @@ const ProductStore = create<TypeProductsStore>()(
                     price: 950,
                     count: 5,
                     status: "new",
+                    discount: null,
                     image: "/productsImg/ip9.webp",
                     colors: [{ color: "Green", code: "#34C759", availability: true }],
                     description: "Latest generation",
@@ -165,6 +175,7 @@ const ProductStore = create<TypeProductsStore>()(
                     price: 1200,
                     count: 3,
                     status: "new",
+                    discount: 15,
                     image: "/productsImg/ip10.jpg",
                     colors: [{ color: "Titanium Blue", code: "#4A90E2", availability: true }],
                     description: "Pro flagship",
@@ -177,6 +188,7 @@ const ProductStore = create<TypeProductsStore>()(
                     price: 300,
                     count: 15,
                     status: "sale",
+                    discount: 50,
                     image: "/productsImg/ip11.jpg",
                     colors: [{ color: "Black", code: "#000000", availability: true }],
                     description: "Compact iPhone",
@@ -189,6 +201,7 @@ const ProductStore = create<TypeProductsStore>()(
                     price: 500,
                     count: 6,
                     status: "normal",
+                    discount: 13,
                     image: "/productsImg/ip12.webp",
                     colors: [{ color: "Gold", code: "#D4AF37", availability: true }],
                     description: "Premium design",
@@ -201,6 +214,7 @@ const ProductStore = create<TypeProductsStore>()(
                     price: 350,
                     count: 8,
                     status: "sale",
+                    discount: 50,
                     image: "/productsImg/ip13.webp",
                     colors: [{ color: "Midnight Green", code: "#4E5851", availability: true }],
                     description: "Triple camera",
@@ -213,6 +227,7 @@ const ProductStore = create<TypeProductsStore>()(
                     price: 250,
                     count: 9,
                     status: "normal",
+                    discount: 7,
                     image: "/productsImg/ip14.jpg",
                     colors: [{ color: "Silver", code: "#C0C0C0", availability: true }],
                     description: "Large OLED display",
@@ -225,6 +240,7 @@ const ProductStore = create<TypeProductsStore>()(
                     price: 800,
                     count: 4,
                     status: "new",
+                    discount: null,
                     image: "/productsImg/ip15.png",
                     colors: [{ color: "Yellow", code: "#FFD60A", availability: true }],
                     description: "Big battery",
@@ -239,6 +255,7 @@ const ProductStore = create<TypeProductsStore>()(
                     price: 500,
                     count: 6,
                     status: "new",
+                    discount: null,
                     image: "/productsImg/aw1.jpg",
                     colors: [{ color: "Midnight", code: "#1C1C1E", availability: true }],
                     size: [
@@ -257,6 +274,7 @@ const ProductStore = create<TypeProductsStore>()(
                     price: 300,
                     count: 10,
                     status: "normal",
+                    discount: 5,
                     image: "/productsImg/aw2.webp",
                     colors: [{ color: "Silver", code: "#C7C7CC", availability: true }],
                     size: [
@@ -275,6 +293,7 @@ const ProductStore = create<TypeProductsStore>()(
                     price: 900,
                     count: 2,
                     status: "new",
+                    discount: null,
                     image: "/productsImg/aw3.jpg",
                     colors: [{ color: "Titanium", code: "#8E8E93", availability: true }],
                     size: [
@@ -293,6 +312,7 @@ const ProductStore = create<TypeProductsStore>()(
                     price: 420,
                     count: 7,
                     status: "sale",
+                    discount: 40,
                     image: "/productsImg/aw4.jpg",
                     colors: [{ color: "Blue", code: "#007AFF", availability: true }],
                     size: [
@@ -311,6 +331,7 @@ const ProductStore = create<TypeProductsStore>()(
                     price: 350,
                     count: 9,
                     status: "normal",
+                    discount: 10,
                     image: "/productsImg/aw5.webp",
                     colors: [{ color: "Red", code: "#FF3B30", availability: true }],
                     size: [
@@ -329,6 +350,7 @@ const ProductStore = create<TypeProductsStore>()(
                     price: 550,
                     count: 5,
                     status: "new",
+                    discount: null,
                     image: "/productsImg/aw6.avif",
                     colors: [{ color: "Midnight", code: "#1C1C1E", availability: true }],
                     size: [
@@ -347,6 +369,7 @@ const ProductStore = create<TypeProductsStore>()(
                     price: 250,
                     count: 8,
                     status: "sale",
+                    discount: 60,
                     image: "/productsImg/aw7.webp",
                     colors: [{ color: "Space Gray", code: "#2F2F2F", availability: true }],
                     size: [
@@ -365,6 +388,7 @@ const ProductStore = create<TypeProductsStore>()(
                     price: 200,
                     count: 6,
                     status: "sale",
+                    discount: 70,
                     image: "/productsImg/aw8.jpg",
                     colors: [{ color: "Silver", code: "#C7C7CC", availability: true }],
                     size: [
@@ -383,6 +407,7 @@ const ProductStore = create<TypeProductsStore>()(
                     price: 1000,
                     count: 3,
                     status: "new",
+                    discount: null,
                     image: "/productsImg/aw9.webp",
                     colors: [{ color: "Titanium", code: "#8E8E93", availability: true }],
                     size: [
@@ -401,6 +426,7 @@ const ProductStore = create<TypeProductsStore>()(
                     price: 450,
                     count: 7,
                     status: "normal",
+                    discount: 15,
                     image: "/productsImg/aw10.jpg",
                     colors: [{ color: "Black/Volt", code: "#32D74B", availability: true }],
                     size: [
@@ -419,6 +445,7 @@ const ProductStore = create<TypeProductsStore>()(
                     price: 1300,
                     count: 2,
                     status: "new",
+                    discount: 5,
                     image: "/productsImg/aw11.webp",
                     colors: [{ color: "Orange", code: "#FF9500", availability: true }],
                     size: [
@@ -437,6 +464,7 @@ const ProductStore = create<TypeProductsStore>()(
                     price: 320,
                     count: 11,
                     status: "normal",
+                    discount: 15,
                     image: "/productsImg/aw12.webp",
                     colors: [{ color: "Starlight", code: "#F2F2F7", availability: true }],
                     size: [
@@ -455,6 +483,7 @@ const ProductStore = create<TypeProductsStore>()(
                     price: 150,
                     count: 14,
                     status: "sale",
+                    discount: 55,
                     image: "/productsImg/aw13.jpg",
                     colors: [{ color: "White", code: "#FFFFFF", availability: true }],
                     size: [
@@ -473,6 +502,7 @@ const ProductStore = create<TypeProductsStore>()(
                     price: 1400,
                     count: 1,
                     status: "new",
+                    discount: null,
                     image: "/productsImg/aw14.webp",
                     colors: [{ color: "Ceramic", code: "#F5F5F5", availability: true }],
                     size: [
@@ -491,6 +521,7 @@ const ProductStore = create<TypeProductsStore>()(
                     price: 120,
                     count: 10,
                     status: "sale",
+                    discount: 67,
                     image: "/productsImg/aw15.webp",
                     colors: [{ color: "Aluminum", code: "#D1D1D6", availability: true }],
                     size: [
