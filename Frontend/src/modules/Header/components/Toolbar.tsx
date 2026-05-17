@@ -1,5 +1,8 @@
+import { useNavigate } from "react-router-dom"
 
 const Toolbar = () =>{
+    const navigate = useNavigate();
+
     return(<>
         <ul className="flex gap-4 unselectable">
             <li className="flex items-center hover:text-(--blue-color) cursor-pointer transition-colors">
@@ -8,7 +11,7 @@ const Toolbar = () =>{
             <li className="flex items-center hover:text-(--blue-color) cursor-pointer transition-colors">
                 <span className="material-symbols-outlined">person</span>
             </li>
-            <li className="flex items-center hover:text-(--blue-color) cursor-pointer transition-colors">
+            <li onClick={()=>navigate("Basket")} className="flex items-center hover:text-(--blue-color) cursor-pointer transition-colors">
                 <span className="material-symbols-outlined">shopping_cart</span>
                 <span className="flex items-center">(0)</span>
             </li>
