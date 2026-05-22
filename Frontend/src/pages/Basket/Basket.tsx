@@ -1,6 +1,9 @@
+import PageBuner from "@/components/PageBuner/PageBuner"
 
 const Basket = () => {
-    return(<></>)
+    return(<>
+    <PageBuner/>
+    </>)
 }
 
 export default Basket
