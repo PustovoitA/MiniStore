@@ -1,4 +1,4 @@
-import { useCallback, memo, useMemo } from "react";
+import { useMemo } from "react";
 import ProductStore, { type Product } from "../store/ProductsStore";
 import { CharProdZone } from "./components/CharProdZone";
 import { ImageProdZone } from "./components/ImageProdZone";
@@ -9,10 +9,10 @@ type Props = {
 
 const ProductInfoZone = ({ProductId}:Props) => {
 
-    const products = ProductStore((state) => state.products);
+    const products:Product[] = ProductStore((state) => state.products);
     const currProduct = useMemo(() => products.find(el => el.productId === ProductId),[products, ProductId]);
 
-    return(<div className="flex justify-center items-center w-full mt-[80px]">
+    return(<div className="flex justify-center items-center w-full mt-20">
         <div className="flex flex-col items-center w-(--width)">
             <section className="product_sec flex items-start justify-center gap-3">
                 <div className="image_product w-137.5 h-137.5">
