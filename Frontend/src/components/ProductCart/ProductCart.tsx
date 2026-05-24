@@ -1,4 +1,5 @@
 import { scrolToTop } from "@/assets/Functions";
+import { memo } from "react";
 import { useNavigate } from "react-router-dom";
 
 type Props = {
@@ -9,7 +10,7 @@ type Props = {
     productId:string;
 }
 
-const ProductCart = ({countProductsInRow, productPrice, productName, productImageSrc, productId}:Props) => {
+const ProductCart = memo(({countProductsInRow, productPrice, productName, productImageSrc, productId}:Props) => {
     const navigate = useNavigate();
 
     return(
@@ -48,6 +49,6 @@ const ProductCart = ({countProductsInRow, productPrice, productName, productImag
             <p className="prise text-(--blue-color)">{`$${productPrice}`}</p>
         </div>
     </div>)
-}
+})
 
 export default ProductCart
