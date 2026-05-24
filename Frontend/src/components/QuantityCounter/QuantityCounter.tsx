@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { memo, useState } from "react";
 
 type Props = {
     maxCountProduct:number|undefined,
@@ -6,7 +6,7 @@ type Props = {
     selectedCountProduct:number|undefined
 }
 
-const QuantityCounter = ({maxCountProduct, setSelectedCountProduct, selectedCountProduct }:Props) => {
+const QuantityCounter = memo(({maxCountProduct, setSelectedCountProduct, selectedCountProduct }:Props) => {
     const [inputValue, setInputValue] = useState(selectedCountProduct?.toString() || "1");
 
     const decrement = ():void => {
@@ -62,6 +62,6 @@ const QuantityCounter = ({maxCountProduct, setSelectedCountProduct, selectedCoun
         />
         <button onClick={()=>increment()} className="border border-(--grey-light-color) py-2 px-4.5 cursor-pointer">+</button>
     </div>);
-}
+})
 
 export default QuantityCounter

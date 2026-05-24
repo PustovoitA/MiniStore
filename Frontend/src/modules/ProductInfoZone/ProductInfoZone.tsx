@@ -1,3 +1,4 @@
+import { useCallback, memo, useMemo } from "react";
 import ProductStore, { type Product } from "../store/ProductsStore";
 import { CharProdZone } from "./components/CharProdZone";
 import { ImageProdZone } from "./components/ImageProdZone";
@@ -9,17 +10,7 @@ type Props = {
 const ProductInfoZone = ({ProductId}:Props) => {
 
     const products = ProductStore((state) => state.products);
-    const getProduct = (products:Product[]):Product | undefined => {
-        for(const product of products){
-            if(product.productId === ProductId){
-                return product;
-            }else{
-                continue
-            }
-        }
-        console.log("Товар не найден");
-    }
-    const currProduct = getProduct(products);
+    const currProduct = useMemo(() => products.find(el => el.productId === ProductId),[products, ProductId]);
 
     return(<div className="flex justify-center items-center w-full mt-[80px]">
         <div className="flex flex-col items-center w-(--width)">
