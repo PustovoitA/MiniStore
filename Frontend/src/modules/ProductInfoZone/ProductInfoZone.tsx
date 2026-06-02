@@ -1,25 +1,26 @@
-import { useMemo } from "react";
-import ProductStore, { type Product } from "../store/ProductsStore";
 import { CharProdZone } from "./components/CharProdZone";
 import { ImageProdZone } from "./components/ImageProdZone";
+import type { Product } from "@/types/Product";
 
 type Props = {
-    ProductId:string | undefined
+    data:Product;
+    isLoading:boolean;
 }
 
-const ProductInfoZone = ({ProductId}:Props) => {
+const ProductInfoZone = ({data, isLoading}:Props) => {
 
-    const products:Product[] = ProductStore((state) => state.products);
-    const currProduct = useMemo(() => products.find(el => el.productId === ProductId),[products, ProductId]);
+    if(isLoading){
+        return <p>loading...</p>
+    }
 
     return(<div className="flex justify-center items-center w-full mt-20">
         <div className="flex flex-col items-center w-(--width)">
             <section className="product_sec flex items-start justify-center gap-3">
                 <div className="image_product w-137.5 h-137.5">
-                    <ImageProdZone imageSrc={currProduct?.image}/>
+                    <ImageProdZone imageSrc={data.image}/>
                 </div>
                 <div className="char_product">
-                    <CharProdZone item={currProduct}/>
+                    <CharProdZone item={data}/>
                 </div>
             </section>
 

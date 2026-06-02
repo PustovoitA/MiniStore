@@ -1,5 +1,6 @@
 import { QuantityCounter } from "@/components/QuantityCounter"
-import type { Product } from "@/modules/store/ProductsStore"
+import type { Product } from "@/types/Product"
+
 import { Button } from "@/ui/Button"
 import { memo, useEffect, useState } from "react"
 

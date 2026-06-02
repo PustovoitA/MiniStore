@@ -1,30 +1,22 @@
 import { ProductCart } from "@/components/ProductCart";
-import ProductStore, { type Product } from "../store/ProductsStore";
 import { useEffect, useState } from "react";
+import { usePhonesOrWatches } from "@/hooks/usePhonesOrWatches";
+import type { Product } from "@/types/Product";
 
 const HomeProductZone = () => {
-    const products = ProductStore((state) => state.products);
-    const [phoneProducts, setPhoneProducts] = useState([... products.filter(el => el.type === "phone").slice(0, 15)]);
-    const [watchProducts, setWatchProducts] = useState([... products.filter(el => el.type === "smart-watches").slice(0, 15)]);
-    const [renderPhoneProducts, setRenderPhoneProducts] = useState<Product[] | []>([]);
-    const [renderWathchProducts, setRenderWatchProducts] = useState<Product[] | []>([]);
-
-    const allPhoneProducts = phoneProducts.length;
     const [phonePage, setPhonePage] = useState(1);
-
-    const allWatchesProducts = watchProducts.length;
     const [watchPage, setWatachPage] = useState(1);
 
+    const totalPages = 3;
     const limitProductsOnPage = 5;
+    const maxProducts = 15;
 
     useEffect(() => {
-        setRenderPhoneProducts(phoneProducts.slice(limitProductsOnPage * phonePage - limitProductsOnPage, limitProductsOnPage * phonePage));
-    }, [phoneProducts, phonePage])
+        if(phonePage > totalPages) setPhonePage(1);
+    }, [phonePage]);
 
-    useEffect(() => {
-        setRenderWatchProducts(watchProducts.slice(limitProductsOnPage * watchPage - limitProductsOnPage, limitProductsOnPage * watchPage))
-    }, [watchProducts, watchPage])
-
+    const phonesQuery = usePhonesOrWatches("phone", phonePage, limitProductsOnPage);
+    const watchesQuery = usePhonesOrWatches("smart-watches", watchPage, limitProductsOnPage);
 
     return(<div className="flex flex-col gap-20 justify-center items-center w-full unselectable">
         <section className="mobile_sec flex flex-col items-center gap-5 w-(--width)">
@@ -36,10 +28,17 @@ const HomeProductZone = () => {
                 </div>
             </div>
             <div className="flex items-center gap-4.5 w-full products">
-                {renderPhoneProducts.map(el => <ProductCart key={el.productId} productId={el.productId} productPrice={el.price} productImageSrc={el.image} productName={el.name} countProductsInRow={5}/>)}
+                {phonesQuery.isLoading
+                ? <p>Loading....</p>
+                : phonesQuery.isError
+                ? <p>Error</p>
+                : phonesQuery.data?.data.map((el:Product) => {
+                    return <ProductCart key={el.id} id={el.id} productPrice={el.price} productImageSrc={el.image} productName={el.name} countProductsInRow={limitProductsOnPage}/>
+                })
+                }
             </div>
             <div className="switcher flex items-center justify-center gap-4 w-full">
-                {Array.from({ length: Math.ceil(allPhoneProducts / limitProductsOnPage) }, (_, i) => (
+                {Array.from({ length: Math.ceil(maxProducts / limitProductsOnPage) }, (_, i) => (
                     <span
                     onClick={() => setPhonePage(i + 1)}
                     key={i + 1}
@@ -59,10 +58,17 @@ const HomeProductZone = () => {
                 </div>
             </div>
             <div className="flex items-center gap-4.5 w-full products">
-                {renderWathchProducts.map(el => <ProductCart key={el.productId} productId={el.productId} productPrice={el.price} productImageSrc={el.image} productName={el.name} countProductsInRow={5}/>)}
+                {watchesQuery.isLoading
+                ?<p>Loading...</p>
+                :watchesQuery.isError
+                ?<p>Error</p>
+                :watchesQuery.data?.data.map((el:Product) => {
+                    return <ProductCart key={el.id} id={el.id} productPrice={el.price} productImageSrc={el.image} productName={el.name} countProductsInRow={limitProductsOnPage}/>
+                })
+                }
             </div>
             <div className="switcher flex items-center justify-center gap-4 w-full">
-                {Array.from({ length: Math.ceil(allWatchesProducts / limitProductsOnPage) }, (_, i) => (
+                {Array.from({ length: Math.ceil(maxProducts / limitProductsOnPage) }, (_, i) => (
                     <span
                     onClick={() => setWatachPage(i + 1)}
                     key={i + 1}

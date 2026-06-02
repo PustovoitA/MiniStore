@@ -1,7 +1,7 @@
 {
             "products": [
                 {
-                    "productId": "IP1",
+                    "id": "IP1",
                     "name": "iPhone XS",
                     "type": "phone",
                     "price": 150,
@@ -17,7 +17,7 @@
                     "reviews": []
                 },
                 {
-                    "productId": "IP2",
+                    "id": "IP2",
                     "name": "iPhone 13 Pro",
                     "type": "phone",
                     "price": 700,
@@ -32,7 +32,7 @@
                     "reviews": []
                 },
                 {
-                    "productId": "IP3",
+                    "id": "IP3",
                     "name": "iPhone 14",
                     "type": "phone",
                     "price": 750,
@@ -47,7 +47,7 @@
                     "reviews": []
                 },
                 {
-                    "productId": "IP4",
+                    "id": "IP4",
                     "name": "iPhone 14 Pro",
                     "type": "phone",
                     "price": 900,
@@ -63,7 +63,7 @@
                 },
                 {
 
-                    "productId": "IP5",
+                    "id": "IP5",
                     "name": "iPhone 12",
                     "type": "phone",
                     "price": 400,
@@ -78,7 +78,7 @@
                     "reviews": []
                 },
                 {
-                    "productId": "IP6",
+                    "id": "IP6",
                     "name": "iPhone 11",
                     "type": "phone",
                     "price": 199,
@@ -93,7 +93,7 @@
                     "reviews": []
                 },
                 {
-                   " productId": "IP7",
+                   "id": "IP7",
                     "name": "iPhone XR",
                     "type": "phone",
                     "price": 180,
@@ -106,7 +106,7 @@
                     "reviews": []
                 },
                 {
-                   " productId": "IP8",
+                   "id": "IP8",
                     "name": "iPhone 13",
                     "type": "phone",
                     "price": 650,
@@ -119,7 +119,7 @@
                     "reviews": []
                 },
                 {
-                   " productId": "IP9",
+                   "id": "IP9",
                     "name": "iPhone 15",
                     "type": "phone",
                     "price": 950,
@@ -132,7 +132,7 @@
                     "reviews": []
                 },
                 {
-                   " productId": "IP10",
+                   "id": "IP10",
                     "name": "iPhone 15 Pro",
                     "type": "phone",
                     "price": 1200,
@@ -145,7 +145,7 @@
                     "reviews": []
                 },
                 {
-                   " productId": "IP11",
+                   "id": "IP11",
                     "name": "iPhone SE 2022",
                     "type": "phone",
                     "price": 300,
@@ -158,7 +158,7 @@
                     "reviews": []
                 },
                 {
-                   " productId": "IP12",
+                   "id": "IP12",
                     "name": "iPhone 12 Pro",
                     "type": "phone",
                     "price": 500,
@@ -171,7 +171,7 @@
                     "reviews": []
                 },
                 {
-                   " productId": "IP13",
+                   "id": "IP13",
                     "name": "iPhone 11 Pro",
                     "type": "phone",
                     "price": 350,
@@ -184,7 +184,7 @@
                     "reviews": []
                 },
                 {
-                   " productId": "IP14",
+                   "id": "IP14",
                     "name": "iPhone XS Max",
                     "type": "phone",
                     "price": 250,
@@ -197,7 +197,7 @@
                     "reviews": []
                 },
                 {
-                   " productId": "IP15",
+                   "id": "IP15",
                     "name": "iPhone 14 Plus",
                     "type": "phone",
                     "price": 800,
@@ -210,7 +210,7 @@
                     "reviews": []
                 },
                 {
-                   " productId": "AW1",
+                   "id": "AW1",
                     "name": "Apple Watch Series 8",
                     "type": "smart-watches",
                     "price": 500,
@@ -229,7 +229,7 @@
                     "reviews": []
                 },
                 {
-                   " productId": "AW2",
+                   "id": "AW2",
                     "name": "Apple Watch SE",
                     "type": "smart-watches",
                     "price": 300,
@@ -248,7 +248,7 @@
                     "reviews": []
                 },
                 {
-                   " productId": "AW3",
+                   "id": "AW3",
                     "name": "Apple Watch Ultra",
                     "type": "smart-watches",
                     "price": 900,
@@ -267,7 +267,7 @@
                     "reviews": []
                 },
                 {
-                   " productId": "AW4",
+                   "id": "AW4",
                     "name": "Apple Watch Series 7",
                     "type": "smart-watches",
                     "price": 420,
@@ -286,7 +286,7 @@
                     "reviews": []
                 },
                 {
-                   " productId": "AW5",
+                   "id": "AW5",
                     "name": "Apple Watch Series 6",
                     "type": "smart-watches",
                     "price": 350,
@@ -305,7 +305,7 @@
                     "reviews": []
                 },
                 {
-                   " productId": "AW6",
+                   "id": "AW6",
                     "name": "Apple Watch Series 9",
                     "type": "smart-watches",
                     "price": 550,
@@ -324,7 +324,7 @@
                     "reviews": []
                 },
                 {
-                   " productId": "AW7",
+                   "id": "AW7",
                     "name": "Apple Watch Series 5",
                     "type": "smart-watches",
                     "price": 250,
@@ -343,7 +343,7 @@
                     "reviews": []
                 },
                 {
-                   " productId": "AW8",
+                   "id": "AW8",
                     "name": "Apple Watch Series 4",
                     "type": "smart-watches",
                     "price": 200,
@@ -362,7 +362,7 @@
                     "reviews": []
                 },
                 {
-                   " productId": "AW9",
+                   "id": "AW9",
                     "name": "Apple Watch Ultra 2",
                     "type": "smart-watches",
                     "price": 1000,
@@ -381,7 +381,7 @@
                     "reviews": []
                 },
                 {
-                   " productId": "AW10",
+                   "id": "AW10",
                     "name": "Apple Watch Nike",
                     "type": "smart-watches",
                     "price": 450,
@@ -400,7 +400,7 @@
                     "reviews": []
                 },
                 {
-                   " productId": "AW11",
+                   "id": "AW11",
                     "name": "Apple Watch Hermes",
                     "type": "smart-watches",
                     "price": 1300,
@@ -419,7 +419,7 @@
                     "reviews": []
                 },
                 {
-                   " productId": "AW12",
+                   "id": "AW12",
                     "name": "Apple Watch SE 2",
                     "type": "smart-watches",
                     "price": 320,
@@ -438,7 +438,7 @@
                     "reviews": []
                 },
                 {
-                   " productId": "AW13",
+                   "id": "AW13",
                     "name": "Apple Watch Series 3",
                     "type": "smart-watches",
                     "price": 150,
@@ -457,7 +457,7 @@
                     "reviews": []
                 },
                 {
-                   " productId": "AW14",
+                   "id": "AW14",
                     "name": "Apple Watch Edition",
                     "type": "smart-watches",
                     "price": 1400,
@@ -476,7 +476,7 @@
                     "reviews": []
                 },
                 {
-                   " productId": "AW15",
+                   "id": "AW15",
                     "name": "Apple Watch Series 2",
                     "type": "smart-watches",
                     "price": 120,
