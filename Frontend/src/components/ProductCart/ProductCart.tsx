@@ -7,16 +7,17 @@ type Props = {
     productName: string;
     productImageSrc: string;
     productPrice: number;
-    productId:string;
+    id:string;
 }
 
-const ProductCart = memo(({countProductsInRow, productPrice, productName, productImageSrc, productId}:Props) => {
+const ProductCart = memo(({countProductsInRow, productPrice, productName, productImageSrc, id}:Props) => {
     const navigate = useNavigate();
 
     return(
     <div className=" flex flex-col items-center gap-2" style={{width: `calc((100% / ${countProductsInRow}) - 9px)`}}>
         <div onClick={()=>{
-            navigate(`/product/${productId}`);
+            console.log(id);
+            navigate(`/product/${id}`);
             scrolToTop();
             }} className="image_block group flex flex-col items-center w-full h-90 relative overflow-hidden">
             <img

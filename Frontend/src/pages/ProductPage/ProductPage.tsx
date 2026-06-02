@@ -1,12 +1,18 @@
 import ProductInfoZone from "@/modules/ProductInfoZone/ProductInfoZone"
+import { useQuery } from "@tanstack/react-query";
 import { useParams } from "react-router-dom";
 
 const ProductPage = () => {
 
-    const { ProductId } = useParams();
-
+    const { id } = useParams();
+    const {data, isLoading} = useQuery({
+        queryKey: ["product", id],
+        queryFn: () =>
+            fetch(`http://localhost:3001/products/${id}`)
+            .then(res => res.json()),
+    });
     return(<>
-        <ProductInfoZone ProductId = {ProductId}/>
+        <ProductInfoZone data={data} isLoading={isLoading} />
     </>)
 }
 
