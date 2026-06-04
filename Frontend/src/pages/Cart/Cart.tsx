@@ -1,9 +1,9 @@
 import PageBuner from "@/components/PageBuner/PageBuner"
 
-const Basket = () => {
+const Cart = () => {
     return(<>
     <PageBuner/>
     </>)
 }
 
-export default Basket
+export default Cart

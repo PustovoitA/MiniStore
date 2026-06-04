@@ -13,8 +13,8 @@ const Toolbar = () =>{
             <li className={`${location.pathname === "/Account" ? "text-[#72AEC8]" : "text-black"} flex items-center hover:text-(--blue-color) cursor-pointer transition-colors tracking-widest`}>
                 <span className="material-symbols-outlined">person</span>
             </li>
-            <li onClick={()=>navigate("Basket")} 
-            className={`${location.pathname === "/Basket" ? "text-[#72AEC8]" : "text-black"} flex items-center hover:text-(--blue-color) cursor-pointer transition-colors tracking-widest`}>
+            <li onClick={()=>navigate("Cart")} 
+            className={`${location.pathname === "/Cart" ? "text-[#72AEC8]" : "text-black"} flex items-center hover:text-(--blue-color) cursor-pointer transition-colors tracking-widest`}>
                 <span className="material-symbols-outlined">shopping_cart</span>
                 <span className="flex items-center">(0)</span>
             </li>
