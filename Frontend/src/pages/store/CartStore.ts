@@ -4,7 +4,7 @@ import { persist } from "zustand/middleware";
 
 type TypeCartStore = {
     basket: Product[] | [],
-    setItemInCart: (item: Product | undefined) => void,
+    setItemInCart: (item: Product | undefined) => boolean,
     deleteItemFromCart: (item: Product | undefined) => void,
     clearState: () => void
 }
@@ -17,10 +17,13 @@ const CartStore = create<TypeCartStore>()(
             basket: [],
 
             setItemInCart(item){
-                set((state) => {
-                    if(!item) return {basket: [...state.basket]}
-                    return {basket: [...state.basket, item]}
-                })
+                if(!item) return false
+
+                set((state) => ({
+                    basket: [...state.basket, item]
+                }));
+
+                return true
             },
 
             deleteItemFromCart(item){
@@ -34,7 +37,7 @@ const CartStore = create<TypeCartStore>()(
                 set(()=>{return{basket: []}})
             },
         }),
-        {name: "history-routes-storage"}
+        {name: "cart-storage"}
     )
 )
 

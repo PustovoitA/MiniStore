@@ -1,6 +1,5 @@
 import { addProductInCart } from "@/assets/cartFunctions"
 import { QuantityCounter } from "@/components/QuantityCounter"
-import CartStore from "@/pages/store/CartStore"
 import type { Product } from "@/types/Product"
 
 import { Button } from "@/ui/Button"
@@ -26,12 +25,6 @@ export const CharProdZone = memo(({item}:Props) => {
         const result = price - (price * discount / 100)
         return result.toFixed(2);
     }
-
-    const stateCart = CartStore((state) => state.basket);
-
-    useEffect(()=>{
-        console.log(stateCart);
-    },[stateCart])
 
     return (<div className="flex flex-col items-start gap-3 font-[Jost]">
         <h1 className="text-[30px]">{item?.name.toUpperCase()}</h1>

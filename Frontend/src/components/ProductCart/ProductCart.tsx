@@ -26,7 +26,9 @@ const ProductCart = memo(({countProductsInRow, item}:Props) => {
             />
 
             <button
-                onClick={()=>{addProductInCart(item)}}
+                onClick={()=>{
+                    addProductInCart(item)
+                }}
                 className="
                 flex items-center gap-2
                 absolute bottom-8
