@@ -3,10 +3,10 @@ import { create } from "zustand";
 import { persist } from "zustand/middleware";
 
 type TypeCartStore = {
-    basket: Product[],
-    setItemInCart: () => void,
-    deleteItemFromCart: () => void,
-    changeCountOfItem: () => void
+    basket: Product[] | [],
+    setItemInCart: (item: Product | undefined) => void,
+    deleteItemFromCart: (item: Product | undefined) => void,
+    clearState: () => void
 }
 
 
@@ -16,11 +16,23 @@ const CartStore = create<TypeCartStore>()(
 
             basket: [],
 
-            setItemInCart(){},
+            setItemInCart(item){
+                set((state) => {
+                    if(!item) return {basket: [...state.basket]}
+                    return {basket: [...state.basket, item]}
+                })
+            },
 
-            deleteItemFromCart(){},
+            deleteItemFromCart(item){
+                set((state) => {
+                    if(!item) return {basket: [...state.basket]}
+                    return{basket: state.basket.filter(el => el !== item)}
+                })
+            },
 
-            changeCountOfItem(){},
+            clearState(){
+                set(()=>{return{basket: []}})
+            },
         }),
         {name: "history-routes-storage"}
     )

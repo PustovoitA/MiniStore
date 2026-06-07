@@ -1,4 +1,4 @@
-import { scrolToTop } from "@/assets/Functions"
+import { scrolToTop } from "@/assets/scrolToTopFunction"
 import { Link } from "react-router-dom"
 
 const QuickLinks = () => {
