@@ -1,0 +1,45 @@
+.notification {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+
+    padding: 0 45px;
+    height: 45px;
+
+    border-radius: 10px;
+
+    background-color: #04bd04;
+    color: white;
+
+    transform: translateX(-50%);
+    z-index: 1000;
+
+    animation: toast 2s ease-in-out forwards;
+}
+
+@keyframes toast {
+    0% {
+        transform: translate(-50%, -100px);
+        opacity: 0;
+    }
+
+    15% {
+        transform: translate(-50%, 0);
+        opacity: 1;
+    }
+
+    85% {
+        transform: translate(-50%, 0);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translate(-50%, -100px);
+        opacity: 0;
+    }
+}
