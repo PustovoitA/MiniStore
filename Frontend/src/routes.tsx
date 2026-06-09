@@ -5,7 +5,7 @@ import { Blog } from "@pages/Blog"
 import { Contact } from "@pages/Contact"
 import { Shop } from "@pages/Shop"
 import { ProductPage } from "./pages/ProductPage"
-import { Basket } from "./pages/Basket"
+import Cart from "./pages/Cart/Cart"
 
 const AppRoutes = () => {
     const navigationRoutes = [
@@ -38,8 +38,8 @@ const AppRoutes = () => {
             element: <ProductPage/>
         },
         {
-            path: "Basket",
-            element: <Basket/>
+            path: "Cart",
+            element: <Cart/>
         }
     ]
 

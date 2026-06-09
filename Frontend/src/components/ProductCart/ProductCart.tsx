@@ -1,32 +1,34 @@
-import { scrolToTop } from "@/assets/Functions";
+import { addProductInCart } from "@/assets/cartFunctions";
+import { scrolToTop } from "@/assets/scrolToTopFunction";
+import type { Product } from "@/types/Product";
 import { memo } from "react";
 import { useNavigate } from "react-router-dom";
 
 type Props = {
     countProductsInRow: number;
-    productName: string;
-    productImageSrc: string;
-    productPrice: number;
-    id:string;
+    item: Product
 }
 
-const ProductCart = memo(({countProductsInRow, productPrice, productName, productImageSrc, id}:Props) => {
+const ProductCart = memo(({countProductsInRow, item}:Props) => {
     const navigate = useNavigate();
 
     return(
     <div className=" flex flex-col items-center gap-2" style={{width: `calc((100% / ${countProductsInRow}) - 9px)`}}>
-        <div onClick={()=>{
-            console.log(id);
-            navigate(`/product/${id}`);
-            scrolToTop();
-            }} className="image_block group flex flex-col items-center w-full h-90 relative overflow-hidden">
+        <div className="image_block group flex flex-col items-center w-full h-90 relative overflow-hidden">
             <img
+                onClick={()=>{
+                    navigate(`/product/${item.id}`);
+                    scrolToTop();
+                }}
                 className="object-cover h-full w-full"
-                src={productImageSrc}
+                src={item.image}
                 alt="image of product"
             />
 
             <button
+                onClick={()=>{
+                    addProductInCart(item)
+                }}
                 className="
                 flex items-center gap-2
                 absolute bottom-8
@@ -46,8 +48,8 @@ const ProductCart = memo(({countProductsInRow, productPrice, productName, produc
             </button>
         </div>
         <div className="inf0_block flex items-center justify-between font-[Jost] w-full text-[18px]">
-            <p className="name">{productName.toUpperCase()}</p>
-            <p className="prise text-(--blue-color)">{`$${productPrice}`}</p>
+            <p className="name">{item.name.toUpperCase()}</p>
+            <p className="prise text-(--blue-color)">{`$${item.price}`}</p>
         </div>
     </div>)
 })

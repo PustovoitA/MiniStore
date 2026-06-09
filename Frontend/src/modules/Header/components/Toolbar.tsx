@@ -1,9 +1,17 @@
+import CartStore from "@/pages/store/CartStore";
+import { useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom"
 
 const Toolbar = () =>{
     const navigate = useNavigate();
-
     const location = useLocation();
+
+    const cartStore = CartStore((state) => state.basket);
+    const [countProducts, setCountProducts] = useState(cartStore.length);
+
+    useEffect(()=>{
+        setCountProducts(cartStore.length);
+    },[cartStore])
 
     return(<>
         <ul className="flex gap-4 unselectable">
@@ -13,10 +21,10 @@ const Toolbar = () =>{
             <li className={`${location.pathname === "/Account" ? "text-[#72AEC8]" : "text-black"} flex items-center hover:text-(--blue-color) cursor-pointer transition-colors tracking-widest`}>
                 <span className="material-symbols-outlined">person</span>
             </li>
-            <li onClick={()=>navigate("Basket")} 
-            className={`${location.pathname === "/Basket" ? "text-[#72AEC8]" : "text-black"} flex items-center hover:text-(--blue-color) cursor-pointer transition-colors tracking-widest`}>
+            <li onClick={()=>navigate("Cart")} 
+            className={`${location.pathname === "/Cart" ? "text-[#72AEC8]" : "text-black"} flex items-center hover:text-(--blue-color) cursor-pointer transition-colors tracking-widest`}>
                 <span className="material-symbols-outlined">shopping_cart</span>
-                <span className="flex items-center">(0)</span>
+                <span className="flex items-center">({countProducts})</span>
             </li>
         </ul>
     </>)

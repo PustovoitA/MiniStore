@@ -1,3 +1,4 @@
+import { addProductInCart } from "@/assets/cartFunctions"
 import { QuantityCounter } from "@/components/QuantityCounter"
 import type { Product } from "@/types/Product"
 
@@ -74,7 +75,12 @@ export const CharProdZone = memo(({item}:Props) => {
         <QuantityCounter setSelectedCountProduct={setSelectedCountProduct} selectedCountProduct={selectedCountProduct} maxCountProduct={item?.count}/>
         <div className="flex items-center gap-1.5">
             <Button value="BUY NOW" bgColor="var(--blue-color)" type="button"/>
-            <Button value="ADD TO CART" bgColor="var(--black-block-color)" type="button"/>
+            
+            <div onClick={()=>{
+                addProductInCart(item);
+            }}>
+                <Button value="ADD TO CART" bgColor="var(--black-block-color)" type="button"/>
+            </div>
         </div>
     </div>)
 })
