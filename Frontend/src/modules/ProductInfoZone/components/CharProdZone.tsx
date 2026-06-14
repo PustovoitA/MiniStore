@@ -77,7 +77,7 @@ export const CharProdZone = memo(({item}:Props) => {
             <Button value="BUY NOW" bgColor="var(--blue-color)" type="button"/>
             
             <div onClick={()=>{
-                addProductInCart(item);
+                addProductInCart(item, selectedCountProduct);
             }}>
                 <Button value="ADD TO CART" bgColor="var(--black-block-color)" type="button"/>
             </div>

@@ -3,12 +3,17 @@ import { create } from "zustand";
 import { persist } from "zustand/middleware";
 
 type TypeCartStore = {
-    basket: Product[] | [],
-    notification: Notification
-    setItemInCart: (item: Product | undefined) => boolean,
+    basket: CartItem[],
+    notification: Notification,
+    setItemInCart: (item: Product | undefined, selectedCount: number) => boolean,
     setNotification:(item: Notification) => void
     deleteItemFromCart: (item: Product | undefined) => void,
     clearState: () => void
+}
+
+type CartItem = {
+    product: Product,
+    quantity: number,
 }
 
 type Notification = {open: boolean, value: "success" | "error"}
@@ -21,15 +26,15 @@ const CartStore = create<TypeCartStore>()(
             basket: [],
             notification: {open: false, value: "success"},
 
-            setItemInCart(item){
+            setItemInCart(item, selectedCount){
                 if(!item){
                     set({notification:{open: true, value: "error"}})
                     return false
                 }
 
                 set((state) => ({
-                    basket: [...state.basket, item],
-                    notification:{open: true, value: "success"}
+                    basket: [...state.basket, {product: item, quantity: selectedCount}],
+                    notification:{open: true, value: "success"},
                 }));
 
                 return true
@@ -44,7 +49,7 @@ const CartStore = create<TypeCartStore>()(
             deleteItemFromCart(item){
                 set((state) => {
                     if(!item) return {basket: [...state.basket]}
-                    return{basket: state.basket.filter(el => el !== item)}
+                    return{basket: state.basket.filter(el => el.product !== item)}
                 })
             },
 

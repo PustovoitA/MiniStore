@@ -27,7 +27,7 @@ const ProductCart = memo(({countProductsInRow, item}:Props) => {
 
             <button
                 onClick={()=>{
-                    addProductInCart(item)
+                    addProductInCart(item, 1)
                 }}
                 className="
                 flex items-center gap-2
