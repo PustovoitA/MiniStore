@@ -14,11 +14,14 @@ type CartItem = {
 
 export const ProductInCart = ({item}:Props) => {
     const [selectedCountProduct, setSelectedCountProduct] = useState(item.quantity);
-    const [subtotal, setSubtotal] = useState(selectedCountProduct * item.product.price);
-    const deleteItem = CartStore((state) => state.deleteItemFromCart)
+    const price = item.product.discount !== null
+    ? item.product.price - (item.product.price * item.product.discount! / 100)
+    : item.product.price
+    const [subtotal, setSubtotal] = useState(selectedCountProduct * price);
+    const deleteItem = CartStore((state) => state.deleteItemFromCart);
 
     useEffect(()=>{
-        setSubtotal(selectedCountProduct * item.product.price);
+        setSubtotal(selectedCountProduct * price);
     },[selectedCountProduct])
 
     return(<><div className="relative flex items-center justify-between w-full h-50 my-2.5">
@@ -28,7 +31,10 @@ export const ProductInCart = ({item}:Props) => {
             </div>
             <div className="flex flex-col text-[20px]">
                 <span>{item.product.name.toUpperCase()}</span>
-                <span className="text-(--blue-color)">{`$${item.product.price.toFixed(2)}`}</span>
+                <span style={{color: item.product.discount !== null
+                    ? "#ea0404"
+                    : "var(--blue-color)"
+                }}>{`$${price.toFixed(2)}`}</span>
             </div>
         </div>
 
