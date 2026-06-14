@@ -19,9 +19,11 @@ export const ProductInCart = ({item}:Props) => {
     : item.product.price
     const [subtotal, setSubtotal] = useState(selectedCountProduct * price);
     const deleteItem = CartStore((state) => state.deleteItemFromCart);
+    const updateQuantity = CartStore((state) => state.updateQuantity);
 
     useEffect(()=>{
         setSubtotal(selectedCountProduct * price);
+        updateQuantity(item.product.id, selectedCountProduct);
     },[selectedCountProduct])
 
     return(<><div className="relative flex items-center justify-between w-full h-50 my-2.5">

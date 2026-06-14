@@ -6,9 +6,10 @@ type TypeCartStore = {
     basket: CartItem[],
     notification: Notification,
     setItemInCart: (item: Product | undefined, selectedCount: number) => boolean,
-    setNotification:(item: Notification) => void
+    setNotification: (item: Notification) => void
     deleteItemFromCart: (item: Product | undefined) => void,
-    clearState: () => void
+    clearState: () => void,
+    updateQuantity: (itemId: string, quantity: number) => void
 }
 
 type CartItem = {
@@ -32,21 +33,7 @@ const CartStore = create<TypeCartStore>()(
                     return false
                 }
 
-                const existingItem = get().basket.find(el => el.product.id === item.id);
-                if (existingItem) {
-                    set((state) => ({
-                        basket: state.basket.map(el =>
-                            el.product.id === item.id
-                            ? {
-                                ...el,
-                                quantity: el.quantity + selectedCount
-                            }
-                            : el
-                        ),
-                        notification: { open: true, value: "success" }
-                    }));
-                    return true;
-                }
+                get().updateQuantity(item.id, selectedCount);
 
                 set((state) => ({
                     basket: [...state.basket, {product: item, quantity: selectedCount}],
@@ -55,6 +42,25 @@ const CartStore = create<TypeCartStore>()(
 
                 return true
             },
+
+            updateQuantity(productId, quantity) {
+                set((state) => {
+                    const newBasket = state.basket.map((item) => {
+                        if (item.product.id === productId) {
+                            return {
+                                ...item,
+                                quantity: quantity
+                            };
+                        }
+
+                        return item;
+                    });
+
+                    return {
+                        basket: newBasket
+                    };
+                });
+},
 
             setNotification(item){
                 set(()=>{
