@@ -32,9 +32,25 @@ const CartStore = create<TypeCartStore>()(
                     return false
                 }
 
+                const existingItem = get().basket.find(el => el.product.id === item.id);
+                if (existingItem) {
+                    set((state) => ({
+                        basket: state.basket.map(el =>
+                            el.product.id === item.id
+                            ? {
+                                ...el,
+                                quantity: el.quantity + selectedCount
+                            }
+                            : el
+                        ),
+                        notification: { open: true, value: "success" }
+                    }));
+                    return true;
+                }
+
                 set((state) => ({
                     basket: [...state.basket, {product: item, quantity: selectedCount}],
-                    notification:{open: true, value: "success"},
+                    notification: {open: true, value: "success"},
                 }));
 
                 return true
