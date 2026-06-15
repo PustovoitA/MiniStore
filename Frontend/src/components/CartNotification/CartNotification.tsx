@@ -34,7 +34,7 @@ const CartNotification = () => {
     if(!notification.open) return null
 
     if(notification.open){
-    return(<div key={Date.now()} className={`${styles.notification} bg-[${context.bgCol}]`} >
+    return(<div key={Date.now()} style={{background: context.bgCol}} className={`${styles.notification}`} >
             <span className="material-symbols-outlined text-[18px]">{context.icon}</span>
             <p>{context.massage}</p>
         </div>)}

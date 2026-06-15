@@ -1,0 +1,1 @@
+export {default as CartProductZone} from "./CartProductZone"
