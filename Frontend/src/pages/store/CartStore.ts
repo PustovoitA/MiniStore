@@ -9,7 +9,8 @@ type TypeCartStore = {
     setNotification: (item: Notification) => void
     deleteItemFromCart: (item: Product | undefined) => void,
     clearState: () => void,
-    updateQuantity: (itemId: string, quantity: number) => void
+    updateQuantity: (itemId: string, quantity: number) => void,
+    incrementQuantity: (item: Product, selectedCount: number) => void
 }
 
 type CartItem = {
@@ -33,7 +34,11 @@ const CartStore = create<TypeCartStore>()(
                     return false
                 }
 
-                get().updateQuantity(item.id, selectedCount);
+                const existingItem = get().basket.find(el => el.product.id === item.id);
+                if (existingItem) {
+                    get().incrementQuantity(item, selectedCount)
+                    return true;
+                }
 
                 set((state) => ({
                     basket: [...state.basket, {product: item, quantity: selectedCount}],
@@ -41,6 +46,20 @@ const CartStore = create<TypeCartStore>()(
                 }));
 
                 return true
+            },
+
+            incrementQuantity(item, selectedCount){
+                set((state) => ({
+                    basket: state.basket.map(el =>
+                        el.product.id === item.id
+                        ? {
+                            ...el,
+                            quantity: el.quantity + selectedCount
+                        }
+                        : el
+                    ),
+                    notification: { open: true, value: "success" }
+                }));
             },
 
             updateQuantity(productId, quantity) {
@@ -51,16 +70,16 @@ const CartStore = create<TypeCartStore>()(
                                 ...item,
                                 quantity: quantity
                             };
+                        }else{
+                            return item;
                         }
-
-                        return item;
                     });
 
                     return {
                         basket: newBasket
                     };
                 });
-},
+            },
 
             setNotification(item){
                 set(()=>{
