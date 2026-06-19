@@ -20,11 +20,16 @@ export const ProductInCart = memo(({item}:Props) => {
     const [subtotal, setSubtotal] = useState(selectedCountProduct * price);
     const deleteItem = CartStore((state) => state.deleteItemFromCart);
     const updateQuantity = CartStore((state) => state.updateQuantity);
+    const updateTotals = CartStore((state) => state.updateTotals);
 
     useEffect(()=>{
         setSubtotal(selectedCountProduct * price);
         updateQuantity(item.product.id, selectedCountProduct);
     },[selectedCountProduct])
+
+    useEffect(()=>{
+        updateTotals({itemId: item.product.id, price: subtotal});
+    },[subtotal])
 
     return(<><div className="relative flex items-center justify-between w-full h-50 my-2.5">
         <div className="flex items-center gap-5 h-full">

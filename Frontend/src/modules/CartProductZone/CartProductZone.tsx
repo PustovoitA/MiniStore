@@ -1,10 +1,18 @@
 import CartStore from "@/pages/store/CartStore"
 import { ProductInCart } from "./components/ProductInCart";
 import { Button } from "@/ui/Button";
+import { useEffect, useState } from "react";
 
 
 const CartProductZone = () => {
     const cartStore = CartStore((state) => state.basket);
+    const totals = CartStore((state) => state.totals)
+    const calculateTotals = CartStore((state) => state.calculateTotals);
+    const [calculatedTotal, setCalculatedTotal] = useState(0)
+
+    useEffect(() => {
+        setCalculatedTotal(calculateTotals());
+    }, [totals]);
 
     return (<div className="flex justify-center font-[Jost] w-full my-20">
         <div className="w-(--width)">
@@ -31,7 +39,7 @@ const CartProductZone = () => {
                     <hr className="text-[#c9bcbc] my-3.5" />
                     <div className="flex items-center justify-between w-[40%] text-[18px]">
                         <p className="underline">TOTAL</p>
-                        <p className="text-(--blue-color)">price</p>
+                        <p className="text-(--blue-color)">{`$${calculatedTotal.toFixed(2)}`}</p>
                     </div>
                     <hr className="text-[#c9bcbc] my-3.5" />
 
