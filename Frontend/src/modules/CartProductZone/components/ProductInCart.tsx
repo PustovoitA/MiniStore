@@ -1,7 +1,7 @@
 import { QuantityCounter } from "@/components/QuantityCounter"
 import CartStore from "@/pages/store/CartStore"
 import type { Product } from "@/types/Product"
-import { useEffect, useState } from "react"
+import { memo, useEffect, useState } from "react"
 
 type Props = {
     item: CartItem,
@@ -12,7 +12,7 @@ type CartItem = {
     quantity: number
 }
 
-export const ProductInCart = ({item}:Props) => {
+export const ProductInCart = memo(({item}:Props) => {
     const [selectedCountProduct, setSelectedCountProduct] = useState(item.quantity);
     const price = item.product.discount !== null
     ? item.product.price - (item.product.price * item.product.discount! / 100)
@@ -49,4 +49,4 @@ export const ProductInCart = ({item}:Props) => {
     </div>
     <hr className="text-[#c9bcbc] my-3.5" />
     </>)
-}
+})
