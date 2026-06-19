@@ -5,12 +5,15 @@ import { persist } from "zustand/middleware";
 type TypeCartStore = {
     basket: CartItem[],
     notification: Notification,
+    totals: Totals[],
     setItemInCart: (item: Product | undefined, selectedCount: number) => boolean,
     setNotification: (item: Notification) => void
     deleteItemFromCart: (item: Product | undefined) => void,
     clearState: () => void,
     updateQuantity: (itemId: string, quantity: number) => void,
-    incrementQuantity: (item: Product, selectedCount: number) => void
+    incrementQuantity: (item: Product, selectedCount: number) => void,
+    updateTotals: (item: Totals) => void,
+    calculateTotals: () => number,
 }
 
 type CartItem = {
@@ -19,6 +22,7 @@ type CartItem = {
 }
 
 type Notification = {open: boolean, value: "success" | "error"}
+type Totals = {itemId: string, price: number}
 
 
 const CartStore = create<TypeCartStore>()(
@@ -27,6 +31,7 @@ const CartStore = create<TypeCartStore>()(
 
             basket: [],
             notification: {open: false, value: "success"},
+            totals: [],
 
             setItemInCart(item, selectedCount){
                 if(!item){
@@ -87,10 +92,41 @@ const CartStore = create<TypeCartStore>()(
                 })
             },
 
+            updateTotals(item){
+                const existingItem = get().totals.find(el => el.itemId === item.itemId);
+                set((state) => {
+                    if(existingItem){
+                        const newTotals = state.totals.map(el => {
+                            if(el.itemId === item.itemId){
+                                return{
+                                    ...el,
+                                    price: item.price
+                                }
+                            }else{
+                                return el
+                            }
+                        })
+
+                        return{totals: newTotals}
+                    }else{
+                        return{totals: [...state.totals, {itemId: item.itemId, price: item.price}]}
+                    }
+                });
+            },
+
+            calculateTotals(){
+                const curTotals = get().totals;
+                const newArr = curTotals.map(el => el.price);
+                return newArr.reduce((el, temp) => el + temp, 0)
+            },
+
             deleteItemFromCart(item){
                 set((state) => {
                     if(!item) return {basket: [...state.basket]}
-                    return{basket: state.basket.filter(el => el.product !== item)}
+                    return{
+                        basket: state.basket.filter(el => el.product !== item),
+                        totals: state.totals.filter(el => el.itemId !== item.id),
+                    }
                 })
             },
 

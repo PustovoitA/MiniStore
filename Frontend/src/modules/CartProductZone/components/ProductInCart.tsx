@@ -1,7 +1,7 @@
 import { QuantityCounter } from "@/components/QuantityCounter"
 import CartStore from "@/pages/store/CartStore"
 import type { Product } from "@/types/Product"
-import { useEffect, useState } from "react"
+import { memo, useEffect, useState } from "react"
 
 type Props = {
     item: CartItem,
@@ -12,7 +12,7 @@ type CartItem = {
     quantity: number
 }
 
-export const ProductInCart = ({item}:Props) => {
+export const ProductInCart = memo(({item}:Props) => {
     const [selectedCountProduct, setSelectedCountProduct] = useState(item.quantity);
     const price = item.product.discount !== null
     ? item.product.price - (item.product.price * item.product.discount! / 100)
@@ -20,11 +20,16 @@ export const ProductInCart = ({item}:Props) => {
     const [subtotal, setSubtotal] = useState(selectedCountProduct * price);
     const deleteItem = CartStore((state) => state.deleteItemFromCart);
     const updateQuantity = CartStore((state) => state.updateQuantity);
+    const updateTotals = CartStore((state) => state.updateTotals);
 
     useEffect(()=>{
         setSubtotal(selectedCountProduct * price);
         updateQuantity(item.product.id, selectedCountProduct);
     },[selectedCountProduct])
+
+    useEffect(()=>{
+        updateTotals({itemId: item.product.id, price: subtotal});
+    },[subtotal])
 
     return(<><div className="relative flex items-center justify-between w-full h-50 my-2.5">
         <div className="flex items-center gap-5 h-full">
@@ -49,4 +54,4 @@ export const ProductInCart = ({item}:Props) => {
     </div>
     <hr className="text-[#c9bcbc] my-3.5" />
     </>)
-}
+})
