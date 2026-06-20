@@ -59,7 +59,7 @@ const CartStore = create<TypeCartStore>()(
                         el.product.id === item.id
                         ? {
                             ...el,
-                            quantity: el.quantity + selectedCount
+                            quantity: el.quantity + selectedCount > item.count ? item.count : el.quantity + selectedCount
                         }
                         : el
                     ),
@@ -73,7 +73,7 @@ const CartStore = create<TypeCartStore>()(
                         if (item.product.id === productId) {
                             return {
                                 ...item,
-                                quantity: quantity
+                                quantity: quantity > item.product.count ? item.product.count : quantity
                             };
                         }else{
                             return item;

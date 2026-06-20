@@ -2,6 +2,7 @@ import { QuantityCounter } from "@/components/QuantityCounter"
 import CartStore from "@/pages/store/CartStore"
 import type { Product } from "@/types/Product"
 import { memo, useEffect, useState } from "react"
+import { useNavigate } from "react-router-dom"
 
 type Props = {
     item: CartItem,
@@ -13,6 +14,8 @@ type CartItem = {
 }
 
 export const ProductInCart = memo(({item}:Props) => {
+    const navigate = useNavigate();
+
     const [selectedCountProduct, setSelectedCountProduct] = useState(item.quantity);
     const price = item.product.discount !== null
     ? item.product.price - (item.product.price * item.product.discount! / 100)
@@ -32,7 +35,7 @@ export const ProductInCart = memo(({item}:Props) => {
     },[subtotal])
 
     return(<><div className="relative flex items-center justify-between w-full h-50 my-2.5">
-        <div className="flex items-center gap-5 h-full">
+        <div onClick={()=>{navigate(`/product/${item.product.id}`);}} className="flex items-center gap-5 h-full cursor-pointer">
             <div className="w-37.5 h-full">
                 <img className="w-full h-full object-cover unselectable" src={item.product.image} alt="product_picture" />
             </div>
