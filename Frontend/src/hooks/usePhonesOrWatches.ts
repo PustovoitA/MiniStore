@@ -12,7 +12,7 @@ export type ProductsResponse = {
 };
 
 const getPhonesOrWatches = async (type:string, page:number, limit:number): Promise<ProductsResponse> => {
-    const response = await fetch(`http://localhost:3001/products?type=${type}&_page=${page}&_per_page=${limit}`);
+    const response = await fetch(`https://ministore-api.up.railway.app/products?type=${type}&_page=${page}&_per_page=${limit}`);
     if(!response.ok){
         throw new Error(`Something not ok with response: ${response.status}`);
     }
