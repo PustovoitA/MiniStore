@@ -12,7 +12,7 @@ export type ProductsResponse = {
 };
 
 const getPhonesOrWatches = async (type:string, page:number, limit:number): Promise<ProductsResponse> => {
-    const response = await fetch(`capable-exploration-production-3154.up.railway.app/products?type=${type}&_page=${page}&_limit=${limit}`);
+    const response = await fetch(`https://capable-exploration-production-3154.up.railway.app/products?type=${type}&_page=${page}&_limit=${limit}`);
     if(!response.ok){
         throw new Error(`Something not ok with response: ${response.status}`);
     }
