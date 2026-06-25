@@ -2,7 +2,7 @@
   "name": "ministore-api",
   "version": "1.0.0",
   "scripts": {
-    "start": "json-server db.json --port 3001 --no-static"
+    "start": "json-server --port 3001 db.json"
   },
   "dependencies": {
     "json-server": "^1.0.0-beta.15"
