@@ -30,12 +30,7 @@ const CartProductZone = () => {
                 </div>
 
                 <div className="mt-15">
-                    <h1 className="text-[30px]">CART TOTALS</h1>
-                    <hr className="text-[#c9bcbc] my-3.5" />
-                    <div className="flex items-center justify-between w-[40%] text-[18px]">
-                        <p className="underline">SUBTOTAL</p>
-                        <p className="text-(--blue-color)">price</p>
-                    </div>
+                    <h1 className="text-[30px]">CART TOTAL</h1>
                     <hr className="text-[#c9bcbc] my-3.5" />
                     <div className="flex items-center justify-between w-[40%] text-[18px]">
                         <p className="underline">TOTAL</p>
