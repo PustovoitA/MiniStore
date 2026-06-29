@@ -32,7 +32,7 @@ const HomeProductZone = () => {
                 ? <p>Loading....</p>
                 : phonesQuery.isError
                 ? <p>Error</p>
-                : phonesQuery.data?.data.map((el:Product) => {
+                : phonesQuery.data?.map((el:Product) => {
                     return <ProductCart key={el.id} item={el} countProductsInRow={limitProductsOnPage}/>
                 })
                 }
@@ -62,7 +62,7 @@ const HomeProductZone = () => {
                 ?<p>Loading...</p>
                 :watchesQuery.isError
                 ?<p>Error</p>
-                :watchesQuery.data?.data.map((el:Product) => {
+                :watchesQuery.data?.map((el:Product) => {
                     return <ProductCart key={el.id} item={el} countProductsInRow={limitProductsOnPage}/>
                 })
                 }

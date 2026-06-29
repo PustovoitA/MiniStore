@@ -23,15 +23,14 @@
     "noFallthroughCasesInSwitch": true,
     "noUncheckedSideEffectImports": true,
 
-    "baseUrl": ".",
-    "ignoreDeprecations": "6.0",
+    "baseUrl": "./src",
     "paths": {
-      "@/*":["src/*"],
-      "@assets/*":["src/assets/*"],
-      "@components/*":["src/components/*"],
-      "@modules/*":["src/modules/*"],
-      "@pages/*":["src/pages/*"],
-      "@ui/*":["src/ui/*"]
+      "@/*": ["./*"],
+      "@assets/*": ["./assets/*"],
+      "@components/*": ["./components/*"],
+      "@modules/*": ["./modules/*"],
+      "@pages/*": ["./pages/*"],
+      "@ui/*": ["./ui/*"]
     }
   },
   "include": ["src"]

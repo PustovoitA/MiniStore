@@ -8,7 +8,7 @@ const ProductPage = () => {
     const {data, isLoading} = useQuery({
         queryKey: ["product", id],
         queryFn: () =>
-            fetch(`http://localhost:3001/products/${id}`)
+            fetch(`https://capable-exploration-production-3154.up.railway.app/products/${id}`)
             .then(res => res.json()),
     });
     return(<>

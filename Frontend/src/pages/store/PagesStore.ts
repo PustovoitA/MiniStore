@@ -9,7 +9,7 @@ interface TypesHistoryRoutes{
 
 const HistoryRoutes = create<TypesHistoryRoutes>()(
   persist(
-    (set, get) => ({
+    (set) => ({
       list: ["/Home"],
 
     setPathInList: (path) => {
