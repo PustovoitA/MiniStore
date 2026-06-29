@@ -4,11 +4,13 @@ import { useParams } from "react-router-dom";
 
 const ProductPage = () => {
 
+    const BASE_URL = import.meta.env.VITE_API_URL;
+
     const { id } = useParams();
     const {data, isLoading} = useQuery({
         queryKey: ["product", id],
         queryFn: () =>
-            fetch(`https://capable-exploration-production-3154.up.railway.app/products/${id}`)
+            fetch(`${BASE_URL}/products/${id}`)
             .then(res => res.json()),
     });
     return(<>
