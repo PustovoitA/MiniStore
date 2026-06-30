@@ -11,7 +11,8 @@ type InputProps = {
     errorMassage: string,
     formStateError: FormState<InputType> | undefined,
     width: string,
-    required: "This file is required" | boolean
+    required: "This file is required" | boolean,
+    ClassName: string
 }
 
 const Input = ({type, register, placeholder, regExp, errorMassage, formStateError, width, required}:InputProps) => {
