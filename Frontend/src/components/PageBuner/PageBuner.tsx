@@ -22,12 +22,26 @@ const PageBuner = () => {
         }
     }, [getPathName]);
 
-    return(<div className="flex flex-col gap-4 items-center justify-center w-full h-87.5 bg-(--grey-light-color) unselectable">
-        <h1 className="font-[Jost] text-8xl font-light">{getPathName.slice(1).toUpperCase()}</h1>
-        <ul className="flex gap-0,5">
-            {list.map(el => <li className={`after:content-['>'] after:mx-2 last:after:content-[''] ${el === getPathName? "text-[#72AEC8] underline" : "text-(--grey-text-color)"} hover:text-[#72AEC8] cursor-pointer`} onClick={() => navigate(el)} key={el}>{el.slice(1)}</li>)}
-        </ul>
-    </div>)
+    return (
+        <div className="flex flex-col gap-3 sm:gap-4 items-center justify-center w-full min-h-50 sm:h-87.5 py-6 sm:py-0 px-4 bg-(--grey-light-color) unselectable">
+            <h1 className="font-[Jost] text-5xl sm:text-8xl md:text-8xl lg:text-8xl font-light text-center break-words">
+            {getPathName.slice(1).toUpperCase()}
+            </h1>
+            <ul className="flex flex-wrap gap-1 justify-center">
+            {list.map(el => (
+                <li
+                className={`text-sm sm:text-base after:content-['>'] after:mx-2 last:after:content-[''] ${
+                    el === getPathName ? "text-[#72AEC8] underline" : "text-(--grey-text-color)"
+                } hover:text-[#72AEC8] cursor-pointer`}
+                onClick={() => navigate(el)}
+                key={el}
+                >
+                {el.slice(1)}
+                </li>
+            ))}
+            </ul>
+        </div>
+    );
 }
 
 export default PageBuner

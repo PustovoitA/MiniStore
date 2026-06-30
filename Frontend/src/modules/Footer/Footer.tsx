@@ -7,22 +7,25 @@ import Insta from "./components/insta";
 import FooterBottom from "./components/FooterBottom";
 
 const Footer = () => {
-    return(<div className="flex flex-col gap-10 items-center justify-center w-full">
-        <footer className="flex flex-col gap-10 w-(--width)">
+  return (
+    <div className="flex flex-col gap-10 items-center justify-center w-full px-4">
+      <footer className="flex flex-col gap-10 w-full sm:w-(--width) max-w-full">
 
-            <section>
-                <Insta/>
-            </section>
+        <section>
+          <Insta />
+        </section>
 
-            <section className="flex items-center justify-between">
-                <SocialLinks/>
-                <QuickLinks/>
-                <HelpAndInfo/>
-                <Contacts/>
-            </section>
-        </footer>
-        <FooterBottom/>
-    </div>)
+        <section className="flex flex-col sm:flex-row flex-wrap items-center sm:items-start justify-center sm:justify-between gap-8 sm:gap-6 text-center sm:text-left">
+          <SocialLinks />
+          <QuickLinks />
+          <HelpAndInfo />
+          <Contacts />
+        </section>
+
+      </footer>
+      <FooterBottom />
+    </div>
+  )
 }
 
 export default Footer

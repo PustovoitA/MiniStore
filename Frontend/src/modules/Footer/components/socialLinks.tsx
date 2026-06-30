@@ -2,7 +2,7 @@
 import { Logo } from "@ui/Logo"
 
 const SocialLinks = () => {
-    return(<div className="flex items-start flex-col gap-3.5 w-75 unselectable">
+    return (<div className="flex items-start flex-col gap-3.5 w-full sm:w-75 unselectable">
     <Logo/>
 
     <p className="text-(--grey-text-color) font-[Jost]">
