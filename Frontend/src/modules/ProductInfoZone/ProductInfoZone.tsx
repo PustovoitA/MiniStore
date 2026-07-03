@@ -3,32 +3,34 @@ import { ImageProdZone } from "./components/ImageProdZone";
 import type { Product } from "@/types/Product";
 
 type Props = {
-    data:Product;
-    isLoading:boolean;
+    data: Product;
+    isLoading: boolean;
 }
 
-const ProductInfoZone = ({data, isLoading}:Props) => {
+const ProductInfoZone = ({ data, isLoading }: Props) => {
 
-    if(isLoading){
+    if (isLoading) {
         return <p>loading...</p>
     }
 
-    return(<div className="flex justify-center items-center w-full mt-20">
-        <div className="flex flex-col items-center w-(--width)">
-            <section className="product_sec flex items-start justify-center gap-3">
-                <div className="image_product w-137.5 h-137.5">
-                    <ImageProdZone imageSrc={data.image}/>
-                </div>
-                <div className="char_product">
-                    <CharProdZone item={data}/>
-                </div>
-            </section>
+    return (
+        <div className="flex justify-center items-center w-full mt-10 lg:mt-20 px-4 sm:px-8 lg:px-0">
+            <div className="flex flex-col items-center w-full max-w-(--width)">
+                <section className="product_sec flex flex-col lg:flex-row items-center lg:items-start justify-center gap-6 lg:gap-3 w-full">
+                    <div className="image_product w-full max-w-137.5 aspect-square lg:w-137.5 lg:h-137.5 shrink-0">
+                        <ImageProdZone imageSrc={data.image} />
+                    </div>
+                    <div className="char_product w-full max-w-137.5 lg:max-w-none">
+                        <CharProdZone item={data} />
+                    </div>
+                </section>
 
-            <section className="info_sec">
+                <section className="info_sec w-full">
 
-            </section>
+                </section>
+            </div>
         </div>
-    </div>)
+    )
 }
 
 export default ProductInfoZone
