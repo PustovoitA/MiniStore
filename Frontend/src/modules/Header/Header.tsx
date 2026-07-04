@@ -7,7 +7,7 @@ import { Logo } from "@ui/Logo"
 
 
 const Header = () => {
-    return(<header className="flex items-center justify-between px-3 sm:px-0 sm:justify-around py-3.5 shadow-[0_2px_4px_rgba(0,0,0,0.1)] relative">
+    return(<header className="flex items-center justify-between px-3 sm:px-0 sm:justify-around py-3.5 shadow-[0_2px_4px_rgba(0,0,0,0.1)]">
         <Logo/>
         <div className="sm:flex sm:gap-10 md:gap-16 lg:gap-25 hidden">
             <List/>
