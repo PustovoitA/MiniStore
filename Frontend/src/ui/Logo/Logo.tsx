@@ -1,7 +1,7 @@
 
 const Logo = () => {
     return(<>
-        <h1 className="font-[Jost] text-3xl">MiniStore<span className="text-(--blue-color)">.</span></h1>
+        <h1 className="font-[Jost] text-3xl sm:text-2xl md:text-3xl">MiniStore<span className="text-(--blue-color)">.</span></h1>
     </>)
 }
 

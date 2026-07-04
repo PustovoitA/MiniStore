@@ -7,7 +7,7 @@ const List = () =>{
     const location = useLocation();
 
     return(<>
-        <ul className="flex gap-12 font-[Jost] text-black unselectable">
+        <ul className="flex sm:gap-6 md:gap-8 lg:gap-12 font-[Jost] text-black sm:text-[14px] md:text-[16px] unselectable">
             <li
             onClick={() => navigate("Home")} 
             className={`${location.pathname === "/Home" ? "text-[#72AEC8]" : "text-black"} flex items-center hover:text-(--blue-color) cursor-pointer transition-colors tracking-widest`}>HOME</li>
