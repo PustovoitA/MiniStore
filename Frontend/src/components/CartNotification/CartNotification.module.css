@@ -21,6 +21,10 @@
     animation: toast 2s ease-in-out forwards;
 }
 
+.fontSize {
+    font-size: 18px
+}
+
 @keyframes toast {
     0% {
         transform: translate(-50%, -100px);
@@ -40,5 +44,23 @@
     100% {
         transform: translate(-50%, -100px);
         opacity: 0;
+    }
+}
+
+@media (max-width: 650px){
+    .notification {
+        width: 70%
+    }
+}
+
+@media (max-width: 575px){
+    .notification {
+        width: 90%
+    }
+}
+
+@media (max-width: 365px){
+    .fontSize {
+        font-size: 14px;
     }
 }
