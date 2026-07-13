@@ -6,6 +6,13 @@ This project is built as a pet project and is aimed at the **Junior Frontend Dev
 
 ---
 
+## 🚀 Demo
+
+You can view the live project here:
+👉 **[mini-store-5yqkj2tnf-andrei20.vercel.app](https://mini-store-5yqkj2tnf-andrei20.vercel.app/Home)**
+
+---
+
 ## 🔍 About the Project
 
 MiniStore is a landing page / online store with a product catalog, hero section, and basic e-commerce UI blocks.
@@ -37,28 +44,10 @@ The design is based on a free-to-use layout (no copyright issues).
 
 * **React**
 * **TypeScript**
-* **Vite**
+* **TanStack Query**
+* **react-hook-form**
+* **Zustand**
 * **Tailwind CSS**
-* **Modular architecture**
-* **Alias imports** (`@/`, `@components`, `@ui`, etc.)
-
----
-
-## 📁 Project Architecture
-
-The project follows a simple modular architecture:
-
-```
-src/
- ├─ app/        # Application initialization
- ├─ pages/      # Pages
- ├─ modules/    # Business modules
- ├─ components/ # Shared components
- ├─ ui/         # UI components
- ├─ assets/     # Static assets
-```
-
-**index.ts** files are used for component re-exports.
 
 ---
 
@@ -92,7 +81,7 @@ http://localhost:5173
 
 ## 📸 Preview
 
-> Screenshot of the main page
+> <img width="1904" height="906" alt="image" src="https://github.com/user-attachments/assets/4d3a011e-4a56-456e-a315-c939a157ad79" />
 
 ---
 
@@ -101,7 +90,6 @@ http://localhost:5173
 * Improve React + TypeScript skills
 * Practice Tailwind CSS
 * Understand frontend application architecture
-* Prepare a portfolio-ready project
 
 ---
 
