@@ -2,9 +2,12 @@ import CartStore from "@/pages/store/CartStore"
 import { ProductInCart } from "./components/ProductInCart";
 import { Button } from "@/ui/Button";
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { scrolToTop } from "@/assets/scrolToTopFunction";
 
 
 const CartProductZone = () => {
+    const navigation = useNavigate();
     const cartStore = CartStore((state) => state.basket);
     const totals = CartStore((state) => state.totals)
     const calculateTotals = CartStore((state) => state.calculateTotals);
@@ -39,7 +42,10 @@ const CartProductZone = () => {
                     <hr className="text-[#c9bcbc] my-3.5" />
 
                     <div className="flex flex-wrap items-center gap-4">
-                        <div className="w-full sm:w-auto">
+                        <div onClick={()=>{
+                                navigation("/Shop");
+                                scrolToTop();
+                            }} className="w-full sm:w-auto">
                             <Button bgColor="var(--black-block-color)" type="button" value="CONTINUE SHOPPING" />
                         </div>
                         <div className="w-full sm:w-auto">
