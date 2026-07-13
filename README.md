@@ -6,9 +6,9 @@ This project is built as a pet project and is aimed at the **Junior Frontend Dev
 
 ---
 
-## 🚀 Демо
+## 🚀 Demo
 
-Посмотреть проект вживую можно здесь:  
+You can view the live project here:
 👉 **[mini-store-5yqkj2tnf-andrei20.vercel.app](https://mini-store-5yqkj2tnf-andrei20.vercel.app/Home)**
 
 ---
