@@ -6,6 +6,7 @@ import { Contact } from "@pages/Contact"
 import { Shop } from "@pages/Shop"
 import { ProductPage } from "./pages/ProductPage"
 import Cart from "./pages/Cart/Cart"
+import { NotFoundPage } from "./pages/404"
 
 const AppRoutes = () => {
     const navigationRoutes = [
@@ -40,6 +41,10 @@ const AppRoutes = () => {
         {
             path: "Cart",
             element: <Cart/>
+        },
+        {
+            path: "*",
+            element: <NotFoundPage/>
         }
     ]
 
