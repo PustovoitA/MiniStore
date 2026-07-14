@@ -9,7 +9,7 @@ This project is built as a pet project and is aimed at the **Junior Frontend Dev
 ## 🚀 Demo
 
 You can view the live project here:
-👉 **[mini-store-5yqkj2tnf-andrei20.vercel.app](https://mini-store-5yqkj2tnf-andrei20.vercel.app/Home)**
+👉 **[mini-store-git-main-andrei20.vercel.app](https://mini-store-git-main-andrei20.vercel.app)**
 
 ---
 
