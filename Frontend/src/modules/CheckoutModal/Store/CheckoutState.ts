@@ -1,16 +1,17 @@
-import { create } from "zustand";
-import { persist } from "zustand/middleware";
+// import { create } from "zustand";
+// import { persist } from "zustand/middleware";
 
-interface TypeCheckoutState {
-    isOpen: boolean
-}
+// interface TypeCheckoutState {
+//     isOpen: boolean
+// }
 
 
-const CheckoutState = create<TypeCheckoutState>()(
-    persist(
-        (set, get) => ({
-            isOpen: false
-        }),
-        {name: "checkout-store"}
-    )
-)
+// const CheckoutState = create<TypeCheckoutState>()(
+//     persist(
+//         (set, get) => ({
+//             isOpen: false
+//         }),
+//         {name: "checkout-store"}
+//     )
+// )
+// export default CheckoutState
