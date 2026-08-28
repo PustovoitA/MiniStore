@@ -51,10 +51,10 @@ export const ProductInCart = memo(({item}:Props) => {
 
         <div className="flex items-center justify-between md:justify-around w-full md:w-[50%] gap-4 min-w-0">
             <QuantityCounter selectedCountProduct={selectedCountProduct} setSelectedCountProduct={setSelectedCountProduct} maxCountProduct={item.product.count}/>
-            <p className="text-(--blue-color) text-[22px] md:text-[35px] whitespace-nowrap shrink-0 min-w-[90px] md:min-w-[130px] text-right">{`$${subtotal.toFixed(2)}`}</p>
+            <p className="text-(--blue-color) text-[22px] md:text-[35px] whitespace-nowrap shrink-0 min-w-22.5 md:min-w-32.5 text-right">{`$${subtotal.toFixed(2)}`}</p>
         </div>
 
-        <span onClick={()=>deleteItem(item.product)} style={{fontSize: 28}} className="material-symbols-outlined absolute top-0 right-0 md:top-1/2 md:-translate-y-1/2 cursor-pointer md:!text-[35px]">close</span>
+        <span onClick={()=>deleteItem(item.product)} style={{fontSize: 28}} className="material-symbols-outlined absolute top-0 right-0 md:top-1/2 md:-translate-y-1/2 cursor-pointer md:text-[35px]!">close</span>
     </div>
     <hr className="text-[#c9bcbc] my-3.5" />
     </>)
