@@ -2,6 +2,7 @@ import { ProductCart } from "@/components/ProductCart";
 import { useEffect, useState } from "react";
 import { usePhonesOrWatches } from "@/hooks/usePhonesOrWatches";
 import type { Product } from "@/types/Product";
+import SkeletonCard from "./components/SkeletonCard";
 
 const HomeProductZone = () => {
     const [phonePage, setPhonePage] = useState(1);
@@ -32,7 +33,7 @@ const HomeProductZone = () => {
 
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4.5 w-full products">
         {phonesQuery.isLoading
-          ? <p>Loading....</p>
+          ? new Array(5).fill(0).map((_,id) => <SkeletonCard key={id}/>)
           : phonesQuery.isError
           ? <p>Error</p>
           : phonesQuery.data?.map((el: Product) => (
@@ -41,7 +42,9 @@ const HomeProductZone = () => {
         }
       </div>
 
-      <div className="switcher flex items-center justify-center gap-4 w-full">
+      {phonesQuery.isLoading
+      ? null
+      : <div className="switcher flex items-center justify-center gap-4 w-full">
         {Array.from({ length: Math.ceil(maxProducts / limitProductsOnPage) }, (_, i) => (
           <span
             onClick={() => setPhonePage(i + 1)}
@@ -54,6 +57,8 @@ const HomeProductZone = () => {
           />
         ))}
       </div>
+      }
+      
     </section>
 
     <section className="watches_sec flex flex-col items-center gap-5 w-full sm:w-(--width) max-w-full">
@@ -67,7 +72,7 @@ const HomeProductZone = () => {
 
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4.5 w-full products">
         {watchesQuery.isLoading
-          ? <p>Loading...</p>
+          ? new Array(5).fill(0).map((_,id) => <SkeletonCard key={id}/>)
           : watchesQuery.isError
           ? <p>Error</p>
           : watchesQuery.data?.map((el: Product) => (
@@ -75,8 +80,9 @@ const HomeProductZone = () => {
             ))
         }
       </div>
-
-      <div className="switcher flex items-center justify-center gap-4 w-full">
+      {watchesQuery.isLoading
+      ? null
+      : <div className="switcher flex items-center justify-center gap-4 w-full">
         {Array.from({ length: Math.ceil(maxProducts / limitProductsOnPage) }, (_, i) => (
           <span
             onClick={() => setWatachPage(i + 1)}
@@ -89,6 +95,8 @@ const HomeProductZone = () => {
           />
         ))}
       </div>
+      }
+      
     </section>
 
   </div>

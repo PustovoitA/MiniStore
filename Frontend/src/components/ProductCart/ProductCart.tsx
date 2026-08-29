@@ -13,7 +13,7 @@ const ProductCart = memo(({item}:Props) => {
 
     return (
   <div className="flex flex-col items-center gap-2 w-full">
-    <div className="image_block group flex flex-col items-center w-full aspect-[3/4] relative overflow-hidden">
+    <div className="image_block group flex flex-col items-center w-full aspect-3/4 relative overflow-hidden">
       <img
         onClick={() => {
           navigate(`/product/${item.id}`);
