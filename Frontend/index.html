@@ -4,6 +4,21 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    
+    <!-- styles for loading screen -->
+    <style>
+    #initial-loader {
+      position: fixed; inset: 0;
+      display: flex; align-items: center; justify-content: center;
+      background: #ffffff; z-index: 9999;
+    }
+    .spinner {
+      width: 60px; height: 60px;
+      border: 4px solid #cac9c9; border-top-color: #191919;
+      border-radius: 50%; animation: spin .8s linear infinite;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+  </style>
 
     <!-- Jost -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -24,7 +39,11 @@
     <title>MiniStore</title>
   </head>
   <body>
-    <div id="root"></div>
+    <div id="root">
+      <div id="initial-loader">
+        <div class="spinner"></div>
+      </div>
+    </div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
