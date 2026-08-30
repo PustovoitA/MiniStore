@@ -12,7 +12,7 @@ const HistoryRoutes = create<TypesHistoryRoutes>()(
     (set) => ({
       list: ["/Home"],
 
-    setPathInList: (path) => {
+      setPathInList: (path) => {
         set((state) => {
             if (state.list[state.list.length - 1] === path) return state
 
@@ -20,9 +20,9 @@ const HistoryRoutes = create<TypesHistoryRoutes>()(
                 list: [...state.list, path]
             }
         })
-    },
+      },
 
-    deletePath: (path) => {
+      deletePath: (path) => {
         set((state) => {
           const index = state.list.indexOf(path)
 
@@ -38,6 +38,5 @@ const HistoryRoutes = create<TypesHistoryRoutes>()(
       name: "history-routes-storage"
     }
   )
-);
-
+)
 export default HistoryRoutes;
