@@ -21,7 +21,7 @@ interface CartItem {
     quantity: number
 }
 
-type Notification = {open: boolean, value: "success" | "error"}
+type Notification = {isOpen: boolean, value: "success" | "error"}
 type Totals = {itemId: string, price: number}
 
 
@@ -30,12 +30,12 @@ const CartStore = create<TypeCartStore>()(
         (set, get) => ({
 
             basket: [],
-            notification: {open: false, value: "success"},
+            notification: {isOpen: false, value: "success"},
             totals: [],
 
             setItemInCart(item, selectedCount){
                 if(!item){
-                    set({notification:{open: true, value: "error"}})
+                    set({notification:{isOpen: true, value: "error"}})
                     return false
                 }
 
@@ -47,7 +47,7 @@ const CartStore = create<TypeCartStore>()(
 
                 set((state) => ({
                     basket: [...state.basket, {product: item, quantity: selectedCount}],
-                    notification: {open: true, value: "success"},
+                    notification: {isOpen: true, value: "success"},
                 }));
 
                 return true
@@ -73,7 +73,7 @@ const CartStore = create<TypeCartStore>()(
                         }
                         : el
                     ),
-                    notification: { open: true, value: "success" }
+                    notification: { isOpen: true, value: "success" }
                 }));
             },
 

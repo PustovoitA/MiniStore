@@ -1,7 +1,8 @@
-import CartStore from "@/pages/store/CartStore"
-import { useEffect } from "react";
+import styles from "./CartNotification.module.css"
 
-import styles from "./CartNotification.module.css";
+import CartStore from "@/pages/store/CartStore"
+
+import { useEffect } from "react"
 
 const CartNotification = () => {
     const notification = CartStore((state) => state.notification);
@@ -19,25 +20,23 @@ const CartNotification = () => {
     }
 
     useEffect(()=>{
-        if(!notification.open) return;
+        if(!notification.isOpen) return;
 
         const timer = setTimeout(()=> {
             setNotification({
-                open: false,
+                isOpen: false,
                 value: notification.value
             })
         }, 3000);
 
         return () => clearTimeout(timer);
-    },[notification.open])
+    },[notification.isOpen])
 
-    if(!notification.open) return null
+    if(!notification.isOpen) return null
 
-    if(notification.open){
     return(<div key={Date.now()} style={{background: context.bgCol}} className={`${styles.notification}`} >
-            <span className="material-symbols-outlined text-[18px]">{context.icon}</span>
-            <p>{context.massage}</p>
-        </div>)}
-    }
-
+        <span className="material-symbols-outlined text-[18px]">{context.icon}</span>
+        <p>{context.massage}</p>
+    </div>)
+}
 export default CartNotification
