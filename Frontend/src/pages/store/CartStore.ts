@@ -1,24 +1,24 @@
 import type { Product } from "@/types/Product";
+
 import { create } from "zustand";
 import { persist } from "zustand/middleware";
 
-type TypeCartStore = {
+interface TypeCartStore {
     basket: CartItem[],
     notification: Notification,
     totals: Totals[],
     setItemInCart: (item: Product | undefined, selectedCount: number) => boolean,
-    setNotification: (item: Notification) => void
     deleteItemFromCart: (item: Product | undefined) => void,
-    clearState: () => void,
-    updateQuantity: (itemId: string, quantity: number) => void,
     incrementQuantity: (item: Product, selectedCount: number) => void,
+    updateQuantity: (itemId: string, quantity: number) => void,
+    setNotification: (item: Notification) => void,
     updateTotals: (item: Totals) => void,
-    calculateTotals: () => number,
+    calculateTotals: () => number
 }
 
-type CartItem = {
+interface CartItem {
     product: Product,
-    quantity: number,
+    quantity: number
 }
 
 type Notification = {open: boolean, value: "success" | "error"}
@@ -51,6 +51,16 @@ const CartStore = create<TypeCartStore>()(
                 }));
 
                 return true
+            },
+
+            deleteItemFromCart(item){
+                set((state) => {
+                    if(!item) return {basket: [...state.basket]}
+                    return{
+                        basket: state.basket.filter(el => el.product !== item),
+                        totals: state.totals.filter(el => el.itemId !== item.id),
+                    }
+                })
             },
 
             incrementQuantity(item, selectedCount){
@@ -118,24 +128,9 @@ const CartStore = create<TypeCartStore>()(
                 const curTotals = get().totals;
                 const newArr = curTotals.map(el => el.price);
                 return newArr.reduce((el, temp) => el + temp, 0)
-            },
-
-            deleteItemFromCart(item){
-                set((state) => {
-                    if(!item) return {basket: [...state.basket]}
-                    return{
-                        basket: state.basket.filter(el => el.product !== item),
-                        totals: state.totals.filter(el => el.itemId !== item.id),
-                    }
-                })
-            },
-
-            clearState(){
-                set(()=>{return{basket: []}})
-            },
+            }
         }),
         {name: "cart-storage"}
     )
 )
-
 export default CartStore
