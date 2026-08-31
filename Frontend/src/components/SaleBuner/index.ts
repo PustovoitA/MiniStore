@@ -1,0 +1,1 @@
+export {default as SaleBuner} from "./SaleBuner"
