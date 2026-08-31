@@ -2,7 +2,7 @@ import { Button } from "@/ui/Button"
 
 import { useNavigate } from "react-router-dom";
 
-const HomeBuner = () => {
+const SaleBuner = () => {
     const navigate = useNavigate();
 
     return (
@@ -32,4 +32,4 @@ const HomeBuner = () => {
         </div>
     );
 }
-export default HomeBuner;
+export default SaleBuner;

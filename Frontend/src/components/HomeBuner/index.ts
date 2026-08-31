@@ -1,1 +1,1 @@
-export {default as HomeBuner} from "./HomeBuner"
+export {default as SaleBuner} from "./SaleBuner"
