@@ -1,5 +1,5 @@
 import { CustomerBenefits } from "@/ui/CustomerBenefits"
-import { SaleBuner } from "@/components/HomeBuner"
+import { SaleBuner } from "@/components/SaleBuner"
 import { HomeSlider } from "@/components/HomeSlider"
 import PageBuner from "@/components/PageBuner/PageBuner"
 import { HomeProductZone } from "@/modules/HomeProductZone"
