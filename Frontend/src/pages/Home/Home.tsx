@@ -1,4 +1,4 @@
-import { CustomerBenefits } from "@/components/CustomerBenefits"
+import { CustomerBenefits } from "@/ui/CustomerBenefits"
 import { HomeBuner } from "@/components/HomeBuner"
 import { HomeSlider } from "@/components/HomeSlider"
 import PageBuner from "@/components/PageBuner/PageBuner"
