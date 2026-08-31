@@ -1,4 +1,5 @@
 import { addProductInCart } from "@/assets/cartFunctions"
+import { calculateDiscount, hasDiscount } from "@/assets/discount"
 import { QuantityCounter } from "@/components/QuantityCounter"
 import type { Product } from "@/types/Product"
 
@@ -21,21 +22,17 @@ export const CharProdZone = memo(({item}:Props) => {
         setCurrSizeProduct(item?.size?.[0]?.size);
     },[item]);
 
-    function calculateDiscount(price:number, discount:number):string{
-        const result = price - (price * discount / 100)
-        return result.toFixed(2);
-    }
 
     return (<div className="flex flex-col items-center lg:items-start gap-3 font-[Jost] text-center lg:text-left w-full">
     <h1 className="text-2xl sm:text-[30px]">{item?.name.toUpperCase()}</h1>
-    {item!.discount === null
+    {hasDiscount(item!.discount)
         ?
-            <p className="text-(--blue-color) text-2xl sm:text-[30px]">${item?.price.toFixed(2)}</p>
-        :
             <div>
                 <p className="text-(--grey-text-color) text-lg sm:text-[20px] line-through">${item?.price.toFixed(2)}</p>
                 <p className="text-[#ea0404] text-2xl sm:text-[30px]">${calculateDiscount(item?.price!, item?.discount!)}</p>
             </div>
+        :
+            <p className="text-(--blue-color) text-2xl sm:text-[30px]">${item?.price.toFixed(2)}</p>
     }
     <p className="shirt_description text-(--grey-text-color) w-full max-w-150 text-sm sm:text-base">
         Justo, cum feugiat imperdiet nulla molestie ac vulputate scelerisque amet.
