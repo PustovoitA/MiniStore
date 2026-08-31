@@ -1,38 +1,39 @@
+import { calculateDiscount } from "@/assets/discount"
 import { QuantityCounter } from "@/components/QuantityCounter"
+
 import CartStore from "@/pages/store/CartStore"
+
 import type { Product } from "@/types/Product"
+
 import { memo, useEffect, useState } from "react"
 import { useNavigate } from "react-router-dom"
 
-type Props = {
+interface Props {
     item: CartItem,
 }
 
-type CartItem = {
+interface CartItem {
     product: Product,
     quantity: number
 }
 
-export const ProductInCart = memo(({item}:Props) => {
+export const CartItem = memo(({item}:Props) => {
     const navigate = useNavigate();
 
-    const [selectedCountProduct, setSelectedCountProduct] = useState(item.quantity);
-    const price = item.product.discount !== null
-    ? item.product.price - (item.product.price * item.product.discount! / 100)
-    : item.product.price
-    const [subtotal, setSubtotal] = useState(selectedCountProduct * price);
     const deleteItem = CartStore((state) => state.deleteItemFromCart);
     const updateQuantity = CartStore((state) => state.updateQuantity);
     const updateTotals = CartStore((state) => state.updateTotals);
 
+    const [selectedCountProduct, setSelectedCountProduct] = useState(item.quantity);
+    const price = calculateDiscount(item.product.price, item.product.discount);
+    const [subtotal, setSubtotal] = useState(selectedCountProduct * price);
+
+
     useEffect(()=>{
         setSubtotal(selectedCountProduct * price);
         updateQuantity(item.product.id, selectedCountProduct);
-    },[selectedCountProduct])
-
-    useEffect(()=>{
         updateTotals({itemId: item.product.id, price: subtotal});
-    },[subtotal])
+    },[selectedCountProduct]);
 
     return(<>
     <div className="relative flex flex-col md:flex-row items-start md:items-center justify-between w-full min-h-fit md:h-50 my-2.5 gap-4 md:gap-2 pr-10 md:pr-14">
