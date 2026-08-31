@@ -4,7 +4,7 @@ import Total from "./components/Total";
 import CartStore from "@/pages/store/CartStore"
 
 
-const CartProductZone = () => {
+const CartSection = () => {
     const cartStore = CartStore((state) => state.basket);
 
     return (<div className="flex justify-center font-[Jost] w-full my-10 md:my-20 px-4 sm:px-6">
@@ -27,4 +27,4 @@ const CartProductZone = () => {
         </div>
     </div>)
 }
-export default CartProductZone
+export default CartSection

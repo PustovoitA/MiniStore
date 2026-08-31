@@ -1,10 +1,10 @@
 import PageBuner from "@/components/PageBuner/PageBuner"
-import { CartProductZone } from "@/modules/CartProductZone"
+import CartSection from "@/modules/CartSection/CartSection"
 
 const Cart = () => {
     return(<>
     <PageBuner/>
-    <CartProductZone/>
+    <CartSection/>
     </>)
 }
 
