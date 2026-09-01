@@ -1,4 +1,4 @@
-import CartStore from "@/pages/store/CartStore";
+import CartStore from "@/store/CartStore";
 import { useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom"
 

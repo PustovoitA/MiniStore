@@ -1,7 +1,7 @@
 import { calculateDiscount } from "@/assets/discount"
 import { QuantityCounter } from "@/components/QuantityCounter"
 
-import CartStore from "@/pages/store/CartStore"
+import CartStore from "@/store/CartStore"
 
 import type { Product } from "@/types/Product"
 
