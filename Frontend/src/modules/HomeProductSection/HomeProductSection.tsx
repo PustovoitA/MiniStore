@@ -9,7 +9,7 @@ import type { Product } from "@/types/Product";
 import { paginationConfig } from "./object/paginationConfig";
 
 
-const HomeProductZone = () => {
+const HomeProductSection = () => {
     const [phonePage, setPhonePage] = useState(1);
     const [watchPage, setWatachPage] = useState(1);
 
@@ -106,4 +106,4 @@ const HomeProductZone = () => {
 )
 }
 
-export default HomeProductZone;
+export default HomeProductSection;
