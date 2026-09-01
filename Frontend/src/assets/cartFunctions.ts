@@ -1,4 +1,4 @@
-import CartStore from "@/pages/store/CartStore";
+import CartStore from "@/store/CartStore";
 import type { Product } from "@/types/Product";
 
 

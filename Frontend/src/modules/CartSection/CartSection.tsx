@@ -1,7 +1,7 @@
 import { CartItem } from "./components/CartItem";
 import Total from "./components/Total";
 
-import CartStore from "@/pages/store/CartStore"
+import CartStore from "@/store/CartStore"
 
 
 const CartSection = () => {

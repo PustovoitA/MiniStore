@@ -1,16 +1,19 @@
 import { ProductCart } from "@/components/ProductCart";
-import { useEffect, useState } from "react";
-import { usePhonesOrWatches } from "@/hooks/usePhonesOrWatches";
-import type { Product } from "@/types/Product";
 import SkeletonCard from "./components/SkeletonCard";
 
-const HomeProductZone = () => {
+import { useEffect, useState } from "react";
+import { usePhonesOrWatches } from "@/hooks/usePhonesOrWatches";
+
+import type { Product } from "@/types/Product";
+
+import { paginationConfig } from "./object/paginationConfig";
+
+
+const HomeProductSection = () => {
     const [phonePage, setPhonePage] = useState(1);
     const [watchPage, setWatachPage] = useState(1);
 
-    const totalPages = 3;
-    const limitProductsOnPage = 5;
-    const maxProducts = 15;
+    const {totalPages, limitProductsOnPage, maxProducts} = paginationConfig;
 
     useEffect(() => {
         if(phonePage > totalPages) setPhonePage(1);
@@ -103,4 +106,4 @@ const HomeProductZone = () => {
 )
 }
 
-export default HomeProductZone;
+export default HomeProductSection;

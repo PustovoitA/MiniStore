@@ -1,4 +1,4 @@
-import HistoryRoutes from "@/pages/store/PagesStore";
+import HistoryRoutes from "@/store/PagesStore";
 
 import { useEffect } from "react";
 import { useLocation, useNavigate } from "react-router-dom";

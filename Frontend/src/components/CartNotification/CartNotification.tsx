@@ -1,6 +1,6 @@
 import styles from "./CartNotification.module.css"
 
-import CartStore from "@/pages/store/CartStore"
+import CartStore from "@/store/CartStore"
 
 import { useEffect } from "react"
 

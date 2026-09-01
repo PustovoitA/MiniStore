@@ -2,7 +2,7 @@ import { scrolToTop } from "@/assets/scrolToTopFunction";
 
 import { Button } from "@/ui/Button";
 
-import CartStore from "@/pages/store/CartStore";
+import CartStore from "@/store/CartStore";
 
 import { useMemo } from "react";
 import { useNavigate } from "react-router-dom";
