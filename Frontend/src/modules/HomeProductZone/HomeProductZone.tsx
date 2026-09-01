@@ -1,16 +1,19 @@
 import { ProductCart } from "@/components/ProductCart";
+import SkeletonCard from "./components/SkeletonCard";
+
 import { useEffect, useState } from "react";
 import { usePhonesOrWatches } from "@/hooks/usePhonesOrWatches";
+
 import type { Product } from "@/types/Product";
-import SkeletonCard from "./components/SkeletonCard";
+
+import { paginationConfig } from "./object/paginationConfig";
+
 
 const HomeProductZone = () => {
     const [phonePage, setPhonePage] = useState(1);
     const [watchPage, setWatachPage] = useState(1);
 
-    const totalPages = 3;
-    const limitProductsOnPage = 5;
-    const maxProducts = 15;
+    const {totalPages, limitProductsOnPage, maxProducts} = paginationConfig;
 
     useEffect(() => {
         if(phonePage > totalPages) setPhonePage(1);
