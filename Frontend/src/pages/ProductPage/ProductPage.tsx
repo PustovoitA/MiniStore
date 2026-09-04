@@ -1,4 +1,4 @@
-import ProductPageSection from "@/modules/ProductInfoZone/ProductPageSection";
+import ProductPageSection from "@/modules/ProductPageSection/ProductPageSection";
 import { useQuery } from "@tanstack/react-query";
 import { useParams } from "react-router-dom";
 

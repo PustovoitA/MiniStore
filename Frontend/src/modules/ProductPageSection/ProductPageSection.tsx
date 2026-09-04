@@ -1,3 +1,5 @@
+import styles from "./style/loader.module.css"
+
 import { ProductInfo } from "./components/ProductInfo";
 import { ProductImage } from "./components/ProductImage";
 
@@ -11,7 +13,11 @@ type Props = {
 const ProductPageSection = ({ data, isLoading }: Props) => {
 
     if (isLoading) {
-        return <p>loading...</p>
+        return (
+            <div className="flex justify-center items-center h-125 w-full mt-10 lg:mt-20 px-4 sm:px-8 lg:px-0">
+                <span className={styles.loader}></span>
+            </div>
+        )
     }
 
     return (
