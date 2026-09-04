@@ -11,7 +11,7 @@ type Props = {
     item:Product | undefined
 }
 
-export const CharProdZone = memo(({item}:Props) => {
+export const ProductInfo = memo(({item}:Props) => {
     const [currColorProduct, setCurrColorProduct] = useState<string | undefined>(item?.colors[0].color);
     const [currSizeProduct, setCurrSizeProduct] = useState<string | undefined>(item?.size?.[0]?.size);
     const [selectedCountProduct, setSelectedCountProduct] = useState(1);
