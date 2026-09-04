@@ -1,0 +1,1 @@
+export {default as ProdutctPageSection} from "./ProductPageSection"
