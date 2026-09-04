@@ -1,4 +1,4 @@
-import ProductInfoZone from "@/modules/ProductInfoZone/ProductInfoZone"
+import ProductPageSection from "@/modules/ProductInfoZone/ProductPageSection";
 import { useQuery } from "@tanstack/react-query";
 import { useParams } from "react-router-dom";
 
@@ -14,7 +14,7 @@ const ProductPage = () => {
             .then(res => res.json()),
     });
     return(<>
-        <ProductInfoZone data={data} isLoading={isLoading} />
+        <ProductPageSection data={data} isLoading={isLoading} />
     </>)
 }
 

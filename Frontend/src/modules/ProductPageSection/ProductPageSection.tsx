@@ -7,7 +7,7 @@ type Props = {
     isLoading: boolean;
 }
 
-const ProductInfoZone = ({ data, isLoading }: Props) => {
+const ProductPageSection = ({ data, isLoading }: Props) => {
 
     if (isLoading) {
         return <p>loading...</p>
@@ -33,4 +33,4 @@ const ProductInfoZone = ({ data, isLoading }: Props) => {
     )
 }
 
-export default ProductInfoZone
+export default ProductPageSection
