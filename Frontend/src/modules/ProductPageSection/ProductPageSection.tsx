@@ -1,5 +1,6 @@
 import { ProductInfo } from "./components/ProductInfo";
 import { ProductImage } from "./components/ProductImage";
+
 import type { Product } from "@/types/Product";
 
 type Props = {

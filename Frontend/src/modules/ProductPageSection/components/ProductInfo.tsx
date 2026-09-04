@@ -1,10 +1,12 @@
 import { addProductInCart } from "@/assets/cartFunctions"
 import { calculateDiscount, hasDiscount } from "@/assets/discount"
-import { QuantityCounter } from "@/components/QuantityCounter"
-import type { Product } from "@/types/Product"
 
+import { QuantityCounter } from "@/components/QuantityCounter"
 import { Button } from "@/ui/Button"
+
 import { memo, useEffect, useState } from "react"
+
+import type { Product } from "@/types/Product"
 
 
 type Props = {
