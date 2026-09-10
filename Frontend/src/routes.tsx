@@ -1,4 +1,5 @@
 import { Navigate, Route, Routes } from "react-router-dom"
+
 import { Home } from "@pages/Home"
 import { About } from "@pages/About"
 import { Blog } from "@pages/Blog"
@@ -7,6 +8,7 @@ import { Shop } from "@pages/Shop"
 import { ProductPage } from "./pages/ProductPage"
 import Cart from "./pages/Cart/Cart"
 import { NotFoundPage } from "./pages/404"
+import { Checkout } from "@pages/Checkout"
 
 const AppRoutes = () => {
     const navigationRoutes = [
@@ -41,6 +43,10 @@ const AppRoutes = () => {
         {
             path: "Cart",
             element: <Cart/>
+        },
+        {
+            path: "Checkout",
+            element: <Checkout/>
         },
         {
             path: "*",
