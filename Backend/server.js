@@ -1,19 +1,29 @@
-const jsonServer = require('json-server')
-const server = jsonServer.create()
-const router = jsonServer.router('db.json')
-const middlewares = jsonServer.defaults()
+require('dotenv').config()
+const express = require('express')
+const cors = require('cors')
+const connectDB = require('./config/db')
+const productRoutes = require('./routes/products')
 
-server.use((req, res, next) => {
-  res.header('Access-Control-Allow-Origin', '*')
-  res.header('Access-Control-Allow-Headers', '*')
-  res.header('Access-Control-Allow-Methods', '*')
-  next()
+const app = express()
+
+// Подключаемся к MongoDB перед стартом сервера
+connectDB()
+
+app.use(cors())
+app.use(express.json())
+
+app.get('/', (req, res) => {
+  res.json({ message: 'MiniStore API is running' })
 })
 
-server.use(middlewares)
-server.use(router)
+app.use('/api/products', productRoutes)
+
+// Обработка несуществующих роутов
+app.use((req, res) => {
+  res.status(404).json({ message: 'Роут не найден' })
+})
 
 const PORT = process.env.PORT || 3001
-server.listen(PORT, () => {
-  console.log(`JSON Server is running on port ${PORT}`)
+app.listen(PORT, () => {
+  console.log(`Server is running on port ${PORT}`)
 })
