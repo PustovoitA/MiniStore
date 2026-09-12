@@ -12,6 +12,7 @@ const Total = () => {
     const navigation = useNavigate();
     const totals = CartStore((state) => state.totals)
     const calculateTotals = CartStore((state) => state.calculateTotals);
+    const basket = CartStore((state) => state.basket);
 
     const calculatedTotal = useMemo(() => {
         return calculateTotals();
@@ -34,7 +35,11 @@ const Total = () => {
                     }} className="w-full sm:w-auto">
                     <Button bgColor="var(--black-block-color)" type="button" value="CONTINUE SHOPPING" />
                 </div>
-                <div className="w-full sm:w-auto">
+                <div onClick={()=>{
+                    if(basket.length){
+                        navigation("/Checkout");
+                    }
+                }} className="w-full sm:w-auto">
                     <Button bgColor="var(--black-block-color)" type="button" value="PROCEED TO CHECKOUT" />
                 </div>
             </div>
