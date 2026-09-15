@@ -9,7 +9,7 @@ const CheckoutModal = () => {
             PLACING ON ORDER
         </section>
         <div className="flex justify-center items-start gap-3 font-[Jost]">
-            <section className="w-[65%]">
+            <section className="flex flex-col gap-[15px] w-[65%]">
                 <Contacts/>
                 <Delivery/>
                 <Payment/>
