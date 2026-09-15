@@ -5,6 +5,8 @@ import {Input} from "@ui/Input"
 
 import type {InputType} from "@ui/Input"
 
+import { emailRegex } from "@/assets/regExp";
+
 const SubscibeBuner = () => {
     const {register, handleSubmit, formState, reset} = useForm<InputType>({
         mode: "onChange"
@@ -34,7 +36,7 @@ const SubscibeBuner = () => {
                     required="This file is required"
                     type="email"
                     placeholder="Your email address here"
-                    regExp={/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/}
+                    regExp={emailRegex}
                     errorMassage="Invalid email"
                     formStateError={formState}
                     width="100%"

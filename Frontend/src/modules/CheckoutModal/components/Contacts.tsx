@@ -3,17 +3,13 @@ import { useForm, type SubmitHandler } from "react-hook-form";
 
 import { Input, type InputType } from "@/ui/Input";
 
+import { lastNameRegex, firstNameRegex, middleNameRegex, emailRegex, uaPhoneRegex } from "@/assets/regExp";
+
 const Contacts = () => {
     const { handleSubmit, register, formState } = useForm<InputType>();
     const onSubmit:SubmitHandler<InputType> = (data) => {
         console.log(data);
     }
-
-    const firstNameRegex = /^[A-Za-zА-Яа-яЁёІіЇїЄєҐґ]+(?:['’-][A-Za-zА-Яа-яЁёІіЇїЄєҐґ]+)*$/;
-    const lastNameRegex = /^[A-Za-zА-Яа-яЁёІіЇїЄєҐґ]+(?:['’-][A-Za-zА-Яа-яЁёІіЇїЄєҐґ]+)*$/;
-    const middleNameRegex = /^[A-Za-zА-Яа-яЁёІіЇїЄєҐґ]+(?:['’-][A-Za-zА-Яа-яЁёІіЇїЄєҐґ]+)*$/;
-    const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-    const uaPhoneRegex = /^(?:\+?38)?\s*\(?0?(39|50|63|66|67|68|73|91|92|93|94|95|96|97|98|99)\)?[\s-]?\d{3}[\s-]?\d{2}[\s-]?\d{2}$/;
 
     return(<>
         <div 
