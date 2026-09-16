@@ -1,6 +1,8 @@
 
 
 const NovaInterface = () => {
-    return (<></>)
+    return (<>
+        Nova Poshta
+    </>)
 }
 export default NovaInterface

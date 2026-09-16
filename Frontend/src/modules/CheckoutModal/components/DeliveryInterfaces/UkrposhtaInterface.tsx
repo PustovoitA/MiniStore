@@ -1,6 +1,8 @@
 
 
 const UkrposhtaInterface = () => {
-    return (<></>)
+    return (<>
+        Ukrposhta
+    </>)
 }
 export default UkrposhtaInterface

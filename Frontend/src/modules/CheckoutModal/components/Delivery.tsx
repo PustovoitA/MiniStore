@@ -1,9 +1,19 @@
+import InStoreInterface from "./DeliveryInterfaces/InStoreInterface"
+import NovaInterface from "./DeliveryInterfaces/NovaInterface"
+import UkrposhtaInterface from "./DeliveryInterfaces/UkrposhtaInterface"
+
 import { useState } from "react"
 
 type deliveryOptionType = "In-store pickup" | "Nova Poshta" | "Ukrposhta"
 
 const Delivery = () => {
     const [deliveryOption, setDeliveryOption] = useState<deliveryOptionType>("In-store pickup")
+
+    const optionObj = {
+        "In-store pickup": <InStoreInterface/>,
+        "Nova Poshta": <NovaInterface/>,
+        "Ukrposhta": <UkrposhtaInterface/>
+    }
     
     return(<>
         <div
@@ -33,6 +43,9 @@ const Delivery = () => {
                     <span className="text-(--grey-text-color) text-[14px]">affordable terms</span>
                 </li>
             </ul>
+
+            {optionObj[deliveryOption]}
+
         </div>
     </>)
 }

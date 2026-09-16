@@ -1,6 +1,8 @@
 
 
 const InStoreInterface = () => {
-    return (<></>)
+    return (<>
+        InStoreInterface
+    </>)
 }
 export default InStoreInterface
