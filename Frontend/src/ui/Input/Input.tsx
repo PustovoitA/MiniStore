@@ -1,19 +1,7 @@
-
-import type { FormState, UseFormRegister } from "react-hook-form"
-import type { InputType } from "./InputType"
+import type { InputProps } from "../types/InputTypes"
 
 
-type InputProps = {
-    type: "password" | "text" | "email",
-    register: UseFormRegister<InputType>,
-    placeholder: string,
-    regExp: RegExp,
-    errorMassage: string,
-    formStateError: FormState<InputType> | undefined,
-    width: string,
-    required: "This file is required" | boolean,
-    ClassName: string
-}
+
 
 const Input = ({type, register, placeholder, regExp, errorMassage, formStateError, width, required}:InputProps) => {
     return(<div className="flex flex-col">
