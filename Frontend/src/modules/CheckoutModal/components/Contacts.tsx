@@ -1,7 +1,9 @@
 
 import { useForm, type SubmitHandler } from "react-hook-form";
 
-import { Input, type InputType } from "@/ui/Input";
+import { Input} from "@/ui/Input";
+
+import type { InputType } from "@/ui/types/InputTypes";
 
 import { lastNameRegex, firstNameRegex, middleNameRegex, emailRegex, uaPhoneRegex } from "@/assets/regExp";
 

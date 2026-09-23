@@ -3,7 +3,7 @@ import { useForm, type SubmitHandler } from "react-hook-form";
 import {Button} from "@ui/Button"
 import {Input} from "@ui/Input"
 
-import type {InputType} from "@ui/Input"
+import type { InputType } from "@/ui/types/InputTypes";
 
 import { emailRegex } from "@/assets/regExp";
 
