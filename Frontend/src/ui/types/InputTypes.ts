@@ -1,10 +1,11 @@
 import type { FormState, UseFormRegister } from "react-hook-form"
 
 
-type InputType = {
+export type InputType = {
     email: string | undefined,
     password:string | undefined,
-    text:string | undefined
+    text:string | undefined,
+    store: string | undefined
 }
 
 export type InputProps = {
