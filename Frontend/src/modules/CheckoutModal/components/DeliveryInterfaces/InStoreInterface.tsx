@@ -1,10 +1,12 @@
-import { Select } from "@/ui/Select"
+import { Select } from "@/ui/Select";
+
 import type { InputType } from "@ui/types/InputTypes";
+
 import { useForm, type SubmitHandler } from "react-hook-form";
 
 
 const InStoreInterface = () => {
-    const { handleSubmit, register, formState } = useForm<InputType>();
+    const { handleSubmit, register, formState, setValue } = useForm<InputType>();
     const onSubmit:SubmitHandler<InputType> = (data) => {
         console.log(data);
     }
@@ -31,6 +33,7 @@ const InStoreInterface = () => {
             placeholder="Select a store"
             errorMassage="Select a store"
             formStateError={formState}
+            setValue={setValue}
             width="100%"
             required="This field is required"
             ClassName=""

@@ -1,4 +1,4 @@
-import type { FormState, UseFormRegister } from "react-hook-form"
+import type { FormState, UseFormRegister, UseFormSetValue } from "react-hook-form"
 
 
 export type InputType = {
@@ -32,6 +32,7 @@ export type SelectProps = {
     placeholder?: string,
     errorMassage: string,
     formStateError: FormState<InputType> | undefined,
+    setValue: UseFormSetValue<InputType>,
     width: string,
     required: "This field is required" | boolean,
     ClassName?: string

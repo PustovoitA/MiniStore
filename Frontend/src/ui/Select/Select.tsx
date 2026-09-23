@@ -1,9 +1,14 @@
 import { useState } from "react"
+
 import type { SelectProps } from "../types/InputTypes"
 
-const Select = ({name, register, options, placeholder, errorMassage, formStateError, width, required}: SelectProps) => {
+const Select = ({name, register, options, placeholder, errorMassage, formStateError, setValue, width, required}: SelectProps) => {
     const [isOpen, setIsOpen] = useState(false);
 
+    const handleSelect = (value: string) => {
+        setValue(name, value, { shouldValidate: true });
+        setIsOpen(false);
+    }
 
     return (<div className="flex flex-col relative">
         <input
@@ -26,7 +31,7 @@ const Select = ({name, register, options, placeholder, errorMassage, formStateEr
 
         {isOpen
         ?<div className="list-none absolute top-full border border-(--border) bg-white w-full scroll-auto max-h-[200px] overflow-y-auto">
-            {options.map(el => <li className="p-1 cursor-pointer w-full hover:bg-(--grey-light-color)" key={el.value}>{el.label}</li>)}
+            {options.map(el => <li onMouseDown={(e) => {e.preventDefault(); handleSelect(el.label)}} className="p-1 cursor-pointer w-full hover:bg-(--grey-light-color)" key={el.value}>{el.label}</li>)}
         </div>
         :null
         }
