@@ -30,17 +30,16 @@ const Select = ({name, register, options, placeholder, errorMassage, formStateEr
         </div>
 
         {isOpen
-        ?<div className="list-none absolute top-full border border-(--border) bg-white w-full scroll-auto max-h-[200px] overflow-y-auto">
+        ? formStateError?.errors[name]?.message
+        ? <span className="text-black w-full border border-(--border) p-1">{formStateError.errors[name]?.message as string}</span>
+        : <div className="list-none absolute top-full border border-(--border) bg-white w-full scroll-auto max-h-[200px] overflow-y-auto">
             {options.map(el => <li onMouseDown={(e) => {e.preventDefault(); handleSelect(el.label)}} className="p-1 cursor-pointer w-full hover:bg-(--grey-light-color)" key={el.value}>{el.label}</li>)}
         </div>
-        :null
+        : null
         }
         
 
-        {formStateError?.errors[name]?.message &&
-        (<span className="ml-3.75 text-red-600">
-            {formStateError.errors[name]?.message as string}
-        </span>)}
+        
     </div>)
 }
 

@@ -6,7 +6,11 @@ import { useForm, type SubmitHandler } from "react-hook-form";
 
 
 const InStoreInterface = () => {
-    const { handleSubmit, register, formState, setValue } = useForm<InputType>();
+    const { handleSubmit, register, formState, setValue } = useForm<InputType>(
+        {
+            mode: "onChange"
+        }
+    );
     const onSubmit:SubmitHandler<InputType> = (data) => {
         console.log(data);
     }
