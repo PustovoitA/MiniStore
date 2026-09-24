@@ -7,7 +7,8 @@ const Select = ({name, register, options, placeholder, errorMassage, formStateEr
 
     const handleSelect = (value: string) => {
         setValue(name, value, { shouldValidate: true });
-        setIsOpen(false);
+        const input = document.querySelector('input[name="store"]') as HTMLInputElement
+        input?.blur()
     }
 
     return (<div className="flex flex-col relative">
@@ -31,7 +32,7 @@ const Select = ({name, register, options, placeholder, errorMassage, formStateEr
 
         {isOpen
         ? formStateError?.errors[name]?.message
-        ? <span className="text-black w-full border border-(--border) p-1">{formStateError.errors[name]?.message as string}</span>
+        ? <span className="absolute top-full text-black w-full border border-(--border) p-1">{formStateError.errors[name]?.message as string}</span>
         : <div className="list-none absolute top-full border border-(--border) bg-white w-full scroll-auto max-h-[200px] overflow-y-auto">
             {options.map(el => <li onMouseDown={(e) => {e.preventDefault(); handleSelect(el.label)}} className="p-1 cursor-pointer w-full hover:bg-(--grey-light-color)" key={el.value}>{el.label}</li>)}
         </div>
