@@ -1,9 +1,11 @@
 import { useState } from "react"
 
 import type { SelectProps } from "../types/InputTypes"
+import { useDebounce } from "@/hooks/useDebounce";
 
 const Select = ({name, register, options, placeholder, errorMassage, formStateError, setValue, width, required}: SelectProps) => {
     const [isOpen, setIsOpen] = useState(false);
+    const [renderOptions, setRenderOptions] = useState(options);
 
     const handleSelect = (value: string) => {
         setValue(name, value, { shouldValidate: true });
@@ -11,15 +13,32 @@ const Select = ({name, register, options, placeholder, errorMassage, formStateEr
         input?.blur()
     }
 
+    const serchStore = (value: string) => {
+        if (value === "") {
+            setRenderOptions(options)
+            return
+        }
+        const newOptions = options.filter((el) => el.label.includes(value))
+        setRenderOptions(newOptions)
+    }
+    const debounceSerch = useDebounce(serchStore, 300);
+
     return (<div className="flex flex-col relative">
         <input
         onFocus = {() => setIsOpen(true) }
+        onInput={(e) => {
+            const value = e.target as HTMLInputElement
+            debounceSerch(value.value)
+         }}
         className="border border-(--border) px-5.5 py-3.75 bg-(--white-color) outline-0 appearance-none cursor-pointer"
         style={{width:width}}
         placeholder={placeholder}
         {...register(name, {
             required: required,
-            validate: (value) => value !== "" || errorMassage,
+            validate: (value) => {
+                if (!value) return true
+                return options.some((el) => el.label.includes(value)) || errorMassage
+            },
             onBlur: () => setIsOpen(false)
         })}
         />
@@ -34,7 +53,7 @@ const Select = ({name, register, options, placeholder, errorMassage, formStateEr
         ? formStateError?.errors[name]?.message
         ? <span className="absolute top-full text-black w-full border border-(--border) p-1">{formStateError.errors[name]?.message as string}</span>
         : <div className="list-none absolute top-full border border-(--border) bg-white w-full scroll-auto max-h-[200px] overflow-y-auto">
-            {options.map(el => <li onMouseDown={(e) => {e.preventDefault(); handleSelect(el.label)}} className="p-1 cursor-pointer w-full hover:bg-(--grey-light-color)" key={el.value}>{el.label}</li>)}
+            {renderOptions.map(el => <li onMouseDown={(e) => {e.preventDefault(); handleSelect(el.label)}} className="p-1 cursor-pointer w-full hover:bg-(--grey-light-color)" key={el.value}>{el.label}</li>)}
         </div>
         : null
         }
