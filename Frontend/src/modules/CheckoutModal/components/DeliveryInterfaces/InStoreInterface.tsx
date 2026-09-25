@@ -35,7 +35,7 @@ const InStoreInterface = () => {
                 { value: "12", label: "MiniStore ТРЦ Depo, м. Вінниця, вул. Хмельницьке шосе, 2" },
             ]}
             placeholder="Select a store"
-            errorMassage="Select a store"
+            errorMassage="Store not found, please check the spelling."
             formStateError={formState}
             setValue={setValue}
             width="100%"
