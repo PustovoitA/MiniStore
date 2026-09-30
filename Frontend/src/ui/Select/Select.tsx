@@ -18,7 +18,7 @@ const Select = ({name, register, options, placeholder, errorMassage, formStateEr
             setRenderOptions(options)
             return
         }
-        const newOptions = options.filter((el) => el.label.includes(value))
+        const newOptions = options.filter((el) => el.label.toLowerCase().includes(value.toLowerCase()))
         setRenderOptions(newOptions)
     }
     const debounceSerch = useDebounce(serchStore, 300);
@@ -37,7 +37,7 @@ const Select = ({name, register, options, placeholder, errorMassage, formStateEr
             required: required,
             validate: (value) => {
                 if (!value) return true
-                return options.some((el) => el.label.includes(value)) || errorMassage
+                return options.some((el) => el.label.toLowerCase().includes(value.toLowerCase())) || errorMassage
             },
             onBlur: () => setIsOpen(false)
         })}
