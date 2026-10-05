@@ -37,3 +37,9 @@ export type SelectProps = {
     required: "This field is required" | boolean,
     ClassName?: string
 }
+
+export type RadioGroupProps = {
+    options: string[]
+    value: string
+    onChange: (value: string) => void
+}
