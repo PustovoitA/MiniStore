@@ -17,12 +17,12 @@ export type InputProps = {
     formStateError: FormState<InputType> | undefined,
     width: string,
     required: "This file is required" | boolean,
-    ClassName: string
+    ClassName: string,
 }
 
 type Option = {
     value: string,
-    label: string
+    label: string,
 }
 
 export type SelectProps = {
@@ -35,11 +35,13 @@ export type SelectProps = {
     setValue: UseFormSetValue<InputType>,
     width: string,
     required: "This field is required" | boolean,
-    ClassName?: string
+    ClassName?: string,
 }
 
 export type RadioGroupProps = {
-    options: string[]
-    value: string
-    onChange: (value: string) => void
+    options: string[],
+    value: string,
+    setLoading: (v:boolean) => void,
+    Loading: boolean,
+    onChange: (value: string) => void,
 }

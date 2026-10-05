@@ -1,3 +1,4 @@
+import { delay } from "../delayLoading/delayLoading"
 import InStoreInterface from "./DeliveryInterfaces/InStoreInterface"
 import NovaInterface from "./DeliveryInterfaces/NovaInterface"
 import UkrposhtaInterface from "./DeliveryInterfaces/UkrposhtaInterface"
@@ -16,19 +17,6 @@ const Delivery = () => {
         "Ukrposhta": <UkrposhtaInterface/>
     }
 
-    const delayLoading = (delay:number) => {
-        let timer:any;
-
-        return () => {
-            clearTimeout(timer);
-            setLoading(true);
-            timer = setTimeout(() => {
-                setLoading(false);
-            }, delay)
-        }
-    }
-    const delay = delayLoading(3000)
-    
     return(<>
         <div
         style={{boxShadow: "0 0 10px 0 rgb(0 0 0 / 0.2)"}}
@@ -37,7 +25,7 @@ const Delivery = () => {
             <div className="flex items-center gap-2.5">
                 <button
                 disabled={loading === true}
-                onClick={() => { setDeliveryOption("In-store pickup"); delay() }}
+                onClick={() => { setDeliveryOption("In-store pickup"); delay(setLoading) }}
                 className="group flex flex-col justify-center items-center border border-(--border) rounded-md cursor-pointer px-[15px] py-[5px] ">
                     <span
                     className={`${deliveryOption === "In-store pickup" ? "text-(--blue-color)" : "text-black"} group-hover:text-(--blue-color) text-[20px] transition-colors`}>In-store pickup</span>
@@ -45,7 +33,7 @@ const Delivery = () => {
                 </button>
                 <button
                 disabled={loading === true}
-                onClick={() => { setDeliveryOption("Nova Poshta"); delay() }}
+                onClick={() => { setDeliveryOption("Nova Poshta"); delay(setLoading) }}
                 className="group flex flex-col justify-center items-center border border-(--border) rounded-md cursor-pointer px-[15px] py-[5px]">
                     <span 
                     className={`${deliveryOption === "Nova Poshta" ? "text-(--blue-color)" : "text-black"} group-hover:text-(--blue-color) text-[20px] transition-colors`}>Nova Poshta</span>
@@ -53,7 +41,7 @@ const Delivery = () => {
                 </button>
                 <button
                 disabled={loading === true}
-                onClick={() => { setDeliveryOption("Ukrposhta"); delay() }}
+                onClick={() => { setDeliveryOption("Ukrposhta"); delay(setLoading) }}
                 className="group flex flex-col justify-center items-center border border-(--border) rounded-md cursor-pointer px-[15px] py-[5px]">
                     <span
                     className={`${deliveryOption === "Ukrposhta" ? "text-(--blue-color)" : "text-black"} group-hover:text-(--blue-color) text-[20px] transition-colors`}>Ukrposhta</span>

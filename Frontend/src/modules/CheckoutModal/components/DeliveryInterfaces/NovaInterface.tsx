@@ -4,11 +4,12 @@ import { useState } from "react"
 
 
 const NovaInterface = () => {
-    const [deliveryMethod, setDeliveryMethod] = useState("Курьер Новая почта");
-    const deliveryMethods = ["Курьер Новая почта", "Отделения Нова пошта", "Почтомат Нова пошта"];
+    const [deliveryMethod, setDeliveryMethod] = useState("Nova Poshta courier");
+    const deliveryMethods = ["Nova Poshta courier", "Nova Poshta branches", "Nova Poshta parcel locker"];
+    const [loading, setLoading] = useState(false)
 
     return (<>
-        <RadioGroup options={deliveryMethods} value={deliveryMethod} onChange={setDeliveryMethod}/>
+        <RadioGroup options={deliveryMethods} setLoading={setLoading} Loading={loading} value={deliveryMethod} onChange={setDeliveryMethod}/>
     </>)
 }
 export default NovaInterface
