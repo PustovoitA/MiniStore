@@ -4,8 +4,8 @@ import { useState } from "react";
 
 
 const UkrposhtaInterface = () => {
-    const [deliveryMethod, setDeliveryMethod] = useState("Отделения Укрпочта");
-    const deliveryMethods = ["Отделения Укрпочта", "Почтомат Укрпочта"];
+    const [deliveryMethod, setDeliveryMethod] = useState("Ukrposhta branches");
+    const deliveryMethods = ["Ukrposhta branches", "Ukrposhta parcel locker"];
     const [loading, setLoading] = useState(false);
 
     return (<>
