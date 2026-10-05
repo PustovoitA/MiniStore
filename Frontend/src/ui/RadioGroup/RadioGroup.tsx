@@ -1,8 +1,9 @@
+import { delay } from "@/modules/CheckoutModal/delayLoading/delayLoading"
 import type { RadioGroupProps } from "../types/InputTypes"
 
 
-const RadioGroup = ({ options, value, onChange }: RadioGroupProps) => {
-     return (
+const RadioGroup = ({ options, value, setLoading, Loading, onChange }: RadioGroupProps) => {
+    return (
     <div className="flex flex-col gap-4">
       {options.map((option) => {
         const isSelected = value === option
@@ -17,7 +18,8 @@ const RadioGroup = ({ options, value, onChange }: RadioGroupProps) => {
               name="radio-group"
               value={option}
               checked={isSelected}
-              onChange={() => onChange(option)}
+              onChange={() => {onChange(option); delay(setLoading)}}
+              disabled={Loading === true}
               className="sr-only"
             />
 
