@@ -1,9 +1,9 @@
 
 
-const delayLoading = (delay:number) => {
+export const useDelayLoadng = (stateLoading: (v:boolean) => void, delay:number) => {
     let timer:any;
 
-    return (stateLoading: (v:boolean) => void) => {
+    return () => {
         clearTimeout(timer);
         stateLoading(true);
         timer = setTimeout(() => {
@@ -11,4 +11,3 @@ const delayLoading = (delay:number) => {
         }, delay)
     }
 }
-export const delay = delayLoading(3000)
