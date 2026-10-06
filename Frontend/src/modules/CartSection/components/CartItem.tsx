@@ -32,8 +32,11 @@ export const CartItem = memo(({item}:Props) => {
     useEffect(()=>{
         setSubtotal(selectedCountProduct * price);
         updateQuantity(item.product.id, selectedCountProduct);
-        updateTotals({itemId: item.product.id, price: subtotal});
     },[selectedCountProduct]);
+
+    useEffect(() => {
+        updateTotals({itemId: item.product.id, price: subtotal});
+    }, [subtotal]);
 
     return(<>
     <div className="relative flex flex-col md:flex-row items-start md:items-center justify-between w-full min-h-fit md:h-50 my-2.5 gap-4 md:gap-2 pr-10 md:pr-14">

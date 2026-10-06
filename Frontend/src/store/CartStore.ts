@@ -7,13 +7,14 @@ interface TypeCartStore {
     basket: CartItem[],
     notification: Notification,
     totals: Totals[],
+    total: number,
     setItemInCart: (item: Product | undefined, selectedCount: number) => boolean,
     deleteItemFromCart: (item: Product | undefined) => void,
     incrementQuantity: (item: Product, selectedCount: number) => void,
     updateQuantity: (itemId: string, quantity: number) => void,
     setNotification: (item: Notification) => void,
     updateTotals: (item: Totals) => void,
-    calculateTotals: () => number
+    calculateTotal: () => void,
 }
 
 interface CartItem {
@@ -32,6 +33,7 @@ const CartStore = create<TypeCartStore>()(
             basket: [],
             notification: {isOpen: false, value: "success"},
             totals: [],
+            total:0,
 
             setItemInCart(item, selectedCount){
                 if(!item){
@@ -104,30 +106,36 @@ const CartStore = create<TypeCartStore>()(
 
             updateTotals(item){
                 const existingItem = get().totals.find(el => el.itemId === item.itemId);
-                set((state) => {
                     if(existingItem){
-                        const newTotals = state.totals.map(el => {
-                            if(el.itemId === item.itemId){
-                                return{
-                                    ...el,
-                                    price: item.price
+                        set((state) => {
+                            const newTotals = state.totals.map(el => {
+                                if(el.itemId === item.itemId){
+                                    return{
+                                        ...el,
+                                        price: item.price
+                                    }
+                                }else{
+                                    return el
                                 }
-                            }else{
-                                return el
-                            }
-                        })
+                            })
 
-                        return{totals: newTotals}
+                            return{totals: newTotals}
+                        })
                     }else{
-                        return{totals: [...state.totals, {itemId: item.itemId, price: item.price}]}
+                        set((state) => {
+                            return{totals: [...state.totals, {itemId: item.itemId, price: item.price}]}
+                        })
                     }
-                });
+
+                get().calculateTotal();
             },
 
-            calculateTotals(){
-                const curTotals = get().totals;
-                const newArr = curTotals.map(el => el.price);
-                return newArr.reduce((el, temp) => el + temp, 0)
+            calculateTotal(){
+                const priceArr = get().totals.map(el => el.price);
+                const newTotal = priceArr.reduce((el, temp) => el + temp, 0);
+                set(() => {
+                    return {total: newTotal}
+                })
             }
         }),
         {name: "cart-storage"}

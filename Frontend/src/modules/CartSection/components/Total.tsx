@@ -4,19 +4,13 @@ import { Button } from "@/ui/Button";
 
 import CartStore from "@/store/CartStore";
 
-import { useMemo } from "react";
 import { useNavigate } from "react-router-dom";
 
 
 const Total = () => {
     const navigation = useNavigate();
-    const totals = CartStore((state) => state.totals)
-    const calculateTotals = CartStore((state) => state.calculateTotals);
+    const total = CartStore((state) => state.total);
     const basket = CartStore((state) => state.basket);
-
-    const calculatedTotal = useMemo(() => {
-        return calculateTotals();
-    }, [totals])
 
     return (<>
         <div className="mt-10 md:mt-15">
@@ -24,7 +18,7 @@ const Total = () => {
             <hr className="text-[#c9bcbc] my-3.5" />
             <div className="flex items-center justify-between w-full sm:w-[60%] md:w-[40%] text-[16px] md:text-[18px]">
                 <p className="underline">TOTAL</p>
-                <p className="text-(--blue-color)">{`$${calculatedTotal.toFixed(2)}`}</p>
+                <p className="text-(--blue-color)">{`$${total.toFixed(2)}`}</p>
             </div>
             <hr className="text-[#c9bcbc] my-3.5" />
 
