@@ -1,3 +1,4 @@
+import { useDebounce } from "@/hooks/useDebounce";
 import { memo, useState } from "react";
 
 type Props = {
@@ -8,24 +9,25 @@ type Props = {
 
 const QuantityCounter = memo(({maxCountProduct, setSelectedCountProduct, selectedCountProduct }:Props) => {
     const [inputValue, setInputValue] = useState(selectedCountProduct?.toString() || "1");
+    const debounce = useDebounce(setSelectedCountProduct, 200);
 
     const decrement = ():void => {
         if(selectedCountProduct! > 1){
-            setSelectedCountProduct(selectedCountProduct! - 1)
             setInputValue(String(selectedCountProduct! - 1))
+            debounce(selectedCountProduct! - 1)
         }else{
-            setSelectedCountProduct(1)
             setInputValue("1");
+            debounce(1)
         }
     }
 
     const increment = ():void => {
         if(selectedCountProduct! < maxCountProduct!){
-            setSelectedCountProduct(selectedCountProduct! + 1);
             setInputValue(String(selectedCountProduct! + 1));
+            debounce(selectedCountProduct! + 1);
         }else{
-            setSelectedCountProduct(maxCountProduct!)
-            setInputValue(maxCountProduct!.toString())
+            setInputValue(maxCountProduct!.toString());
+            debounce(maxCountProduct!)
         }
     }
 
