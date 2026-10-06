@@ -7,14 +7,13 @@ interface TypeCartStore {
     basket: CartItem[],
     notification: Notification,
     totals: Totals[],
-    total: number,
     setItemInCart: (item: Product | undefined, selectedCount: number) => boolean,
     deleteItemFromCart: (item: Product | undefined) => void,
     incrementQuantity: (item: Product, selectedCount: number) => void,
     updateQuantity: (itemId: string, quantity: number) => void,
     setNotification: (item: Notification) => void,
     updateTotals: (item: Totals) => void,
-    calculateTotal: () => void,
+    calculateTotal: () => number,
 }
 
 interface CartItem {
@@ -33,7 +32,6 @@ const CartStore = create<TypeCartStore>()(
             basket: [],
             notification: {isOpen: false, value: "success"},
             totals: [],
-            total:0,
 
             setItemInCart(item, selectedCount){
                 if(!item){
@@ -126,16 +124,12 @@ const CartStore = create<TypeCartStore>()(
                             return{totals: [...state.totals, {itemId: item.itemId, price: item.price}]}
                         })
                     }
-
-                get().calculateTotal();
             },
 
             calculateTotal(){
                 const priceArr = get().totals.map(el => el.price);
-                const newTotal = priceArr.reduce((el, temp) => el + temp, 0);
-                set(() => {
-                    return {total: newTotal}
-                })
+                const newTotal = priceArr.reduce((el, temp) => el + temp, 0)
+                return newTotal
             }
         }),
         {name: "cart-storage"}
