@@ -10,6 +10,14 @@ const NovaInterface = () => {
 
     return (<>
         <RadioGroup options={deliveryMethods} setLoading={setLoading} Loading={loading} value={deliveryMethod} onChange={setDeliveryMethod}/>
+
+        {
+            loading
+            ? <div className="flex justify-center items-center">
+                <div className="spinner"></div>
+              </div>
+            : <p>result</p>
+        }
     </>)
 }
 export default NovaInterface
