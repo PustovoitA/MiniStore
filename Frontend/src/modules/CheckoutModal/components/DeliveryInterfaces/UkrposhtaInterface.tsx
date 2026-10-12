@@ -1,7 +1,7 @@
 import { useState } from "react";
 
-import UkrposhtaBranches from "./UkrposhtaBranches";
-import UkrposhtaParcelLocker from "./UkrposhtaParcelLocker";
+import UkrposhtaBranches from "./DeliveryMethodFroms/UkrposhtaBranches";
+import UkrposhtaParcelLocker from "./DeliveryMethodFroms/UkrposhtaParcelLocker";
 import { RadioGroup } from "@/ui/RadioGroup";
 
 type UkrPoshtaDeliveryMethodType = "Ukrposhta branches" | "Ukrposhta parcel locker"

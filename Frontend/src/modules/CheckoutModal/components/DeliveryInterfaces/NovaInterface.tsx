@@ -1,8 +1,8 @@
 import { useState } from "react"
 
-import NovaPoshtaBranches from "./NovaPoshtaBranches";
-import NovaPoshtaParcelLocker from "./NovaPoshtaParcelLocker";
-import NovaPoshtaCourier from "./NovaPoshtaCourier";
+import NovaPoshtaBranches from "./DeliveryMethodFroms/NovaPoshtaBranches";
+import NovaPoshtaParcelLocker from "./DeliveryMethodFroms/NovaPoshtaParcelLocker";
+import NovaPoshtaCourier from "./DeliveryMethodFroms/NovaPoshtaCourier";
 import { RadioGroup } from "@/ui/RadioGroup"
 
 type NovaPoshtaDeliveryMethodType = "Nova Poshta courier" | "Nova Poshta branches" | "Nova Poshta parcel locker"
