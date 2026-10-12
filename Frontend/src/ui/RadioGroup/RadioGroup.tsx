@@ -3,7 +3,7 @@ import { useDelayLoadng } from "@/hooks/useDelayLoaidng"
 
 import type { RadioGroupProps } from "../types/InputTypes"
 
-const RadioGroup = ({ options, value, setLoading, Loading, onChange }: RadioGroupProps) => {
+const RadioGroup = <T,>({ options, value, setLoading, Loading, onChange }: RadioGroupProps<T>) => {
   const delay = useDelayLoadng(setLoading, 3000);
 
   return (
@@ -21,7 +21,7 @@ const RadioGroup = ({ options, value, setLoading, Loading, onChange }: RadioGrou
               name="radio-group"
               value={option}
               checked={isSelected}
-              onChange={() => {onChange(option); delay()}}
+              onChange={() => {onChange(option as T); delay()}}
               disabled={Loading === true}
               className="sr-only"
             />
