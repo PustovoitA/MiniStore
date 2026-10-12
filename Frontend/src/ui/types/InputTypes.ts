@@ -5,7 +5,9 @@ export type InputType = {
     email: string | undefined,
     password:string | undefined,
     text:string | undefined,
-    store: string | undefined
+    store: string | undefined,
+    branch: string | undefined,
+    locker: string | undefined,
 }
 
 export type InputProps = {
