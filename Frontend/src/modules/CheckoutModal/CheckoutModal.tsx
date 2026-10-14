@@ -8,13 +8,13 @@ const CheckoutModal = () => {
         <section className="flex items-center justify-center w-full bg-(--grey-light-color) text-[40px] p-10 mb-20">
             PLACING ON ORDER
         </section>
-        <div className="flex justify-center items-start gap-3 font-[Jost]">
-            <section className="flex flex-col gap-[15px] w-[65%]">
+        <div className="mx-auto flex w-full max-w-[1240px] flex-col items-stretch justify-center gap-4 px-4 font-[Jost] lg:flex-row lg:items-start lg:gap-6">
+            <section className="flex w-full flex-col gap-[15px] lg:w-[calc(100%-360px)]">
                 <Contacts/>
                 <Delivery/>
                 <Payment/>
             </section>
-            <section>
+            <section className="w-full lg:sticky lg:top-6 lg:w-[336px] lg:shrink-0">
                 <Order/>
             </section>
         </div>
