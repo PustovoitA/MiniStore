@@ -8,7 +8,7 @@ type UkrPoshtaDeliveryMethodType = "Ukrposhta branches" | "Ukrposhta parcel lock
 
 const UkrposhtaInterface = () => {
     const [deliveryMethod, setDeliveryMethod] = useState<UkrPoshtaDeliveryMethodType>("Ukrposhta branches");
-    const deliveryMethods = ["Ukrposhta branches", "Ukrposhta parcel locker"];
+    const deliveryMethods: UkrPoshtaDeliveryMethodType[] = ["Ukrposhta branches", "Ukrposhta parcel locker"];
     const [loading, setLoading] = useState(false);
 
     const context = {

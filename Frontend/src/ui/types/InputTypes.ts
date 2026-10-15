@@ -40,10 +40,10 @@ export type SelectProps = {
     ClassName?: string,
 }
 
-export type RadioGroupProps<T> = {
-    options: string[],
-    value: string,
+export type RadioGroupProps<T extends string> = {
+    options: T[],
+    value: T,
     setLoading: (v:boolean) => void,
     Loading: boolean,
-    onChange: (value: T ) => void,
+    onChange?: (value: T ) => void,
 }
