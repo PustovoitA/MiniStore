@@ -33,6 +33,7 @@ const SubscibeBuner = () => {
                 >
                     <Input
                     register={register}
+                    name="email"
                     required="This file is required"
                     type="email"
                     placeholder="Your email address here"

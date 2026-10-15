@@ -21,6 +21,7 @@ const NovaPoshtaCourier = () => {
                         <p className="text-(--grey-text-color)">Street</p>
                         <Input
                         type="text"
+                        name="text"
                         register={register}
                         placeholder="Enter your Street"
                         required = "This file is required"
@@ -37,6 +38,7 @@ const NovaPoshtaCourier = () => {
                         <p className="text-(--grey-text-color)">House number</p>
                         <Input
                         type="text"
+                        name="text"
                         register={register}
                         placeholder="Enter your house number"
                         required = "This file is required"
@@ -53,6 +55,7 @@ const NovaPoshtaCourier = () => {
                         <p className="text-(--grey-text-color)">Apartment number</p>
                         <Input
                         type="text"
+                        name="text"
                         register={register}
                         placeholder="Enter your apartment number"
                         required = {false}
