@@ -8,10 +8,15 @@ export type InputType = {
     store: string | undefined,
     branch: string | undefined,
     locker: string | undefined,
+    cardNumber: string | undefined,
+    cardHolder: string | undefined,
+    expiryDate: string | undefined,
+    cvv: string | undefined,
 }
 
 export type InputProps = {
-    type: "password" | "text" | "email",
+    type: "password" | "text" | "email" | "tel",
+    name: keyof InputType,
     register: UseFormRegister<InputType>,
     placeholder: string,
     regExp: RegExp,
