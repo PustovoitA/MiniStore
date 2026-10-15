@@ -31,7 +31,7 @@ export const ProductInfo = memo(({item}:Props) => {
         ?
             <div>
                 <p className="text-(--grey-text-color) text-lg sm:text-[20px] line-through">${item?.price.toFixed(2)}</p>
-                <p className="text-[#ea0404] text-2xl sm:text-[30px]">${calculateDiscount(item?.price!, item?.discount!)}</p>
+                <p className="text-[#ea0404] text-2xl sm:text-[30px]">${calculateDiscount(item?.price!, item?.discount!).toFixed(2)}</p>
             </div>
         :
             <p className="text-(--blue-color) text-2xl sm:text-[30px]">${item?.price.toFixed(2)}</p>
