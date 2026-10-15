@@ -26,6 +26,7 @@ const Contacts = () => {
                         <p className="text-(--grey-text-color)">last Name</p>
                         <Input
                         type="text"
+                        name="text"
                         register={register}
                         placeholder="Enter your Last Name"
                         required = "This file is required"
@@ -42,6 +43,7 @@ const Contacts = () => {
                         <p className="text-(--grey-text-color)">Name</p>
                         <Input
                         type="text"
+                        name="text"
                         register={register}
                         placeholder="Enter your Name"
                         required = "This file is required"
@@ -58,6 +60,7 @@ const Contacts = () => {
                         <p className="text-(--grey-text-color)">Middle Name</p>
                         <Input
                         type="text"
+                        name="text"
                         register={register}
                         placeholder="Enter your Middle Name"
                         required = {false}
@@ -76,6 +79,7 @@ const Contacts = () => {
                         <p className="text-(--grey-text-color)">Phone</p>
                         <Input
                         type="text"
+                        name="text"
                         register={register}
                         placeholder="+380"
                         required = "This file is required"
@@ -92,6 +96,7 @@ const Contacts = () => {
                         <p className="text-(--grey-text-color)">E-mail</p>
                         <Input
                         type="email"
+                        name="text"
                         register={register}
                         placeholder="example@gmail.com"
                         required = "This file is required"
