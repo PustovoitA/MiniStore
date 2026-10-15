@@ -9,7 +9,7 @@ type NovaPoshtaDeliveryMethodType = "Nova Poshta courier" | "Nova Poshta branche
 
 const NovaInterface = () => {
     const [deliveryMethod, setDeliveryMethod] = useState<NovaPoshtaDeliveryMethodType>("Nova Poshta courier");
-    const deliveryMethods = ["Nova Poshta courier", "Nova Poshta branches", "Nova Poshta parcel locker"];
+    const deliveryMethods: NovaPoshtaDeliveryMethodType[] = ["Nova Poshta courier", "Nova Poshta branches", "Nova Poshta parcel locker"];
     const [loading, setLoading] = useState(false);
 
     const context = {
