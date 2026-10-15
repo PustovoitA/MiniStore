@@ -1,4 +1,4 @@
-import { calculateDiscount } from "@/assets/discount"
+import { calculateDiscount, hasDiscount } from "@/assets/discount"
 import { QuantityCounter } from "@/components/QuantityCounter"
 
 import CartStore from "@/store/CartStore"
@@ -46,10 +46,16 @@ export const CartItem = memo(({item}:Props) => {
             </div>
             <div className="flex flex-col text-[16px] md:text-[20px] min-w-0">
                 <span className="truncate">{item.product.name.toUpperCase()}</span>
-                <span style={{color: item.product.discount !== null
-                    ? "#ea0404"
-                    : "var(--blue-color)"
-                }}>{`$${price.toFixed(2)}`}</span>
+                {
+                    hasDiscount(item.product.discount)
+                    ?<>
+                    <p className="text-(--grey-text-color) line-through">{`$${item.product.price.toFixed(2)}`}</p>
+                    <p className="text-[#ea0404]">
+                        {`$${price.toFixed(2)}`}
+                    </p>
+                    </>
+                    :<p className="text-(--blue-color)">{`$${price.toFixed(2)}`}</p>
+                }
             </div>
         </div>
 
