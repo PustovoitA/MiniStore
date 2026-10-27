@@ -7,7 +7,7 @@ const Input = ({type, name, register, placeholder, regExp, errorMassage, formSta
     const fieldName = name ?? type;
     return(<div className="flex flex-col">
         <input
-        className="border border-(--border) px-5.5 py-3.75 text-(--grey-text-color) bg-(--white-color) outline-0"
+        className="border border-(--border) px-5.5 py-3.75 bg-(--white-color) outline-0"
         style={{width:width}}
         type={type}
         placeholder={placeholder}

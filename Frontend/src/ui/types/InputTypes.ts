@@ -2,10 +2,17 @@ import type { FormState, UseFormRegister, UseFormSetValue } from "react-hook-for
 
 
 export type InputType = {
+    name: string | undefined,
+    lastName: string | undefined,
+    middleName: string | undefined,
+    phone: string | undefined,
     email: string | undefined,
     password:string | undefined,
     text:string | undefined,
     store: string | undefined,
+    street: string | undefined,
+    houseNumber: string | undefined,
+    apartmentNumber: string | undefined,
     branch: string | undefined,
     locker: string | undefined,
     cardNumber: string | undefined,

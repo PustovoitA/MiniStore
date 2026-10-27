@@ -26,7 +26,7 @@ const Contacts = () => {
                         <p className="text-(--grey-text-color)">last Name</p>
                         <Input
                         type="text"
-                        name="text"
+                        name="lastName"
                         register={register}
                         placeholder="Enter your Last Name"
                         required = "This file is required"
@@ -43,7 +43,7 @@ const Contacts = () => {
                         <p className="text-(--grey-text-color)">Name</p>
                         <Input
                         type="text"
-                        name="text"
+                        name="name"
                         register={register}
                         placeholder="Enter your Name"
                         required = "This file is required"
@@ -60,7 +60,7 @@ const Contacts = () => {
                         <p className="text-(--grey-text-color)">Middle Name</p>
                         <Input
                         type="text"
-                        name="text"
+                        name="middleName"
                         register={register}
                         placeholder="Enter your Middle Name"
                         required = {false}
@@ -78,8 +78,8 @@ const Contacts = () => {
                     >
                         <p className="text-(--grey-text-color)">Phone</p>
                         <Input
-                        type="text"
-                        name="text"
+                        type="tel"
+                        name="phone"
                         register={register}
                         placeholder="+380"
                         required = "This file is required"
@@ -96,7 +96,7 @@ const Contacts = () => {
                         <p className="text-(--grey-text-color)">E-mail</p>
                         <Input
                         type="email"
-                        name="text"
+                        name="email"
                         register={register}
                         placeholder="example@gmail.com"
                         required = "This file is required"
