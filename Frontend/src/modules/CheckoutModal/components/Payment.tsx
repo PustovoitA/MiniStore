@@ -25,7 +25,7 @@ const Payment = () => {
                 <button
                 disabled={loading === true}
                 onClick={() => { setPaymentOption("Payment upon receipt"); delay() }}
-                className="group flex flex-col justify-center items-center border border-(--border) rounded-md cursor-pointer px-[15px] py-[5px] ">
+                className="group flex flex-col justify-center items-center border border-(--border) rounded-md cursor-pointer px-3.75 py-1.25 ">
                     <span
                     className={`${paymentOption === "Payment upon receipt" ? "text-(--blue-color)" : "text-black"} group-hover:text-(--blue-color) text-[20px] transition-colors`}>
                         Payment upon receipt
@@ -35,7 +35,7 @@ const Payment = () => {
                 <button
                 disabled={loading === true}
                 onClick={() => { setPaymentOption("Card payment"); delay() }}
-                className="group flex flex-col justify-center items-center border border-(--border) rounded-md cursor-pointer px-[15px] py-[5px]">
+                className="group flex flex-col justify-center items-center border border-(--border) rounded-md cursor-pointer px-3.75 py-1.25">
                     <span 
                     className={`${paymentOption === "Card payment" ? "text-(--blue-color)" : "text-black"} group-hover:text-(--blue-color) text-[20px] transition-colors`}>
                         Card payment

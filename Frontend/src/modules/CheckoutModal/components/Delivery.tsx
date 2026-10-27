@@ -27,7 +27,7 @@ const Delivery = () => {
                 <button
                 disabled={loading === true}
                 onClick={() => { setDeliveryOption("In-store pickup"); delay() }}
-                className="group flex flex-col justify-center items-center border border-(--border) rounded-md cursor-pointer px-[15px] py-[5px] ">
+                className="group flex flex-col justify-center items-center border border-(--border) rounded-md cursor-pointer px-3.75 py-1.25 ">
                     <span
                     className={`${deliveryOption === "In-store pickup" ? "text-(--blue-color)" : "text-black"} group-hover:text-(--blue-color) text-[20px] transition-colors`}>In-store pickup</span>
                     <span className="text-(--grey-text-color) text-[14px]">payment upon receipt</span>
@@ -35,7 +35,7 @@ const Delivery = () => {
                 <button
                 disabled={loading === true}
                 onClick={() => { setDeliveryOption("Nova Poshta"); delay() }}
-                className="group flex flex-col justify-center items-center border border-(--border) rounded-md cursor-pointer px-[15px] py-[5px]">
+                className="group flex flex-col justify-center items-center border border-(--border) rounded-md cursor-pointer px-3.75 py-1.25">
                     <span 
                     className={`${deliveryOption === "Nova Poshta" ? "text-(--blue-color)" : "text-black"} group-hover:text-(--blue-color) text-[20px] transition-colors`}>Nova Poshta</span>
                     <span className="text-(--grey-text-color) text-[14px]">extensive network</span>
@@ -43,7 +43,7 @@ const Delivery = () => {
                 <button
                 disabled={loading === true}
                 onClick={() => { setDeliveryOption("Ukrposhta"); delay() }}
-                className="group flex flex-col justify-center items-center border border-(--border) rounded-md cursor-pointer px-[15px] py-[5px]">
+                className="group flex flex-col justify-center items-center border border-(--border) rounded-md cursor-pointer px-3.75 py-1.25">
                     <span
                     className={`${deliveryOption === "Ukrposhta" ? "text-(--blue-color)" : "text-black"} group-hover:text-(--blue-color) text-[20px] transition-colors`}>Ukrposhta</span>
                     <span className="text-(--grey-text-color) text-[14px]">affordable terms</span>

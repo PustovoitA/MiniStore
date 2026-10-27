@@ -18,8 +18,8 @@ const Contacts = () => {
         style={{boxShadow: "0 0 10px 0 rgb(0 0 0 / 0.2)"}}
         className="flex flex-col items-start gap-4 w-full p-10 box-border rounded-2xl">
             <h1 className="text-[25px]">Contacts</h1>
-            <form className="flex flex-col gap-[20px] w-full" onSubmit={handleSubmit(onSubmit)}>
-                <div className="flex items-center gap-[20px] w-full">
+            <form className="flex flex-col gap-5 w-full" onSubmit={handleSubmit(onSubmit)}>
+                <div className="flex items-center gap-5 w-full">
                     <label
                     style={{width:"calc(100% / 3 - 10px)"}}
                     >
@@ -72,7 +72,7 @@ const Contacts = () => {
                         />
                     </label>
                 </div>
-                <div className="flex items-center gap-[20px] w-full">
+                <div className="flex items-center gap-5 w-full">
                     <label
                     style={{width:"calc(100% / 2 - 10px)"}}
                     >

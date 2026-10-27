@@ -14,7 +14,7 @@ const NovaPoshtaCourier = () => {
 
     return (<>
         <form className="w-full" onSubmit={handleSubmit(onSubmit)}>
-                <div className="flex items-center gap-[20px] w-full">
+                <div className="flex items-center gap-5 w-full">
                     <label
                     style={{width:"calc(100% / 3 - 10px)"}}
                     >
@@ -66,7 +66,6 @@ const NovaPoshtaCourier = () => {
                         ClassName=""
                         />
                     </label>
-                    <button type="submit">submit</button>
                 </div>
         </form>
     </>)
