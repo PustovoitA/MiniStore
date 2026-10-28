@@ -8,7 +8,7 @@ const NovaPoshtaParcelLocker = () => {
     const { register, formState, setValue } = useFormContext<InputType>();
 
     return(<>
-        <form className="w-full">
+        <div className="w-full">
             <Select
             name="locker"
             register={register}
@@ -34,7 +34,7 @@ const NovaPoshtaParcelLocker = () => {
             required={false}
             ClassName=""
             />
-        </form>
+        </div>
     </>)
 }
 export default NovaPoshtaParcelLocker

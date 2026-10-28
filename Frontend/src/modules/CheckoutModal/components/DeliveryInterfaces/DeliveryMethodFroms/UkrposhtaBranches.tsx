@@ -8,7 +8,7 @@ const UkrposhtaBranches = () => {
     const { register, formState, setValue } = useFormContext<InputType>();
 
     return (<>
-        <form className="w-full">
+        <div className="w-full">
             <Select
             name="branch"
             register={register}
@@ -34,7 +34,7 @@ const UkrposhtaBranches = () => {
             required={false}
             ClassName=""
             />
-        </form>
+        </div>
     </>)
 }
 export default UkrposhtaBranches
