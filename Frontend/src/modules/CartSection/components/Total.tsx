@@ -6,6 +6,7 @@ import CartStore from "@/store/CartStore";
 
 import { useMemo } from "react";
 import { useNavigate } from "react-router-dom";
+import CheckoutState from "@/store/CheckoutState";
 
 
 const Total = () => {
@@ -16,7 +17,9 @@ const Total = () => {
 
     const calculatedTotal = useMemo(() => {
         return calculateTotal();
-    }, [totals])
+    }, [totals]);
+
+    const resetBuyNowPorduct = CheckoutState((state) => state.resetBuyNowProduct)
 
     return (<>
         <div className="mt-10 md:mt-15">
@@ -38,6 +41,8 @@ const Total = () => {
                 <div onClick={()=>{
                     if(basket.length){
                         navigation("/Checkout");
+                        resetBuyNowPorduct();
+                        scrolToTop();
                     }
                 }} className="w-full sm:w-auto">
                     <Button bgColor="var(--black-block-color)" type="button" value="PROCEED TO CHECKOUT" />

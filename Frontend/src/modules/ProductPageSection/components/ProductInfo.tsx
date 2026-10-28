@@ -5,8 +5,10 @@ import { QuantityCounter } from "@/components/QuantityCounter"
 import { Button } from "@/ui/Button"
 
 import { memo, useEffect, useState } from "react"
+import { useNavigate } from "react-router-dom"
 
 import type { Product } from "@/types/Product"
+import CheckoutState from "@/store/CheckoutState"
 
 
 type Props = {
@@ -14,10 +16,14 @@ type Props = {
 }
 
 export const ProductInfo = memo(({item}:Props) => {
+    const navigate = useNavigate()
+
     const [currColorProduct, setCurrColorProduct] = useState<string | undefined>(item?.colors[0].color);
     const [currSizeProduct, setCurrSizeProduct] = useState<string | undefined>(item?.size?.[0]?.size);
     const [selectedCountProduct, setSelectedCountProduct] = useState(1);
     const size = item?.size;
+
+    const setBuyNowProduct = CheckoutState((state) => state.setBuyNowProduct)
 
     useEffect(()=>{
         setCurrColorProduct(item?.colors[0].color);
@@ -73,7 +79,12 @@ export const ProductInfo = memo(({item}:Props) => {
     </p>
     <QuantityCounter setSelectedCountProduct={setSelectedCountProduct} selectedCountProduct={selectedCountProduct} maxCountProduct={item?.count} />
     <div className="flex items-center gap-1.5 flex-wrap justify-center lg:justify-start w-full">
-        <Button value="BUY NOW" bgColor="var(--blue-color)" type="button" />
+        <div onClick={() => {
+            navigate("/Checkout");
+            setBuyNowProduct(item, selectedCountProduct);
+        }}>
+            <Button value="BUY NOW" bgColor="var(--blue-color)" type="button" />
+        </div>
 
         <div onClick={() => {
             addProductInCart(item, selectedCountProduct);

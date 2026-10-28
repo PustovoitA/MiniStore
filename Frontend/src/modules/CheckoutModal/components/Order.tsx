@@ -1,15 +1,18 @@
 import { calculateDiscount } from "@/assets/discount";
 import CartStore from "@/store/CartStore";
+import CheckoutState from "@/store/CheckoutState";
 
 const formatPrice = (price: number) => `$${price.toFixed(2)}`;
 
 const Order = () => {
     const basket = CartStore((state) => state.basket);
+    const buyNowProduct = CheckoutState((state) => state.buyNowProduct);
+    const products = buyNowProduct === null ? basket : [buyNowProduct];
 
-    const subtotal = basket.reduce((sum, item) => sum + item.product.price * item.quantity, 0);
-    const discount = basket.reduce((sum, item) => {
-        const discountedPrice = calculateDiscount(item.product.price, item.product.discount);
-        return sum + (item.product.price - discountedPrice) * item.quantity;
+    const subtotal = products.reduce((sum, item) => sum + item.product!.price * item.quantity, 0);
+    const discount = products.reduce((sum, item) => {
+        const discountedPrice = calculateDiscount(item.product!.price, item.product!.discount);
+        return sum + (item.product!.price - discountedPrice) * item.quantity;
     }, 0);
     const total = subtotal - discount;
 
@@ -23,22 +26,22 @@ const Order = () => {
             </div>
 
             <div className="max-h-72 space-y-5 overflow-y-auto pr-1">
-                {basket.length === 0 ? (
+                {products.length === 0 ? (
                     <p className="py-4 text-sm text-(--grey-text-color)">Your cart is empty.</p>
-                ) : basket.map(({ product, quantity }) => {
-                    const price = calculateDiscount(product.price, product.discount);
+                ) : products.map(({ product, quantity }) => {
+                    const price = calculateDiscount(product!.price, product!.discount);
                     return (
-                        <article key={product.id} className="flex gap-3">
+                        <article key={product!.id} className="flex gap-3">
                             <div className="h-20 w-20 shrink-0 bg-(--grey-light-color)">
-                                <img className="h-full w-full object-cover" src={product.image} alt={product.name} />
+                                <img className="h-full w-full object-cover" src={product!.image} alt={product!.name} />
                             </div>
                             <div className="min-w-0 flex-1 text-sm">
-                                <p className="line-clamp-2 font-medium text-(--black-text-color)">{product.name}</p>
-                                <p className="mt-0.5 text-(--grey-text-color)">{product.type === "phone" ? "Phone" : "Smart watch"}</p>
+                                <p className="line-clamp-2 font-medium text-(--black-text-color)">{product!.name}</p>
+                                <p className="mt-0.5 text-(--grey-text-color)">{product!.type === "phone" ? "Phone" : "Smart watch"}</p>
                                 <p className="mt-1 text-xs text-(--grey-text-color)">Qty: {quantity}</p>
                                 <div className="mt-1 flex flex-wrap items-center gap-x-2 text-sm">
-                                    {product.discount !== null && <span className="text-(--grey-text-color) line-through">{formatPrice(product.price * quantity)}</span>}
-                                    <span className={product.discount !== null ? "font-semibold text-red-500" : "font-medium"}>{formatPrice(price * quantity)}</span>
+                                    {product!.discount !== null && <span className="text-(--grey-text-color) line-through">{formatPrice(product!.price * quantity)}</span>}
+                                    <span className={product!.discount !== null ? "font-semibold text-red-500" : "font-medium"}>{formatPrice(price * quantity)}</span>
                                 </div>
                             </div>
                         </article>

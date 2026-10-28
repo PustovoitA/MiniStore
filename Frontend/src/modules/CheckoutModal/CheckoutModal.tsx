@@ -7,7 +7,10 @@ import Payment from "./components/Payment"
 
 import type { InputType } from "@ui/types/InputTypes"
 
+import { useNavigate } from "react-router-dom"
+
 const CheckoutModal = () => {
+    const navigate = useNavigate()
     const methods = useForm<InputType>({
         shouldUnregister: true,
     });
@@ -16,8 +19,14 @@ const CheckoutModal = () => {
     }
 
     return(<>
-        <section className="flex items-center justify-center w-full bg-(--grey-light-color) text-[40px] p-10 mb-20">
+        <section className="flex flex-col items-center justify-center w-full bg-(--grey-light-color) text-[40px] p-10 mb-20">
             PLACING ON ORDER
+            <span className=" flex items-center gap-1 cursor-pointer hover:text-(--blue-color) text-(--grey-text-color) text-[16px] transition-colors"
+            onClick={() => navigate(-1)}
+            >
+                <span className="material-symbols-outlined">keyboard_backspace</span>
+                Back
+            </span>
         </section>
         <FormProvider {...methods}>
             <section className="mx-auto flex w-full max-w-310 flex-col items-stretch justify-center gap-4 px-4 font-[Jost] lg:flex-row lg:items-start lg:gap-6">
