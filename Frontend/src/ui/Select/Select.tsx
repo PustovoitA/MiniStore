@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 
 import type { SelectProps } from "../types/InputTypes"
 import { useDebounce } from "@/hooks/useDebounce";
@@ -7,9 +7,13 @@ const Select = ({name, register, options, placeholder, errorMassage, formStateEr
     const [isOpen, setIsOpen] = useState(false);
     const [renderOptions, setRenderOptions] = useState(options);
 
+    useEffect(() => {
+        setValue(name, "");
+    },[])
+
     const handleSelect = (value: string) => {
         setValue(name, value, { shouldValidate: true });
-        const input = document.querySelector('input[name="store"]') as HTMLInputElement
+        const input = document.querySelector(`input[name="${name}"]`) as HTMLInputElement
         input?.blur()
     }
 
