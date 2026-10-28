@@ -2,20 +2,13 @@ import { Select } from "@/ui/Select";
 
 import type { InputType } from "@ui/types/InputTypes";
 
-import { useForm, type SubmitHandler } from "react-hook-form";
+import { useFormContext } from "react-hook-form";
 
 const NovaPoshtaParcelLocker = () => {
-    const { handleSubmit, register, formState, setValue } = useForm<InputType>(
-        {
-            mode: "onChange"
-        }
-    );
-    const onSubmit:SubmitHandler<InputType> = (data) => {
-        console.log(data);
-    }
+    const { register, formState, setValue } = useFormContext<InputType>();
 
     return(<>
-        <form className="w-full" onSubmit={handleSubmit(onSubmit)}>
+        <form className="w-full">
             <Select
             name="locker"
             register={register}

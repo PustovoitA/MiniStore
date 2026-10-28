@@ -1,5 +1,5 @@
 
-import { useForm, type SubmitHandler } from "react-hook-form";
+import { useFormContext } from "react-hook-form";
 
 import { Input} from "@/ui/Input";
 
@@ -8,17 +8,14 @@ import type { InputType } from "@/ui/types/InputTypes";
 import { lastNameRegex, firstNameRegex, middleNameRegex, emailRegex, uaPhoneRegex } from "@/assets/regExp";
 
 const Contacts = () => {
-    const { handleSubmit, register, formState } = useForm<InputType>();
-    const onSubmit:SubmitHandler<InputType> = (data) => {
-        console.log(data);
-    }
+    const { register, formState } = useFormContext<InputType>();
 
     return(<>
         <div 
         style={{boxShadow: "0 0 10px 0 rgb(0 0 0 / 0.2)"}}
         className="flex flex-col items-start gap-4 w-full p-10 box-border rounded-2xl">
             <h1 className="text-[25px]">Contacts</h1>
-            <form className="flex flex-col gap-5 w-full" onSubmit={handleSubmit(onSubmit)}>
+            <div className="flex flex-col gap-5 w-full">
                 <div className="flex items-center gap-5 w-full">
                     <label
                     style={{width:"calc(100% / 3 - 10px)"}}
@@ -43,7 +40,7 @@ const Contacts = () => {
                         <p className="text-(--grey-text-color)">Name</p>
                         <Input
                         type="text"
-                        name="name"
+                        name="firstName"
                         register={register}
                         placeholder="Enter your Name"
                         required = "This file is required"
@@ -108,7 +105,7 @@ const Contacts = () => {
                         />
                     </label>
                 </div>
-            </form>
+            </div>
         </div>
     </>)
 }
