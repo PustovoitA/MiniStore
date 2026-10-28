@@ -38,6 +38,7 @@ const Total = () => {
                 <div onClick={()=>{
                     if(basket.length){
                         navigation("/Checkout");
+                        scrolToTop();
                     }
                 }} className="w-full sm:w-auto">
                     <Button bgColor="var(--black-block-color)" type="button" value="PROCEED TO CHECKOUT" />
