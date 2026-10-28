@@ -4,24 +4,21 @@ import { Input } from "@/ui/Input";
 
 import type { InputType } from "@ui/types/InputTypes";
 
-import { useForm, type SubmitHandler } from "react-hook-form";
+import { useFormContext } from "react-hook-form";
 
 const NovaPoshtaCourier = () => {
-    const { handleSubmit, register, formState } = useForm<InputType>();
-    const onSubmit:SubmitHandler<InputType> = (data) => {
-        console.log(data);
-    }
+    const { register, formState } = useFormContext<InputType>();
 
     return (<>
-        <form className="w-full" onSubmit={handleSubmit(onSubmit)}>
-                <div className="flex items-center gap-[20px] w-full">
+        <div className="w-full">
+                <div className="flex items-center gap-5 w-full">
                     <label
                     style={{width:"calc(100% / 3 - 10px)"}}
                     >
                         <p className="text-(--grey-text-color)">Street</p>
                         <Input
                         type="text"
-                        name="text"
+                        name="street"
                         register={register}
                         placeholder="Enter your Street"
                         required = "This file is required"
@@ -38,7 +35,7 @@ const NovaPoshtaCourier = () => {
                         <p className="text-(--grey-text-color)">House number</p>
                         <Input
                         type="text"
-                        name="text"
+                        name="houseNumber"
                         register={register}
                         placeholder="Enter your house number"
                         required = "This file is required"
@@ -55,7 +52,7 @@ const NovaPoshtaCourier = () => {
                         <p className="text-(--grey-text-color)">Apartment number</p>
                         <Input
                         type="text"
-                        name="text"
+                        name="apartmentNumber"
                         register={register}
                         placeholder="Enter your apartment number"
                         required = {false}
@@ -67,7 +64,7 @@ const NovaPoshtaCourier = () => {
                         />
                     </label>
                 </div>
-        </form>
+        </div>
     </>)
 }
 export default NovaPoshtaCourier

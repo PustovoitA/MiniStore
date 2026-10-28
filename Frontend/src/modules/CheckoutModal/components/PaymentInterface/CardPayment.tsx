@@ -1,17 +1,13 @@
-import { useForm } from "react-hook-form";
+import { useFormContext } from "react-hook-form";
 
 import { Input } from "@/ui/Input";
 import type { InputType } from "@/ui/types/InputTypes";
 
 const CardPayment = () => {
-    const { register, handleSubmit, formState } = useForm<InputType>();
+    const { register, formState } = useFormContext<InputType>();
 
     return (
-        <form
-            className="flex flex-col gap-5 w-full"
-            onSubmit={handleSubmit(() => undefined)}
-            noValidate
-        >
+        <div className="flex flex-col gap-5 w-full">
             <p className="text-(--grey-text-color)">
                 Enter your card details to continue.
             </p>
@@ -81,14 +77,7 @@ const CardPayment = () => {
                     />
                 </label>
             </div>
-
-            <button
-                type="submit"
-                className="self-start bg-(--blue-color) text-white px-6 py-3 rounded-md cursor-pointer hover:opacity-90 transition-opacity"
-            >
-                Continue
-            </button>
-        </form>
+        </div>
     );
 };
 
