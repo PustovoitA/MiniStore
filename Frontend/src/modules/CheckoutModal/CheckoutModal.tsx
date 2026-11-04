@@ -9,13 +9,16 @@ import type { InputType } from "@ui/types/InputTypes"
 
 import { useNavigate } from "react-router-dom"
 
+import CheckoutState from "@/store/CheckoutState"
+
 const CheckoutModal = () => {
+    const itemsToBuy = CheckoutState((state) => state.itemsToBuy)
     const navigate = useNavigate()
     const methods = useForm<InputType>({
         shouldUnregister: true,
     });
     const onSubmit:SubmitHandler<InputType> = (data) => {
-        console.log(data)
+        console.log(data, itemsToBuy)
     }
 
     return(<>

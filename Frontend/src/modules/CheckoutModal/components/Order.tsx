@@ -1,6 +1,7 @@
 import { calculateDiscount } from "@/assets/discount";
 import CartStore from "@/store/CartStore";
 import CheckoutState from "@/store/CheckoutState";
+import { useEffect } from "react";
 
 const formatPrice = (price: number) => `$${price.toFixed(2)}`;
 
@@ -8,6 +9,11 @@ const Order = () => {
     const basket = CartStore((state) => state.basket);
     const buyNowProduct = CheckoutState((state) => state.buyNowProduct);
     const products = buyNowProduct === null ? basket : [buyNowProduct];
+
+    const setItemToBuy = CheckoutState((state) => state.setItemToBuy);
+    useEffect(() => {
+        setItemToBuy(products);
+    }, [basket, buyNowProduct])
 
     const subtotal = products.reduce((sum, item) => sum + item.product!.price * item.quantity, 0);
     const discount = products.reduce((sum, item) => {
