@@ -35,7 +35,7 @@ const productSchema = new mongoose.Schema(
     name: { type: String, required: true },
     type: { type: String, required: true }, // 'phone' | 'smart-watches' и т.д.
     price: { type: Number, required: true },
-    count: { type: Number, required: true, default: 0 },
+    count: { type: Number, required: true, default: 0, min: 0 },
     status: {
       type: String,
       enum: ['normal', 'sale', 'new'],
