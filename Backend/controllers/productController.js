@@ -58,6 +58,32 @@ async function updateProduct(req, res) {
   }
 }
 
+// PATCH /api/products/:id/purchase
+// Тело запроса: { "quantity": 3 } — сколько штук куплено
+async function purchaseProduct(req, res) {
+  try {
+    const { quantity } = req.body
+
+    if (!Number.isInteger(quantity) || quantity <= 0) {
+      return res.status(400).json({ message: 'Некорректное количество' })
+    }
+
+    const product = await Product.findOneAndUpdate(
+      { id: req.params.id, count: { $gte: quantity } }, // только если остатка хватает
+      { $inc: { count: -quantity } },                   // вычитание делает сама БД
+      { new: true }                                     // вернуть уже обновлённый товар
+    )
+
+    if (!product) {
+      return res.status(409).json({ message: 'Товара недостаточно на складе или он не найден' })
+    }
+
+    res.json(product)
+  } catch (error) {
+    res.status(500).json({ message: 'Ошибка при оформлении покупки', error: error.message })
+  }
+}
+
 // DELETE /api/products/:id
 async function deleteProduct(req, res) {
   try {
@@ -76,5 +102,6 @@ module.exports = {
   getProductById,
   createProduct,
   updateProduct,
+  purchaseProduct,
   deleteProduct
 }
