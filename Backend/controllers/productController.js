@@ -1,14 +1,29 @@
 const Product = require('../models/Product')
 
 // GET /api/products
-// Поддерживает простую фильтрацию через query-параметры: ?type=phone&status=sale
+// Фильтрация: ?type=phone&status=sale
+// Пагинация: ?_page=1&_limit=5 (общее число товаров приходит в заголовке X-Total-Count)
 async function getAllProducts(req, res) {
   try {
     const filter = {}
     if (req.query.type) filter.type = req.query.type
     if (req.query.status) filter.status = req.query.status
 
-    const products = await Product.find(filter)
+    const page = Number(req.query._page)
+    const limit = Number(req.query._limit)
+
+    let query = Product.find(filter).sort({ _id: 1 }) // стабильный порядок, иначе страницы могут "плавать"
+    if (page > 0 && limit > 0) {
+      query = query.skip((page - 1) * limit).limit(limit)
+    }
+
+    const [products, total] = await Promise.all([
+      query,
+      Product.countDocuments(filter)
+    ])
+
+    res.set('X-Total-Count', String(total))
+    res.set('Access-Control-Expose-Headers', 'X-Total-Count') // иначе браузер скроет заголовок от фронтенда
     res.json(products)
   } catch (error) {
     res.status(500).json({ message: 'Ошибка при получении товаров', error: error.message })
