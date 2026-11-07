@@ -26,7 +26,7 @@ const CheckoutModal = () => {
     const clearCheckout = useClearCheckout();
 
     const onSubmit:SubmitHandler<InputType> = (data) => {
-        //console.log(data, itemsToBuy);
+        console.log(data, itemsToBuy);
         purchase.isPending 
         purchase.mutate(itemsToBuy, {
             onSuccess: () => {
