@@ -14,6 +14,8 @@ interface TypeCartStore {
     setNotification: (item: Notification) => void,
     updateTotals: (item: Totals) => void,
     calculateTotal: () => number,
+    clearBasket: () => void,
+    clearTotal: () => void,
 }
 
 interface CartItem {
@@ -130,6 +132,14 @@ const CartStore = create<TypeCartStore>()(
                 const priceArr = get().totals.map(el => el.price);
                 const newTotal = priceArr.reduce((el, temp) => el + temp, 0)
                 return newTotal
+            },
+
+            clearBasket(){
+                set(() => ({basket:[]}))
+            },
+
+            clearTotal(){
+                set(() => ({totals:[]}));
             }
         }),
         {name: "cart-storage"}

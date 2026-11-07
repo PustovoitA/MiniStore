@@ -8,6 +8,7 @@ interface TypeCheckoutState {
     setItemToBuy: (items:{product: Product | undefined, quantity: number}[]) => void,
     setBuyNowProduct: (item: Product | undefined, selectedCountProduct: number) => void,
     resetBuyNowProduct: () => void,
+    clearItemsToBuy: () => void
 }
 
 
@@ -28,6 +29,10 @@ const CheckoutState = create<TypeCheckoutState>()(
 
             resetBuyNowProduct(){
                 set(() => ({buyNowProduct: null}))
+            },
+
+            clearItemsToBuy(){
+                set(() => ({itemsToBuy:[]}))
             }
         }),
         {name: "checkout-store"}
