@@ -4,43 +4,36 @@ import Contacts from "./components/Contacts"
 import Delivery from "./components/Delivery"
 import Order from "./components/Order"
 import Payment from "./components/Payment"
+import Confirmation from "./components/Confirmation"
 
 import type { InputType } from "@ui/types/InputTypes"
 
-import CheckoutState from "@/store/CheckoutState"
-import ToastState from "@/store/ToastState"
-
 import { useNavigate } from "react-router-dom"
+import { useEffect, useState } from "react"
 import { useBuyProduct } from "@/hooks/useBuyProducts"
-import { useClearCheckout } from "@/hooks/useClearCheckout"
-import { scrolToTop } from "@/assets/scrolToTopFunction"
+
 
 const CheckoutModal = () => {
-    const itemsToBuy = CheckoutState((state) => state.itemsToBuy)
-    const showToast = ToastState((state) => state.showToast)
     const navigate = useNavigate()
     const methods = useForm<InputType>({
         shouldUnregister: true,
     });
+
     const purchase = useBuyProduct();
-    const clearCheckout = useClearCheckout();
+    const [confirmationIsOpet, setConfirmationIsOpet] = useState(false);
+    const [inputData, setInputData] = useState<InputType>();
+
+    useEffect(() => {
+        if(confirmationIsOpet){
+            document.body.classList.add('no-scroll');
+        }else{
+            document.body.classList.remove('no-scroll');
+        }
+    }, [confirmationIsOpet])
 
     const onSubmit:SubmitHandler<InputType> = (data) => {
-        console.log(data, itemsToBuy);
-        purchase.isPending 
-        purchase.mutate(itemsToBuy, {
-            onSuccess: () => {
-                clearCheckout();
-                navigate("/Home");
-                scrolToTop();
-                showToast("success", "Your order has been placed successfully!");
-            },
-            onError: (error) => {
-                console.log("Unable to purchase the item; please try again later.");
-                console.error(`ERROR: ${error}`);
-                showToast("error", "Unable to complete your purchase. Please try again later.");
-            }
-        });
+        setConfirmationIsOpet(true);
+        setInputData(data);
     }
 
     return(<>
@@ -70,6 +63,19 @@ const CheckoutModal = () => {
                 </section>
             </section>
         </FormProvider>
+
+        <div 
+        className="justify-center items-center w-full h-full bg-black/60 backdrop-blur-md fixed z-999 inset-0"
+        style={{
+            display: confirmationIsOpet ? "flex" : "none"
+        }}
+        >
+            <Confirmation
+            setConfirmationIsOpet={setConfirmationIsOpet}
+            data={inputData}
+            purchase={purchase}
+            />
+        </div>
     </>)
 }
 export default CheckoutModal
