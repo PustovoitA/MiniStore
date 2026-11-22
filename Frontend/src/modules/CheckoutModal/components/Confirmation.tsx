@@ -15,7 +15,7 @@ interface Props{
     purchase: any
 }
 
-const Confirmation = ({setConfirmationIsOpet, data, purchase}:Props) => {
+const Confirmation = ({setConfirmationIsOpet, purchase}:Props) => {
 
     const navigate = useNavigate()
     const itemsToBuy = CheckoutState((state) => state.itemsToBuy)
