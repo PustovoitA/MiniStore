@@ -1,6 +1,7 @@
 import { calculateDiscount } from "@/assets/discount";
 import CartStore from "@/store/CartStore";
 import CheckoutState from "@/store/CheckoutState";
+import { Button } from "@/ui/Button";
 import { useEffect } from "react";
 
 const formatPrice = (price: number) => `$${price.toFixed(2)}`;
@@ -65,9 +66,9 @@ const Order = () => {
             <p className="mt-5 text-xs leading-4 text-(--black-text-color)">
                 By placing your order, you agree to our <a href="#" className="text-(--blue-color) hover:underline">terms of service</a>, <a href="#" className="text-(--blue-color) hover:underline">return policy</a> and <a href="#" className="text-(--blue-color) hover:underline">privacy policy</a>.
             </p>
-            <button form="checkout" type="submit" className="mt-4 w-full bg-(--blue-color) px-4 py-4 text-sm font-semibold uppercase text-white transition-colors hover:brightness-95">
-                Place order
-            </button>
+            <div className="flex items-center justify-center w-full my-1">
+                <Button width="80%" form="checkout" bgColor="var(--blue-color)" value="Place order" type="submit"/>
+            </div>
         </aside>
     );
 };
