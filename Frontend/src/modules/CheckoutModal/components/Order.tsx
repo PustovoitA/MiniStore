@@ -56,7 +56,7 @@ const Order = () => {
             </div>
 
             <dl className="mt-5 space-y-3 text-sm">
-                <div className="flex justify-between gap-3"><dt>{basket.reduce((count, item) => count + item.quantity, 0)} items</dt><dd>{formatPrice(subtotal)}</dd></div>
+                <div className="flex justify-between gap-3"><dt>{products.reduce((count, item) =>  count + item.quantity, 0)} items</dt><dd>{formatPrice(subtotal)}</dd></div>
                 <div className="flex justify-between gap-3"><dt>Delivery</dt><dd className="text-right">Free</dd></div>
                 {discount > 0 && <div className="flex justify-between gap-3"><dt>Discount</dt><dd className="text-red-500">−{formatPrice(discount)}</dd></div>}
                 <div className="flex justify-between gap-3 border-t border-(--border) pt-3 text-base font-semibold"><dt>Total</dt><dd>{formatPrice(total)}</dd></div>
